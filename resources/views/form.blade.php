@@ -13,7 +13,7 @@
      }
 </style>
     <div class="well well-lg" style="margin: auto  25%;">
-                <h1 class="text-center">FORMS</h1>
+                <h1 class="text-center">FORMS REG</h1>
                 <div class="regForm" style="margin-left: 15%;">
                     {!! Form::open(['method' => 'POST']) !!}
                     <div class="form-group">
