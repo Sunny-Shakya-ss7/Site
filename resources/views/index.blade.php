@@ -2,7 +2,7 @@
 @section('title', 'Home')
 @section('content')
 
-@include('inc.messages')
+
 <!background color >
 
     <div class="background">
