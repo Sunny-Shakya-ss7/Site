@@ -77,7 +77,7 @@
         </div>
       </div>
     </nav>
-    @include('inc.messages');
+    @include('inc.messages')
     @yield('content')
   </body>
 </html>
