@@ -23,11 +23,11 @@
        <!Navigation>
     <nav class="navbar navbar-expand-md navbar-dark bg-dark sticky-top">
       <div class="container-fluid">
-        <a class="navbar-brand" href="/">
+        <a class="navbar-brand" href="/" >
           <img class="rounded" 
             src="{{asset('graphics/logo/logo.png')}}"
             width="40px" />
-          <label> Lions Club International</label>
+          <label style="cursor: pointer;"> Lions Club International</label>
         </a>
         <button
           class="navbar-toggler"
@@ -57,7 +57,7 @@
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                         {{ __('Logout') }}
-                                    </a>
+                          </a>
                       </li>
                     @else
                         <a class="nav-link" href="{{ route('login') }}">Login</a>
@@ -77,7 +77,9 @@
         </div>
       </div>
     </nav>
+    <div class="background">
     @include('inc.messages')
     @yield('content')
+  </div>
   </body>
 </html>

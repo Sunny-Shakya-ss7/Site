@@ -5,7 +5,6 @@
 
 <!background color >
 
-    <div class="background">
       <div class="container">
         <img
           src="https://scontent.fktm8-1.fna.fbcdn.net/v/t1.15752-9/107071849_281722563150112_1848598037131003840_n.png?_nc_cat=100&_nc_sid=ae9488&_nc_ohc=7tzvBIHMLaMAX-PoAgt&_nc_ht=scontent.fktm8-1.fna&oh=5825d92b10cc52bcf125ec2b4b4a5a31&oe=5F2D35F0"
@@ -27,5 +26,4 @@
         <br />
         <br/>
       </div>
-    </div>
  @endsection
