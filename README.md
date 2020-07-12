@@ -1,11 +1,4 @@
-<p align="center"><img src="https://res.cloudinary.com/dtfbvvkyp/image/upload/v1566331377/laravel-logolockup-cmyk-red.svg" width="400"></p>
-
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/d/total.svg" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
-</p>
+<p align="center"><img src="https://toppng.com/public/uploads/preview/leo-logo-png-transparent-leo-club-international-11563053714vpnhp40led.png" width="400"></p>
 
 ## About Leo International Club
 
@@ -68,5 +61,6 @@ Nepal Eco Friendly Leo Club
 Bhaktapur Kedareshwor Leo Club
 
 ##Contact us
+
 leodistrict325a2@gmail.com
 +977 980 123 5522
