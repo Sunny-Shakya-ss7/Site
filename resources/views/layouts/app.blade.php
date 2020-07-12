@@ -23,9 +23,9 @@
        <!Navigation>
     <nav class="navbar navbar-expand-md navbar-dark bg-dark sticky-top">
       <div class="container-fluid">
-        <a class="navbar-brand" href="#">
+        <a class="navbar-brand" href="/">
           <img class="rounded" 
-            src="https://toppng.com/public/uploads/preview/leo-logo-png-transparent-leo-club-international-11563053714vpnhp40led.png"
+            src="{{asset('graphics/logo/logo.png')}}"
             width="40px" />
           <label> Lions Club International</label>
         </a>
@@ -50,21 +50,34 @@
               @if (Route::has('login'))
                 <li class="nav-item">
                     @auth
-                        <a class="nav-link" href="{{ url('/profile') }}">Profile</a>
+                        <a class="nav-link" href="{{ url('/home') }}">Profile</a>
+                      </li>
+                      <li class="nav-item">
+                         <a class="nav-link" href="{{ route('logout') }}"
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                        {{ __('Logout') }}
+                                    </a>
+                      </li>
                     @else
                         <a class="nav-link" href="{{ route('login') }}">Login</a>
-
+                </li>
+                <li class="nav-item">
                         @if (Route::has('register'))
                             <a class="nav-link" href="{{ route('register') }}">Register</a>
                         @endif
                     @endauth
                 </li>
             @endif
+            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                @csrf
+            </form>
             </li>
           </ul>
         </div>
       </div>
     </nav>
+    @include('inc.messages')
     @yield('content')
   </body>
 </html>
