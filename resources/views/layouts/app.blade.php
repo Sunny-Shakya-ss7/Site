@@ -72,7 +72,7 @@
                       </li>
                       @endif
                     @else
-                        <a class="nav-link" href="{{ route('login') }}">Login User</a>
+                        <a class="nav-link" href="{{ route('login') }}">Login</a>
                 </li>
                 <li class="nav-item">
                         @if (Route::has('register'))
