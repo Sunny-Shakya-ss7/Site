@@ -47,6 +47,8 @@
             <li class="nav-item">
               <a class="nav-link" href="#"> Events </a>
             </li>
+
+            <!--Login And Logout -->
               @if (Route::has('login'))
                 <li class="nav-item">
                   @auth
@@ -55,7 +57,12 @@
                         @else
                         <a class="nav-link" href="{{ url('/home') }}">Profile</a>
                       </li>
-                      @endif
+                  @endif
+                    @if(Auth::guard('admins')->check())
+                      <li class="nav-item">
+                         <a class="nav-link" href="{{ url('admin/logout') }}">{{ __(' Admin Logout') }}</a>
+                      </li>
+                      @else
                       <li class="nav-item">
                          <a class="nav-link" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
@@ -63,6 +70,7 @@
                                         {{ __('Logout') }}
                           </a>
                       </li>
+                      @endif
                     @else
                         <a class="nav-link" href="{{ route('login') }}">Login User</a>
                 </li>
@@ -72,8 +80,8 @@
                 </li>
                         @endif
                     @endauth
-                
             @endif
+
             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                 @csrf
             </form>
