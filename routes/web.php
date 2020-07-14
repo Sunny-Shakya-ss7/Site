@@ -20,6 +20,25 @@ Route::get('/', function () {
 Route::get('index',function(){
 	return view('dashboard');
 });
-Auth::routes();
 
+//Auth Routes
+//Auth::routes();
+Auth::routes([
+  'register' => false, // Registration Routes...
+  'reset' => false, // Password Reset Routes...
+  'verify' => false, // Email Verification Routes...
+]);
+
+//Profile controller for admins and users
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::prefix('admin')->group(function(){
+	Route::get('/login', 'Auth\AdminLoginController@loginForm')->name('admin.login');
+	Route::post('/login', 'Auth\AdminLoginController@login')->name('admin.login.submit');
+	Route::get('/', 'AdminController@index')->name('admin.dashboard');
+});
+//Forms Data Subbmition
+//Route::resource('/form','FormsController');
+
+//User Controll 
+//Route::get('/admin','UserController@checkadmin');

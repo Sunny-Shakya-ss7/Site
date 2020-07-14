@@ -49,9 +49,13 @@
             </li>
               @if (Route::has('login'))
                 <li class="nav-item">
-                    @auth
+                  @auth
+                  @if(Auth::guard('admins')->check())
+                        <a class="nav-link" href="{{ url('/admin') }}">Admin Profile</a>
+                        @else
                         <a class="nav-link" href="{{ url('/home') }}">Profile</a>
                       </li>
+                      @endif
                       <li class="nav-item">
                          <a class="nav-link" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
@@ -60,14 +64,15 @@
                           </a>
                       </li>
                     @else
-                        <a class="nav-link" href="{{ route('login') }}">Login</a>
+                        <a class="nav-link" href="{{ route('login') }}">Login User</a>
                 </li>
                 <li class="nav-item">
                         @if (Route::has('register'))
-                            <a class="nav-link" href="{{ route('register') }}">Register</a>
+                          <a class="nav-link" href="{{ route('register') }}">Register</a>   
+                </li>
                         @endif
                     @endauth
-                </li>
+                
             @endif
             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                 @csrf

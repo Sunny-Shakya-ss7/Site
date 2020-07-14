@@ -18,11 +18,13 @@
         <br />
         <br />
         <br />
+        @guest
       <div class="animatedbutton">
         <button  class="animated">
           <a href="#">Join Now</a>
         </button>
       </div>
+      @endguest
         <br />
         <br/>
       </div>
