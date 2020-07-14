@@ -59,9 +59,13 @@
                       </li>
                   @endif
                     @if(Auth::guard('admins')->check())
+                        <li class="nav-item">
+                          <a class="nav-link" href="{{ url('/user') }}">Register User</a>   
+                      </li>
                       <li class="nav-item">
                          <a class="nav-link" href="{{ url('admin/logout') }}">{{ __(' Admin Logout') }}</a>
                       </li>
+                      
                       @else
                       <li class="nav-item">
                          <a class="nav-link" href="{{ route('logout') }}"
@@ -74,11 +78,7 @@
                     @else
                         <a class="nav-link" href="{{ route('login') }}">Login</a>
                 </li>
-                <li class="nav-item">
-                        @if (Route::has('register'))
-                          <a class="nav-link" href="{{ route('register') }}">Register</a>   
-                </li>
-                        @endif
+                
                     @endauth
             @endif
 

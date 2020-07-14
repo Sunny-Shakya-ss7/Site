@@ -42,5 +42,5 @@ Route::prefix('admin')->group(function(){
 //Forms Data Subbmition
 //Route::resource('/form','FormsController');
 
-//User Controll 
-//Route::get('/admin','UserController@checkadmin');
+//User Control 
+Route::resource('/user','UserController');
