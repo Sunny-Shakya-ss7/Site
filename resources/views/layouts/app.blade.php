@@ -45,7 +45,7 @@
               <a class="nav-link" href="#"> About us </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#"> Events </a>
+              <a class="nav-link" href="/news"> Events </a>
             </li>
 
             <!--Login And Logout -->

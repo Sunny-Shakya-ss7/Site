@@ -43,4 +43,9 @@ Route::prefix('admin')->group(function(){
 //Route::resource('/form','FormsController');
 
 //User Control 
-Route::resource('/user','UserController');
+Route::resource('/user','UserController',[
+    'except' => ['update']
+]);
+
+//News / Events Controller
+Route::resource('/news','NewsController');

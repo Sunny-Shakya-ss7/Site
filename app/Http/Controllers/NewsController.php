@@ -1,0 +1,137 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+use App\News;
+use Auth;
+
+class NewsController extends Controller
+{
+    public function __construct()
+    {
+        $this->middleware('auth:admins', ['except' => ['index', 'show']]);
+    }
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function index()
+    {
+        $news = News::orderBy('id','desc')->paginate(10);
+        return view('news.index')->with('news',$news);
+    }
+
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create()
+    {
+        return view('news.create');
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store(Request $request)
+    {
+        $this-> validate($request,[
+            'title' => 'required',
+            'slug' => 'required',
+            'body' => 'required',
+            'cover_image' => 'image|nullable|max:1999',
+            'signature' => 'required'
+        ]);
+        $news = new News;
+        $news->title = $request->input('title');
+        $news->slug = $request->input('slug');
+        $news->body = $request->input('body');
+        $news->user_id = auth()->user()->id;
+        if($request->has('signature')){
+            $news->signature = $request->input('signature');
+        }
+        else{
+            $news->signature = "LDC 325 A2";
+        }
+        $news->save();
+
+        return redirect('/news')->with('success','News/Event has been Created');
+    }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function show($id)
+    {
+        $new = News::find($id);
+        return view('news.show')->with('new',$new);
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function edit($id)
+    {
+        $new = News::find($id);
+        return view('news.edit')->with('new',$new);
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Request $request, $id)
+    {
+        $this-> validate($request,[
+            'title' => 'required',
+            'slug' => 'required',
+            'body' => 'required',
+            'cover_image' => 'image|nullable|max:1999',
+            'signature' => 'required'
+        ]);
+        $news =  News::find($id);
+        $news->title = $request->input('title');
+        $news->slug = $request->input('slug');
+        $news->body = $request->input('body');
+        $news->user_id = auth()->user()->id;
+        if($request->has('signature')){
+            $news->signature = $request->input('signature');
+        }
+        else{
+            $news->signature = "LDC 325 A2";
+        }
+        $news->save();
+
+        return redirect('/news')->with('success','News/Event has been Updated');
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy($id)
+    {
+        $news = News::find($id);
+        //Check for correct user
+        $news->delete();
+
+        return redirect('/news')->with('success', 'News/Event has been Removed');
+    }
+}

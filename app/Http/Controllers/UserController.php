@@ -54,7 +54,7 @@ class UserController extends Controller
         ]);
         $user->save();
 
-        return redirect('admin')->with('success','User Created');
+        return redirect('/users/index')->with('success','User Created');
     }
 
     /**
