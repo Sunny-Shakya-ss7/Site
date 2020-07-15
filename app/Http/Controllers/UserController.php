@@ -19,7 +19,8 @@ class UserController extends Controller
     
     public function index()
     {
-        
+        $Users = User::orderBy('created_at','desc')->paginate(10);
+        return view('users.index')->with('Users', $Users);
     }
 
     /**
@@ -29,7 +30,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        return view('users.reguser');
+        return view('users.register');
     }
 
     /**
@@ -64,7 +65,8 @@ class UserController extends Controller
      */
     public function show($id)
     {
-        //
+        $User = User::find($id);
+        return view('users.show')->with('User',$User);
     }
 
     /**
@@ -75,7 +77,8 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-        //
+        $User = User::find($id);
+        return view('users.edit')->with('User',$User);
     }
 
     /**
@@ -87,7 +90,6 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
     }
 
     /**
@@ -98,6 +100,10 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-        //
+         $User = User::find($id);
+        //Check for correct user
+        $User->delete();
+
+        return redirect('/user')->with('success', 'User has been Removed');
     }
 }

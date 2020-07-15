@@ -60,7 +60,7 @@
                   @endif
                     @if(Auth::guard('admins')->check())
                         <li class="nav-item">
-                          <a class="nav-link" href="{{ url('/user') }}">Register User</a>   
+                          <a class="nav-link" href="{{ url('/user') }}">View User</a>   
                       </li>
                       <li class="nav-item">
                          <a class="nav-link" href="{{ url('admin/logout') }}">{{ __(' Admin Logout') }}</a>
