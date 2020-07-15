@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\User;
 
 class UserController extends Controller
 {
@@ -18,7 +19,7 @@ class UserController extends Controller
     
     public function index()
     {
-        return view('users.reguser');
+        
     }
 
     /**
@@ -28,7 +29,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        //
+        return view('users.reguser');
     }
 
     /**
@@ -39,7 +40,20 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this-> validate($request,[
+            'name' => 'required',
+            'email' => 'required|email',
+            'password' => 'required|min:8',
+            'confim_password' => 'required_with:password|same:password|min:8'
+        ]);
+        $user = new User([
+            'name' => $request->name,
+            'email' => $request->email,
+            'password' => bcrypt($request->password)
+        ]);
+        $user->save();
+
+        return redirect('admin')->with('success','User Created');
     }
 
     /**

@@ -65,7 +65,6 @@
                       <li class="nav-item">
                          <a class="nav-link" href="{{ url('admin/logout') }}">{{ __(' Admin Logout') }}</a>
                       </li>
-                      
                       @else
                       <li class="nav-item">
                          <a class="nav-link" href="{{ route('logout') }}"
