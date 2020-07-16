@@ -12,7 +12,7 @@
 		<div class="well">
 			<div class="row">
 				<div class="col-md-4 col-sm-4">
-					<img width="50%" height="25%" src="/storage/cover_images/{{$new->cover_image}}" alt="">
+					<img class="ml-1"src="/storage/news/{{$new->cover_image}}" alt="" style="height:80%; width: 80%;">
 				</div>
 				<div class="col-md-8 col-sm-4">
 			<h3><a href="/news/{{$new->id}}">{{$new->title}}- {{$new->slug}}</a></h3>

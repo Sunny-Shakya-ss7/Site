@@ -44,6 +44,15 @@
                         {{$message}}
                     </div>
                     @enderror
+            <div class="form-group">
+                {{Form::label('title','Profile Photo [Optional]')}}<br>
+                {{Form::File('profile_image')}}
+            </div> 
+            @error('profile_image')
+                    <div class="alert alert-danger col-md-5">
+                        {{$message}}
+                    </div>
+                    @enderror
             {{Form::submit('Reg User', ['class' => 'btn btn-primary', 'style'=> 'margin-left:16%;'])}}
             {!! Form::close() !!}
     </div>   

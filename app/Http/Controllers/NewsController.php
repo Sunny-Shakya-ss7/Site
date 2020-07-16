@@ -48,17 +48,29 @@ class NewsController extends Controller
             'cover_image' => 'image|nullable|max:1999',
             'signature' => 'required'
         ]);
+
+        if($request->hasFile('cover_image')){
+            $filenameWithExt = $request->file('cover_image')->getClientOriginalName();
+            //Get just file name
+            $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
+            //Get just extension
+            $extension = $request->file('cover_image')->getClientOriginalExtension();
+            //File name to store
+            $fileNameToStore = $filename.'_'.time().'.'.$extension;
+            //Upload Image
+            $path = $request->file('cover_image')->storeAs('public/news',$fileNameToStore);
+
+        }else{
+            $fileNameToStore = 'noimage.jpg';
+        }
+
         $news = new News;
         $news->title = $request->input('title');
         $news->slug = $request->input('slug');
         $news->body = $request->input('body');
         $news->user_id = auth()->user()->id;
-        if($request->has('signature')){
-            $news->signature = $request->input('signature');
-        }
-        else{
-            $news->signature = "LDC 325 A2";
-        }
+        $news->signature = $request->input('signature');
+        $news->cover_image = $fileNameToStore;
         $news->save();
 
         return redirect('/news')->with('success','News/Event has been Created');
@@ -103,18 +115,29 @@ class NewsController extends Controller
             'body' => 'required',
             'cover_image' => 'image|nullable|max:1999',
             'signature' => 'required'
-        ]);
+              ]);
+
+             if($request->hasFile('cover_image')){
+            $filenameWithExt = $request->file('cover_image')->getClientOriginalName();
+            //Get just file name
+            $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
+            //Get just extension
+            $extension = $request->file('cover_image')->getClientOriginalExtension();
+            //File name to store
+            $fileNameToStore = $filename.'_'.time().'.'.$extension;
+            //Upload Image
+            $path = $request->file('cover_image')->storeAs('public/news',$fileNameToStore);
+            }
+
+     
         $news =  News::find($id);
         $news->title = $request->input('title');
         $news->slug = $request->input('slug');
         $news->body = $request->input('body');
         $news->user_id = auth()->user()->id;
-        if($request->has('signature')){
-            $news->signature = $request->input('signature');
-        }
-        else{
-            $news->signature = "LDC 325 A2";
-        }
+        $news->signature = $request->input('signature');
+        if($request->hasFile('cover_image'))
+            $news->cover_image = $fileNameToStore;
         $news->save();
 
         return redirect('/news')->with('success','News/Event has been Updated');

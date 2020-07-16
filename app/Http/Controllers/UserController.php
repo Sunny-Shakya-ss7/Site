@@ -45,16 +45,33 @@ class UserController extends Controller
             'name' => 'required',
             'email' => 'required|email',
             'password' => 'required|min:8',
-            'confim_password' => 'required_with:password|same:password|min:8'
+            'confim_password' => 'required_with:password|same:password|min:8',
+            'profile_image' => 'image|nullable|max:1999',
         ]);
+
+         if($request->hasFile('profile_image')){
+            $filenameWithExt = $request->file('profile_image')->getClientOriginalName();
+            //Get just file name
+            $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
+            //Get just extension
+            $extension = $request->file('profile_image')->getClientOriginalExtension();
+            //File name to store
+            $fileNameToStore = $filename.'_'.time().'.'.$extension;
+            //Upload Image
+            $path = $request->file('profile_image')->storeAs('public/profile',$fileNameToStore);
+        }else{
+            $fileNameToStore = 'noimage.jpg';
+        }
+
         $user = new User([
             'name' => $request->name,
             'email' => $request->email,
-            'password' => bcrypt($request->password)
+            'password' => bcrypt($request->password),
         ]);
+        $user->profile_image = $fileNameToStore;
         $user->save();
 
-        return redirect('/users/index')->with('success','User Created');
+        return redirect('user')->with('success','User Created');
     }
 
     /**
