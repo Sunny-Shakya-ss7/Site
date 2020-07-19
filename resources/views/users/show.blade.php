@@ -2,14 +2,14 @@
 @section('title',$User->name)
 
 @section('content')
-	<div class="container">
-		<div class="well" style="color:white;">
+	<div class="container" style="color:white;">
+		<div class="well" >
 			<br>
 			<h1 class="text-center">{{$User->name}}</h1>
 		</div> 
-			<a href="/user" class="btn btn-default">Go Back</a>
+			<a href="/user" class="btn btn-success">Go Back</a>
 			<div class="row">
-			<div class="col-md-4 col-sm-4">
+			<div class="col-md-4 col-sm-4 text-white">
 			ID : {{$User->id}} <br>
 			Name : {{$User->name}} <br>
 			Email : {{$User->email}} <br>

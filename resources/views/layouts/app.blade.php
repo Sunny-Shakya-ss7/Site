@@ -4,19 +4,20 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width-device-width, initial-scale=1" />
     <title>{{config('app.name','LDC 325 A2')}} - @yield('title')</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"/>
 
     <!-- jQuery library -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
     <!-- Latest compiled JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
     <script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
 
     <!--CSS / SCSS -->
     <link rel="stylesheet" href="{{asset('css/style.css')}}" />
     <link rel="stylesheet" href="{{asset('css/button.css')}}">
+
 
 </head>
   <body>
@@ -42,7 +43,10 @@
               <a class="nav-link" href="#"> Discover </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#"> About us </a>
+              <a class="nav-link" href="/gallery"> Gallery </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/about"> About us </a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="/news"> Events </a>
@@ -92,6 +96,6 @@
     <div class="background">
     @include('inc.messages')
     @yield('content')
-  </div>
+      </div>
   </body>
 </html>

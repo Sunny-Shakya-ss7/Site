@@ -13,16 +13,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-});  
+//Pages Controller Routes
+Route::get('/', 'PagesController@index')->name('main.index');  
+Route::get('/index','PagesController@userindex')->name('user.index');
+Route::get('/about','PagesController@about')->name('user.about');
 
-Route::get('index',function(){
-	return view('dashboard');
-});
+Route::resource('/gallery','GalleryController',[
+	'except' => ['update','show','edit','create']
+]);
 
-//Auth Routes
-//Auth::routes();
+//Authentication Routes
 Auth::routes([
   'register' => false, // Registration Routes...
   'reset' => false, // Password Reset Routes...
@@ -37,8 +37,8 @@ Route::prefix('admin')->group(function(){
 	Route::post('/login', 'Auth\AdminLoginController@login')->name('admin.login.submit');
 	Route::get('/', 'AdminController@index')->name('admin.dashboard');
 	Route::get('/logout', 'Auth\AdminLoginController@logout')->name('admin.logout');
-
 });
+
 //Forms Data Subbmition
 //Route::resource('/form','FormsController');
 

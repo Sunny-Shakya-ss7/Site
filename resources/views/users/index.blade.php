@@ -13,7 +13,7 @@
             <a href="/user/create" class="btn btn-success" style="color:white;">Register User</a>
             <hr>
         </div>
-            <table class="table">
+            <table class="table text-white">
                 <thead>
                     <tr class="filters">
                         <th><input type="text" class="form-control" placeholder="ID No" disabled></th>
