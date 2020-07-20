@@ -39,7 +39,7 @@ Route::prefix('admin')->group(function(){
 	Route::get('/logout', 'Auth\AdminLoginController@logout')->name('admin.logout');
 });
 
-//Forms Data Subbmition
+//Forms Data Submittion
 //Route::resource('/form','FormsController');
 
 //User Control 
@@ -49,3 +49,9 @@ Route::resource('/user','UserController',[
 
 //News / Events Controller
 Route::resource('/news','NewsController');
+
+//Communty Controller
+Route::resource('/community','PostsController');
+Route::resource('/community/reply','ReplyController',[
+	'except' => ['index','show','edit','create','destroy']
+]);

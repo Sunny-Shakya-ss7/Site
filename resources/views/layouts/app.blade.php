@@ -10,6 +10,7 @@
 
     <!-- Latest compiled JavaScript -->
     <script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+    <script src="https://kit.fontawesome.com/66fc271527.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
@@ -51,7 +52,9 @@
             <li class="nav-item">
               <a class="nav-link" href="/news"> Events </a>
             </li>
-
+             <li class="nav-item">
+              <a class="nav-link" href="/community"> Community </a>
+            </li>
             <!--Login And Logout -->
               @if (Route::has('login'))
                 <li class="nav-item">
