@@ -52,6 +52,10 @@
             <li class="nav-item">
               <a class="nav-link" href="/news"> Events </a>
             </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/spa"> SPA </a>
+            </li>
+
              <li class="nav-item">
               <a class="nav-link" href="/community"> Community </a>
             </li>
@@ -99,6 +103,11 @@
     <div class="background">
     @include('inc.messages')
     @yield('content')
+  </div>
+  <script src="{{ asset('ckeditor/ckeditor.js') }}"></script>
+    <script>
+    CKEDITOR.replace( 'summary_ckeditor' );
+  </script>
       </div>
   </body>
 </html>
