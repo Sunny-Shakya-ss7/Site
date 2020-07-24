@@ -138,9 +138,17 @@ Extra (xl) large devices (large desktops, 1200px and up)
 @media (min-width: 1200px) { ... }
 */
 
+/* -------------------------- SPA ------------------------------- */
+
 hr {
     width: 48%;
     background-color: white;
+}
+
+@media (max-width: 1080px) {
+    hr {
+        width: 73%;
+    }
 }
 
 @media (max-width: 768px) {
@@ -150,7 +158,64 @@ hr {
 }
 
 @media (max-width: 576px) {
-    hr {
-        width: 93%;
+}
+
+.top {
+    width: 50rem;
+    background-color: rgba(0, 0, 0, 0.25);
+    box-shadow: 15px 15px rgba(0, 0, 0, 0.3);
+    border-radius: 40px;
+}
+
+.backimgtop {
+    background-image: url("../graphics/logo/logo_old_transparent.png");
+    background-size: 27rem;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.backimgdown {
+    background-image: url("../graphics/logo/logo_old_transparent.png");
+    background-size: 48rem;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.contenttop {
+    width: 100%;
+}
+
+.contentdown {
+    width: 100%;
+}
+
+.input {
+    background: #ece8e8;
+    opacity: 0.5;
+    border-radius: 26px;
+    color: black;
+}
+
+.length {
+    width: 30rem;
+}
+
+@media (max-width: 576px) {
+    hr,
+    .top {
+        width: 80%;
+    }
+
+    .backimgtop,
+    .backimgdown {
+        background-size: 23rem;
+    }
+
+    .length {
+        width: 19rem;
+    }
+
+    .but {
+        left: 15%;
     }
 }

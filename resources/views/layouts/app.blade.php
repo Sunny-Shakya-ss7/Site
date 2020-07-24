@@ -19,7 +19,6 @@
     <link rel="stylesheet" href="{{asset('css/style.css')}}" />
     <link rel="stylesheet" href="{{asset('css/button.css')}}">
 
-
 </head>
   <body>
        <!Navigation>
@@ -101,13 +100,12 @@
       </div>
     </nav>
     <div class="background">
-    @include('inc.messages')
-    @yield('content')
-  </div>
+      @include('inc.messages')
+      @yield('content')
+    </div>
   <script src="{{ asset('ckeditor/ckeditor.js') }}"></script>
-    <script>
+  <script>
     CKEDITOR.replace( 'summary_ckeditor' );
   </script>
-      </div>
   </body>
 </html>
