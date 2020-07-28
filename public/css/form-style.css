@@ -1,0 +1,63 @@
+/*User Login From Opens*/
+.mainpage{
+      overflow: hidden;
+    }
+    .signin{    
+      background: #23242A;
+      border-radius: 25px;
+      margin:3%;
+      margin-left: 13%;
+      padding:5% 5% 2% 5%;
+      transition: box-shadow linear 0.4s;
+    }
+    
+    .form-control, .input-group-text{
+      background: #C4C4C4;
+      border-radius: 5px;
+    }
+    .signin:hover{
+      box-shadow: 0px 0px 10px 1px  #C4C4C4;
+    }
+    .slogan{
+      margin-top: 5%;
+      margin-left: 5%;
+    }
+    .slogan-img{
+      margin-left: 15%;
+    }
+    .slogan-text{
+      font-size: 5vh;
+      font-weight: 500; 
+      letter-spacing: 3px; 
+      margin-top: 7%;
+    }
+  
+    .contact-menu{
+      background-color: #AEAEAE;
+    }
+    ul li a{
+      color:white;
+      font-size: 3vh;
+    }
+    ul li a:hover{
+      text-decoration: none;
+    }
+    i.fa{
+      font-size: 3vh;
+    }
+    .contact-menu{
+      position: fixed;
+      width: 100%;
+      height: 5%;
+      top:95%;
+    }
+    @media screen and (max-width: 780px) {
+        .slogan {
+          display:none;
+        }
+        .signin{
+          margin-right: 10%;
+
+        }
+      }
+      /*User Login Form Closes*/

@@ -1,0 +1,106 @@
+       header img{
+            position: absolute;
+            width: 100%;
+        }
+        .header-bg{
+            left: -0.15%;
+            right: 0.15%;
+            top: 0%;
+            height: 95%;
+
+        }
+        .header-gold{
+            height: 27%;
+            top: 9%;
+            left: 0;
+            right: 0;
+        }
+        .header-black{
+            width: 93%;
+            left: 7%;
+            right: 0;
+            top: 12%;
+            bottom: 79%;
+        }
+        .ellipse-gold{
+            width: 10.75%;
+            left: 2%;
+            right: 88%;
+            top: 11%;
+            bottom: 79%;
+        }
+        .logo{
+            width: 13%;
+            left: 0;
+            right: 88%;
+            top: 12%;
+            bottom: 79%;
+        }
+        .group{
+            width: 33%;
+            left: 29%;
+            right: 30%;
+            top: 29%;
+            bottom: 7%;
+            opacity: 0.2;
+        }
+        .circle-design{
+            width: 86%;
+            left: 6%;
+            right: 4.3%;
+            top: 58%;
+            bottom: 36.39%;
+        }
+
+        .footer-grad{
+            width: 99.8%;
+            left: 0.16%;
+            right: 0.15%;
+            top: 92%;
+            bottom: 4.35%;
+        }
+
+        .footer-black{
+            width: 99.8%;
+            left: 0.14%;
+            right: 0.16%;
+            top: 94%;
+            bottom: 0%;
+        }
+        .header-content1{
+            position: absolute;
+            left: 30.9%;
+            right: 28.7%;
+            top: 15%;
+            bottom: 83.61%;
+            font-size: 6vh;
+            text-align: center;
+            color: #FFFFFF;
+        }
+        .header-content2{
+            position: absolute;
+            left: 11.11%;
+            right: 10.89%;
+            top: 62%;
+            bottom: 39.35%;
+            font-size: 4.5vh;
+            text-align: center;
+            color: #FFFFFF;
+        }
+        
+    ul li a{
+    color:white;
+    font-size: 3vh;
+    }
+    ul li a:hover{
+    text-decoration: none;
+    }
+    i.fa{
+    font-size: 3vh;
+    }
+    .contact-menu{
+    position: fixed;
+    width: 100%;
+    height: 5%;
+    top:95%;
+    }

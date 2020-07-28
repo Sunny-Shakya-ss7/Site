@@ -29,7 +29,7 @@
           <img class="rounded" 
             src="{{asset('graphics/logo/logo.png')}}"
             width="40px" />
-          <label style="cursor: pointer;"> Lions Club International</label>
+          <label style="cursor: pointer; font-size: 3vh; font-weight: 500;"> LDC 325 A2</label>
         </a>
         <button
           class="navbar-toggler"
@@ -56,38 +56,38 @@
               <a class="nav-link" href="/community"> Community </a>
             </li>
             <!--Login And Logout -->
-              @if (Route::has('login'))
-                <li class="nav-item">
-                  @auth
-                  @if(Auth::guard('admins')->check())
-                        <a class="nav-link" href="{{ url('/admin') }}">Admin Profile</a>
-                        @else
-                        <a class="nav-link" href="{{ url('/home') }}">Profile</a>
-                      </li>
-                  @endif
-                    @if(Auth::guard('admins')->check())
-                        <li class="nav-item">
-                          <a class="nav-link" href="{{ url('/user') }}">View User</a>   
-                      </li>
-                      <li class="nav-item">
-                         <a class="nav-link" href="{{ url('admin/logout') }}">{{ __(' Admin Logout') }}</a>
-                      </li>
+            @if(Auth::guard('admins')->check() || Auth::guard('web')->check())
+            @if (Route::has('login'))
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle"  id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                   Profile
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="">
+                      @if(Auth::guard('admins')->check())
+                        <a class="dropdown-item" href="{{ url('/admin') }}">Admin Profile</a>
+                        <a class="dropdown-item" href="{{ url('/user') }}">View Users</a>   
                       @else
-                      <li class="nav-item">
-                         <a class="nav-link" href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
-                          </a>
-                      </li>
-                      @endif
-                    @else
-                        <a class="nav-link" href="{{ route('login') }}">Login</a>
-                </li>
-                
-                    @endauth
-            @endif
-
+                        <a class="dropdown-item" href="{{ url('/home') }}">Profile</a>
+                        @endif
+                        <div class="dropdown-divider"></div>
+                        @if(Auth::guard('admins')->check())
+                        <a class="dropdown-item" href="{{ url('admin/logout') }}">{{ __(' Admin Logout') }}</a>
+                        @else
+                        <a class="dropdown-item" href="{{ route('logout') }}"
+                         onclick="event.preventDefault();
+                                       document.getElementById('logout-form').submit();">
+                          {{ __('Logout') }}
+                        </a> 
+                      </div>
+              </li>
+                  @endif 
+              @endif 
+              @else
+              <li class="nav-item">
+                <a class="nav-link"  href="{{ route('login') }}">Login</a>
+              </li>
+           
+          @endif
             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                 @csrf
             </form>
@@ -102,3 +102,5 @@
       </div>
   </body>
 </html>
+
+                       

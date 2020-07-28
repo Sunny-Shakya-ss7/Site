@@ -5,8 +5,8 @@
 	<div class="container">
 		@if(Auth::guard('admins')->check())
 		<a href="/news/create" class="btn btn-success ">Post Events/News</a>
+		<hr>
 		@endif
-	<hr>
 		@if(count($news)>0)
 		@foreach	($news as $new)
 		<div class="well">

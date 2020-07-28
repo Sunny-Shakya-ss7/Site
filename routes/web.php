@@ -17,6 +17,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', 'PagesController@index')->name('main.index');  
 Route::get('/index','PagesController@userindex')->name('user.index');
 Route::get('/about','PagesController@about')->name('user.about');
+Route::get('/welcome',function(){
+	return view('welcome');
+});
 
 Route::resource('/gallery','GalleryController',[
 	'except' => ['update','show','edit','create']
@@ -31,6 +34,7 @@ Auth::routes([
 
 //Profile controller for admins and users
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/welcome', 'HomeController@welcome')->name('welcome');
 
 Route::prefix('admin')->group(function(){
 	Route::get('/login', 'Auth\AdminLoginController@loginForm')->name('admin.login');
