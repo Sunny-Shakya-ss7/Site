@@ -19,7 +19,6 @@
     <link rel="stylesheet" href="{{asset('css/style.css')}}" />
     <link rel="stylesheet" href="{{asset('css/button.css')}}">
 
-
 </head>
   <body>
        <!Navigation>
@@ -52,6 +51,10 @@
             <li class="nav-item">
               <a class="nav-link" href="/news"> Events </a>
             </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/spa"> SPA </a>
+            </li>
+
              <li class="nav-item">
               <a class="nav-link" href="/community"> Community </a>
             </li>
@@ -97,9 +100,13 @@
       </div>
     </nav>
     <div class="background">
-    @include('inc.messages')
-    @yield('content')
-      </div>
+      @include('inc.messages')
+      @yield('content')
+    </div>
+  <script src="{{ asset('ckeditor/ckeditor.js') }}"></script>
+  <script>
+    CKEDITOR.replace( 'summary_ckeditor' );
+  </script>
   </body>
 </html>
 

@@ -59,3 +59,6 @@ Route::resource('/community','PostsController');
 Route::resource('/community/reply','ReplyController',[
 	'except' => ['index','show','edit','create','destroy']
 ]);
+
+//SPA Form
+Route::resource('/spa','SpaController');
