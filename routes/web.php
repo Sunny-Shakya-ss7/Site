@@ -58,3 +58,7 @@ Route::resource('/community/reply','ReplyController',[
 
 //SPA Form
 Route::resource('/spa','SpaController');
+
+// About Leo & Leo Clubs
+Route::get('/about_leo', 'PagesController@about_leo')->name('about_leo.index'); 
+Route::get('/leo_clubs', 'PagesController@leo_clubs')->name('leo_clubs.index'); 

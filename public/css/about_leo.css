@@ -1,0 +1,433 @@
+body {
+    background: rgb(78, 77, 77); /* fallback for old browsers */
+    background: -webkit-linear-gradient(
+        to right,
+        #27313a,
+        #2d3944
+    ); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(
+        to right,
+        #27313a,
+        #2d3944
+    ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    min-height: 100%;
+}
+
+/* ---------------------- Left Side ----------------------- */
+
+.image2 {
+    position: absolute;
+    width: 12rem;
+    height: 12rem;
+    top: 30%;
+    z-index: 1;
+    left: 1.7rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.vertical2 {
+    position: absolute;
+    width: 9px;
+    height: 103rem;
+    top: -1px;
+}
+
+@media (max-width: 900px) {
+    .image2 {
+        width: 10rem;
+        height: 10rem;
+        left: -0.7rem;
+        top: 15%;
+    }
+}
+
+@media (max-width: 800px) {
+    .image2 {
+        width: 8rem;
+        height: 8rem;
+        left: 0.4rem;
+        top: 17%;
+    }
+}
+
+@media (max-width: 640px) {
+    .image2 {
+        width: 8rem;
+        height: 8rem;
+        top: 25%;
+        left: -2%;
+    }
+
+    .vertical2 {
+        width: 5px;
+        height: 84rem;
+    }
+}
+
+/* ---------------------- Header ----------------------- */
+
+.header {
+    position: absolute;
+    width: 80%;
+    height: 13%;
+    left: 13%;
+    top: 10%;
+}
+
+.bar {
+    position: absolute;
+    width: 100%;
+    height: 10rem;
+    top: 25%;
+}
+
+.header h1 {
+    position: relative;
+    font-size: 3.7rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 3;
+    padding-top: 1.6rem;
+}
+
+@media (max-width: 1080px) {
+    .header {
+        height: 13%;
+        left: 20%;
+        top: 5%;
+    }
+
+    .bar {
+        width: 100%;
+        height: 10rem;
+        top: 25%;
+    }
+
+    .header h1 {
+        font-size: 2.5rem;
+        font-weight: 600;
+    }
+}
+
+@media (max-width: 700px) {
+    .header {
+        height: 6%;
+    }
+
+    .bar {
+        width: 100%;
+        height: 8rem;
+        top: 16%;
+    }
+
+    .header h1 {
+        font-size: 1.8rem;
+        font-weight: 500;
+    }
+}
+
+@media (max-width: 640px) {
+    .header {
+        width: 78%;
+        height: 10%;
+        left: 18%;
+        top: 10%;
+    }
+
+    .bar {
+        height: 7rem;
+        top: 25%;
+    }
+
+    .header h1 {
+        font-size: 2rem;
+        padding-top: 1.6rem;
+    }
+}
+
+/* ---------------------- Motto ----------------------- */
+
+.motto {
+    position: absolute;
+    width: 75%;
+    height: 25rem;
+    left: 18rem;
+    top: 15rem;
+    background: #24242a;
+    border-radius: 30px;
+}
+
+.motto h1 {
+    padding-left: 3rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.wrapper {
+    padding-left: 3rem;
+    display: flex;
+    justify-content: flex-start;
+    height: 6.5rem;
+    clear: both;
+}
+
+.topic {
+    position: absolute;
+    width: 10rem;
+    height: 3.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fbcd0f;
+    border-radius: 0 20px 20px 0;
+    color: black;
+    z-index: 1;
+}
+
+.topic h3 {
+    position: relative;
+    padding-top: 0.5rem;
+    padding-right: 0.5rem;
+    font-size: 1.3rem;
+    font-weight: 500;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.line {
+    position: relative;
+    width: 95%;
+    height: 3.5rem;
+    background: #1a519e;
+    border-radius: 0 20px 20px 0;
+}
+
+.line p {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding-left: 11rem;
+    padding-top: 1rem;
+}
+
+@media (max-width: 1080px) {
+    .motto {
+        height: 20rem;
+        width: 75%;
+        left: 23%;
+    }
+
+    .motto h1 {
+        padding-left: 2rem;
+    }
+
+    .wrapper {
+        padding-left: 2rem;
+        height: 5rem;
+    }
+
+    .topic h3 {
+        padding-top: 1.2rem;
+        padding-right: 0.5rem;
+        font-size: -1rem;
+    }
+
+    .line {
+        width: 95%;
+        height: 3rem;
+    }
+
+    .line p {
+        font-size: 0.64rem;
+        padding-left: 8rem;
+    }
+}
+
+@media (max-width: 700px) {
+    .motto {
+        height: 17rem;
+        width: 75%;
+        left: 23%;
+        top: 10rem;
+    }
+
+    .motto h1 {
+        padding-left: 1rem;
+        font-size: 1.6rem;
+    }
+
+    .wrapper {
+        padding-left: 1rem;
+        height: 3.8rem;
+    }
+
+    .topic {
+        width: 5rem;
+        height: 3rem;
+        font-size: 0.5rem;
+    }
+
+    .line {
+        width: 95%;
+        height: 3rem;
+    }
+
+    .line p {
+        font-size: 0.53rem;
+        padding-left: 5.7rem;
+    }
+}
+
+@media (max-width: 640px) {
+    .motto {
+        top: 12rem;
+    }
+
+    .motto h1 {
+        font-size: 1.2rem;
+    }
+
+    .wrapper {
+        padding-left: 1rem;
+        height: 3.8rem;
+    }
+
+    .topic h3 {
+        width: 5rem;
+        height: 3rem;
+        padding-left: 0.3rem;
+        font-size: 1.5em;
+    }
+
+    .line {
+        width: 95%;
+        height: 3rem;
+    }
+
+    .line p {
+        font-size: 0.56em;
+        padding-left: 5.5rem;
+        padding-top: 0.7rem;
+    }
+}
+
+/* ---------------------- Container1 ----------------------- */
+
+.container1 {
+    position: absolute;
+    width: 75%;
+    height: 36rem;
+    left: 18rem;
+    top: 45rem;
+    background: #24242a;
+    border-radius: 30px;
+}
+
+.container1 article {
+    position: relative;
+    width: 100%;
+    padding-left: 5rem;
+    padding-right: 5rem;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font-size: 1.1rem;
+    color: #ffffff;
+}
+
+.container1 article ul {
+    list-style-type: none;
+}
+
+@media (max-width: 1080px) {
+    .container1 {
+        width: 75%;
+        height: 38rem;
+        left: 23%;
+        top: 37rem;
+    }
+
+    .container1 article {
+        width: 80%;
+        left: 10%;
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 640px) {
+    .container1 {
+        top: 32rem;
+        height: 34rem;
+    }
+
+    .container1 article {
+        padding-left: 0.1rem;
+        padding-right: 0.1rem;
+        font-size: 0.7rem;
+    }
+}
+
+/* ---------------------- Container2 ----------------------- */
+
+.container2 {
+    position: absolute;
+    width: 75%;
+    height: 14rem;
+    left: 18rem;
+    top: 87rem;
+    background: #24242a;
+    border-radius: 30px;
+}
+
+.container2 article {
+    position: relative;
+    width: 100%;
+    padding-left: 7rem;
+    padding-right: 7rem;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font-size: 1.1rem;
+    color: #ffffff;
+}
+
+.container1 h2,
+.container2 h2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    font-weight: 600;
+    padding-top: 1rem;
+    padding-bottom: 2rem;
+}
+
+@media (max-width: 640px) {
+    .container2 {
+        height: 14rem;
+        left: 23%;
+        top: 69rem;
+    }
+
+    .container2 article {
+        padding-left: 2rem;
+        padding-right: 2rem;
+        font-size: 0.7rem;
+    }
+
+    .container1 h2,
+    .container2 h2 {
+        font-size: 1.5rem;
+    }
+}
