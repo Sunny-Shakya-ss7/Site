@@ -2,10 +2,61 @@
 
 @section('content')
 
-    <h1 style="color: #FBFF3C;" class="container col-lg-6 col-md-9">Successful Leo Club Projects Activity</h1>
+    <style>
+        .vertical3 { 
+            position: absolute;
+            width: 9px;
+            min-height: 350%;
+        }
+
+        @media (max-width: 500px) {
+            .vertical3 {
+                width: 5px;
+                min-height: 364%;
+            }
+        }
+
+        @media (max-width: 1080px) {
+        .v1 {
+            left: 3rem !important;
+        }
+        .v2 {
+            left: 4rem !important;
+        }
+        .v3 {
+            left: 5rem !important;
+        }
+        .v4 {
+            left: 6rem !important;
+        }
+        }
+
+        @media (max-width: 700px) {
+        .v1 {
+            left: 2rem !important;
+        }
+        .v2 {
+            left: 3rem !important;
+        }
+        .v3 {
+            left: 4rem !important;
+        }
+        .v4 {
+            left: 5rem !important;
+        }
+        }
+    </style>
+
+    <img class="vertical3 v1" src="{{asset('graphics/logo/line.png')}}" alt="line" style="left: 6rem;" />
+    <img class="vertical3 v2" src="{{asset('graphics/logo/line.png')}}" alt="line" style="left: 7.5rem;" />
+    <img class="vertical3 v3" src="{{asset('graphics/logo/line.png')}}" alt="line" style="left: 9rem;" />
+    <img class="vertical3 v4" src="{{asset('graphics/logo/line.png')}}" alt="line" style="left: 10.5rem;"/>
+    <img class="image" src="{{asset('graphics/logo/a.png')}}" alt="logo" />
+
+    <h1 style="color: #FBFF3C;" class="space">Successful Leo Club Projects Activity</h1>
     {!! Form::open(['action' => 'SpaController@store', 'method' => 'POST', 'enctype' => 'multipart/form-data']) !!}
 
-        <div class="container top">
+        <div class="top">
             <div class=" container backimgtop">
                 <div class="contenttop">
                     <div class="form-group col-lg-6 col-md-6">
@@ -28,9 +79,9 @@
             </div>
         </div>
 
-        <br><hr><h1 style="color: #FBFF3C;" class="container col-lg-6 col-md-9">Heading</h1><hr><br>
+        <br><hr><h1 style="color: #FBFF3C;" class="space">Heading</h1><hr><br>
         
-        <div class="container top">
+        <div class="top">
             <div class=" container backimgdown">
                 <div class="contentdown">
                     <div class="form-group col-lg-6 col-md-6">
@@ -65,7 +116,7 @@
                     </div>
                     <div class="form-group col-lg-6 col-md-6">
                         {{Form::label('body', 'Activity Details *')}}
-                        {{Form::textarea('', '', ['id' => 'summary_ckeditor', 'name' => 'summary_ckeditor', 'class' => 'form-control', 'placeholder' => '','required' => 'required'])}}
+                        {{Form::textarea('', '', ['id' => 'summary_ckeditor', 'name' => 'summary_ckeditor', 'class' => 'form-control editor', 'placeholder' => '','required' => 'required'])}}
                     </div>
                     <div class="form-group col-lg-6 col-md-6">
                         {{Form::label('title', 'Leos Involved *')}}
@@ -85,12 +136,12 @@
                     </div>
                     <div class="form-group col-lg-6 col-md-6">
                         {{Form::label('title', 'Upload Project Photos *')}}
-                        {{Form::file('image')}}
+                        <input type="file" name="file[]" multiple><br><br>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="but container form-group col-lg-6 col-md-9">
+        <div class="but space form-group">
             {{Form::submit('Next',['class' => 'btn btn-outline-primary'])}}
         </div>
 

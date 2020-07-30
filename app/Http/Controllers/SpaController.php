@@ -53,16 +53,20 @@ class SpaController extends Controller
             'image' => 'image|nullable|max:1999'
         ]);
 
-        if ($request->hasfile('image')) {
-            $fileNameWithExt = $request->file('image')->getClientOriginalName();
-            // Get just filename
-            $filename = pathinfo($fileNameWithExt, PATHINFO_FILENAME);
-            // Get just extension
-            $extension = $request->file('image')->getClientOriginalExtension();
-            // Filename to store
-            $fileNameToStore = $filename.'_'.time().'.'.$extension;
-            // Upload Image
-            $path = $request->file('image')->storeAs('public/images', $fileNameToStore);
+        if ($request->hasfile('file')) {
+            foreach ($request->file as $file) {
+                $fileNameWithExt = $file->getClientOriginalName();
+                // Get just filename
+                $filename = pathinfo($fileNameWithExt, PATHINFO_FILENAME);
+                // Get just extension
+                $extension = $file->getClientOriginalExtension();
+                // Filename to store
+                $fileNameToStore = $filename.'_'.time().'.'.$extension;
+                // Upload Image
+                $path = $file->storeAs('public/images', $fileNameToStore);
+
+                $data[] = $fileNameToStore;
+            }
         }else{
             $fileNameToStore = 'noimage.jpg';  
         }
@@ -83,7 +87,7 @@ class SpaController extends Controller
         $spa->People_Benefited = $request->input('people_benefited');
         $spa->Overall_Points_Received = $request->input('points');
         $spa->Total_Leo_Hours = $request->input('hours');  
-        $spa->Photos = $fileNameToStore;
+        $spa->Photos = json_encode($data);
        
         $spa->save();
 
