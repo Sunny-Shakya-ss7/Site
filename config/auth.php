@@ -44,6 +44,10 @@ return [
             'driver' => 'session',
             'provider' => 'admins',
         ],
+         'cadmin' => [
+            'driver' => 'session',
+            'provider' => 'cadmin',
+        ],
 
         'api' => [
             'driver' => 'token',
@@ -78,6 +82,10 @@ return [
             'driver' => 'eloquent',
             'model' => App\Admin::class,
         ],
+        'cadmin' => [
+            'driver' => 'eloquent',
+            'model' => App\Cadmin::class,
+        ],
 
         // 'users' => [
         //     'driver' => 'database',
@@ -109,6 +117,12 @@ return [
         ],
         'admins' => [
             'provider' => 'admins',
+            'table' => 'password_resets',
+            'expire' => 60,
+            'throttle' => 60,
+        ],
+         'cadmin' => [
+            'provider' => 'cadmin',
             'table' => 'password_resets',
             'expire' => 60,
             'throttle' => 60,
