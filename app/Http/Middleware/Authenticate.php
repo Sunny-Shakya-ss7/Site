@@ -37,6 +37,10 @@ class Authenticate extends Middleware
              if (Arr::first($this->guards) === 'admins') {
                 return route('admin.login');
             }
+            elseif (Arr::first($this->guards) === 'cadmin') {
+                return route('cadmin.login');
+            }
+            else
                 return route('login');
         }
     }

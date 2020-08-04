@@ -15,7 +15,12 @@
 						<div class="input-group-prepend">
 							<div class="input-group-text">Leo</div>
 						</div>		
-						<input type="text" class="form-control" placeholder="Enter your Name">
+						<input type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
+						@error('name')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
 					</div>
 				</div><br>
 				<div class="form-group"> E-mail
