@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use DB;
 
 class PagesController extends Controller
 {
@@ -25,5 +26,15 @@ class PagesController extends Controller
     {
     	return view('pages.testimonial');
     }
+
+    public function about_leo()
+    {
+    	return view('pages.about_leo');
+    }
     
+    public function leo_clubs()
+    {
+      $clubs = DB::select('select * from leo_clubs');
+      return view('pages.leo_clubs',['clubs'=>$clubs]);
+    }
 }

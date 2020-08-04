@@ -18,6 +18,9 @@
     <!--CSS / SCSS -->
     <link rel="stylesheet" href="{{asset('css/style.css')}}" />
     <link rel="stylesheet" href="{{asset('css/button.css')}}">
+    <link rel="stylesheet" href="{{asset('css/about_leo.css')}}">
+    <link rel="stylesheet" href="{{asset('css/leo_clubs.css')}}">
+    <link rel="stylesheet" href="{{asset('css/spa.css')}}">
 
 </head>
   <body>

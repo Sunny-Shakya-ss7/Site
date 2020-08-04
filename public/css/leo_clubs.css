@@ -1,0 +1,272 @@
+/* ---------------------- Left Side ----------------------- */
+
+.image {
+    position: absolute;
+    width: 12rem;
+    height: 12rem;
+    top: 12%;
+    z-index: 1;
+    left: 1.7rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.vertical {
+    position: absolute;
+    width: 9px;
+    height: 153rem;
+    top: -1px;
+}
+
+@media (max-width: 900px) {
+    .image {
+        width: 10rem;
+        height: 10rem;
+        left: -0.7rem;
+        top: 15%;
+    }
+
+    .vertical {
+        width: 7px;
+        height: 77rem;
+    }
+}
+
+@media (max-width: 800px) {
+    .image {
+        width: 8rem;
+        height: 8rem;
+        left: 0.4rem;
+        top: 17%;
+    }
+
+    .vertical {
+        width: 5px;
+        height: 77rem;
+    }
+}
+
+@media (max-width: 500px) {
+    .image {
+        width: 8rem;
+        height: 8rem;
+        left: -0.7rem;
+        top: 15%;
+    }
+
+    .vertical {
+        width: 5px;
+        height: 153rem;
+    }
+}
+
+/* ---------------------- Header ----------------------- */
+
+.header2 {
+    position: absolute;
+    width: 87%;
+    height: 15%;
+    left: 12%;
+    top: 15%;
+}
+
+.bar2 {
+    position: absolute;
+    width: 100%;
+    height: 5rem;
+    top: 25%;
+}
+
+.header2 h1 {
+    position: relative;
+    font-size: 3.5rem;
+    font-weight: 500;
+    top: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding-left: 8%;
+    z-index: 1;
+}
+
+@media (max-width: 900px) {
+    .header2 {
+        width: 81%;
+        height: 15%;
+        left: 18%;
+        top: 17%;
+    }
+
+    .bar2 {
+        width: 100%;
+        height: 5rem;
+        top: 25%;
+    }
+
+    .header2 h1 {
+        font-size: 3rem;
+        font-weight: 600;
+    }
+}
+
+@media (max-width: 800px) {
+    .header2 {
+        width: 80%;
+        height: 15%;
+        left: 16%;
+        top: 17%;
+    }
+
+    .bar2 {
+        width: 100%;
+        height: 4rem;
+        top: 25%;
+    }
+
+    .header2 h1 {
+        font-size: 2.5rem;
+        font-weight: 500;
+    }
+}
+
+@media (max-width: 640px) {
+    .header2 {
+        width: 79%;
+        height: 15%;
+        left: 18%;
+        top: 17%;
+    }
+
+    .header2 h1 {
+        font-size: 2.3rem;
+        font-weight: 500;
+    }
+}
+
+@media (max-width: 500px) {
+    .header2 {
+        width: 76%;
+        height: 15%;
+        left: 20%;
+        top: 15%;
+    }
+
+    .header2 h1 {
+        font-size: 2.3rem;
+        font-weight: 500;
+    }
+}
+
+/* ---------------------- Table ----------------------- */
+
+.clubtable {
+    position: absolute;
+    width: 85%;
+    height: 3rem;
+    left: 13rem;
+    top: 18rem;
+    border: 2px solid #f8cc5b;
+    text-align: center;
+}
+
+.clubtable th {
+    color: black;
+    background: #f8cc5b;
+    border-right: 2px solid white;
+    font-weight: 500;
+    padding: 10px;
+}
+
+.clubtable td {
+    border-right: 2px solid white;
+    padding: 10px;
+    font-weight: 400;
+    color: white;
+    border-top: none;
+}
+
+.clubtableble th:last-child,
+td:last-child {
+    border-right: 2px solid #f8cc5b;
+}
+
+.clubtable tr:nth-child(even) {
+    background-color: #525253;
+}
+
+@media (max-width: 900px) {
+    .clubtable {
+        width: 83%;
+        height: 3rem;
+        left: 15%;
+        top: 16rem;
+    }
+
+    .clubtable th {
+        font-weight: 500;
+        padding: 10px;
+        font-size: 1rem;
+    }
+
+    .clubtable td {
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 800px) {
+    .clubtable {
+        width: 82%;
+        height: 3rem;
+        left: 16%;
+        top: 17rem;
+    }
+
+    .clubtable th {
+        font-weight: 500;
+        padding: 7px;
+        font-size: 0.9rem;
+    }
+
+    .clubtable td {
+        font-size: 0.7rem;
+    }
+}
+
+@media (max-width: 640px) {
+    .clubtable {
+        width: 82%;
+        height: 3rem;
+        left: 6rem;
+        top: 15rem;
+    }
+
+    .clubtable th {
+        font-weight: 500;
+        padding: 7px;
+        font-size: 0.8rem;
+    }
+
+    .clubtable td {
+        font-size: 0.7rem;
+    }
+}
+
+@media (max-width: 500px) {
+    .clubtable {
+        width: 77%;
+        height: 3rem;
+        left: 6.5rem;
+        top: 16rem;
+    }
+
+    .clubtable th {
+        font-weight: 500;
+        padding: 7px;
+        font-size: 0.8rem;
+    }
+
+    .clubtable td {
+        font-size: 0.6rem;
+    }
+}

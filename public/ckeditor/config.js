@@ -41,9 +41,14 @@ CKEDITOR.editorConfig = function(config) {
 
     // Change size of editor
     config.resize_enabled = true;
-    config.height = 200;
-    config.width = 700;
 
-    // config.width = "auto";
-    // config.height = "auto";
+    if (screen.width <= 500) {
+        config.width = "auto";
+        config.height = "auto";
+    }
+
+    if (screen.width >= 1100) {
+        config.height = 200;
+        config.width = 700;
+    }
 };
