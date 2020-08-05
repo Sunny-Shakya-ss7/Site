@@ -1,21 +1,24 @@
-hr {
+.hrline {
     width: 48%;
     background-color: white;
 }
 
 @media (max-width: 1080px) {
-    hr {
+    .hrline {
         width: 73%;
     }
 }
 
 @media (max-width: 768px) {
-    hr {
+    .hrline {
         width: 80%;
     }
 }
 
 @media (max-width: 576px) {
+    .hrline {
+        width: 75%;
+    }
 }
 
 .space {
