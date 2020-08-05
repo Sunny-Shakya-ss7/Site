@@ -79,7 +79,7 @@
             </div>
         </div>
 
-        <br><hr><h1 style="color: #FBFF3C;" class="space">Heading</h1><hr><br>
+        <br><hr class="hrline"><h1 style="color: #FBFF3C;" class="space">Heading</h1><hr class="hrline"><br>
         
         <div class="top">
             <div class=" container backimgdown">
