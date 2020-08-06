@@ -51,10 +51,13 @@
                             </div>
                         </div>
 			
-				<div class="form-group d-flex justify-content-center">
-					 <button type="submit" class="btn btn-primary" style="font-weight: 800;">
+				<div class="form-group clearfix">
+					<button type="submit" class="btn btn-primary float-left" style="font-weight: 500;">
                                     {{ __('LOGIN') }}
-                                </button>
+                    </button>
+                    <a href="/cadmin/login" class="btn btn-primary float-right" style="font-weight: 500;">
+                                    {{ __('Login as Admin') }}
+                    </a>
 				</div>
 			</form>
 		</div>
