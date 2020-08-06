@@ -59,7 +59,7 @@ Route::resource('/user','UserController',[
     'except' => ['update']
 ]);
 Route::resource('/cadmin','CadminController',[
-	'except' => ['index','update','edit',]
+	'except' => ['update','edit',]
 ]);
 
 //News / Events Controller

@@ -73,6 +73,9 @@
                       @if(Auth::guard('admins')->check())
                         <a class="dropdown-item" href="{{ url('/admin') }}">Admin Profile</a>
                         <a class="dropdown-item" href="{{ url('/user') }}">View Users</a>   
+                        @elseif(Auth::guard('cadmin')->check())
+                        <a class="dropdown-item" href="{{ url('/cadmin') }}">Admin Profile</a>
+                        <a class="dropdown-item" href="{{ url('/user') }}">View Users</a>
                       @else
                         <a class="dropdown-item" href="{{ url('/home') }}">Profile</a>
                         @endif
