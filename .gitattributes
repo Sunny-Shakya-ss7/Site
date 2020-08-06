@@ -4,3 +4,4 @@
 *.js text
 *.blade text
 CHANGELOG.md export-ignore
+\resources\views\pages\about_leo.blade.php diff
