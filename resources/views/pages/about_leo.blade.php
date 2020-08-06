@@ -33,7 +33,7 @@
       }
     }
     </style>
-    div
+    
     <img class="vertical2 v1" src="{{asset('graphics/logo/line.png')}}" alt="line" style="left: 6rem;" />
     <img class="vertical2 v2" src="{{asset('graphics/logo/line.png')}}" alt="line" style="left: 7.5rem;" />
     <img class="vertical2 v3" src="{{asset('graphics/logo/line.png')}}" alt="line" style="left: 9rem;" />

@@ -38,7 +38,7 @@ CKEDITOR.editorConfig = function(config) {
 
     // Simplify the dialog windows.
     config.removeDialogTabs = "image:advanced;link:advanced";
-
+    //nothing
     // Change size of editor
     config.resize_enabled = true;
 
