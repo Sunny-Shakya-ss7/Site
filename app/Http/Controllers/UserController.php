@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
+use App\Cadmin;
 
 class UserController extends Controller
 {
@@ -19,8 +20,11 @@ class UserController extends Controller
     
     public function index()
     {
-        $Users = User::orderBy('created_at','desc')->paginate(10);
-        return view('users.index')->with('Users', $Users);
+        $Users = User::orderBy('created_at','desc')->paginate(20);
+        $Cadmins = Cadmin::orderby('created_at','desc')->paginate(20);
+        return view('users.index')
+                    ->with('Users', $Users)
+                    ->with('Cadmins',$Cadmins);
     }
 
     /**

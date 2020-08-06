@@ -36,6 +36,7 @@ Auth::routes([
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/welcome', 'HomeController@welcome')->name('welcome');
 
+//Admins and C-Admins Routes
 Route::prefix('admin')->group(function(){
 	Route::get('/login', 'Auth\AdminLoginController@loginForm')->name('admin.login');
 	Route::post('/login', 'Auth\AdminLoginController@login')->name('admin.login.submit');
@@ -43,12 +44,22 @@ Route::prefix('admin')->group(function(){
 	Route::get('/logout', 'Auth\AdminLoginController@logout')->name('admin.logout');
 });
 
+Route::prefix('cadmin')->group(function(){
+	Route::get('/login', 'Auth\CadminLoginController@loginForm')->name('cadmin.login');
+	Route::post('/login', 'Auth\CadminLoginController@login')->name('cadmin.login.submit');
+	Route::get('/', 'CadminController@index')->name('cadmin.dashboard');
+	Route::get('/logout', 'Auth\CadminLoginController@logout')->name('cadmin.logout');
+});
+
 //Forms Data Submittion
 //Route::resource('/form','FormsController');
 
-//User Control 
+//User and C-admin Control 
 Route::resource('/user','UserController',[
     'except' => ['update']
+]);
+Route::resource('/cadmin','CadminController',[
+	'except' => ['index','update','edit',]
 ]);
 
 //News / Events Controller

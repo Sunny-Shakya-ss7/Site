@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Cadmin;
 
 class CadminController extends Controller
 {
@@ -11,6 +12,11 @@ class CadminController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+     public function __construct()
+    {
+        $this->middleware('auth:admins');
+    }
+    
     public function index()
     {
         //
@@ -23,7 +29,7 @@ class CadminController extends Controller
      */
     public function create()
     {
-        //
+        return view('users.cregister');
     }
 
     /**
@@ -34,7 +40,42 @@ class CadminController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this-> validate($request,[
+            'name' => 'required',
+            'email' => 'required|email',
+            'password' => 'required|min:8',
+            'confim_password' => 'required_with:password|same:password|min:8',
+            'profile_image' => 'image|nullable|max:2048',
+            'club_name' => 'required',
+            'club_post' => 'required'
+        ]);
+
+         if($request->hasFile('profile_image')){
+            $filenameWithExt = $request->file('profile_image')->getClientOriginalName();
+            //Get just file name
+            $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
+            //Get just extension
+            $extension = $request->file('profile_image')->getClientOriginalExtension();
+            //File name to store
+            $fileNameToStore = $filename.'_'.time().'.'.$extension;
+            //Upload Image
+            $path = $request->file('profile_image')->storeAs('public/profile',$fileNameToStore);
+        }else{
+            $fileNameToStore = 'noimage.jpg';
+        }
+
+        $cadmin = new Cadmin([
+            'name' => $request->name,
+            'email' => $request->email,
+            'password' => bcrypt($request->password),
+            'dob' => $request->dob,
+            'club_name' => $request->club_name,
+            'club_post' => $request->club_post,
+        ]);
+        $cadmin->profile_image = $fileNameToStore;
+        $cadmin->save();
+
+        return redirect('user')->with('success','Admin Created');
     }
 
     /**
@@ -45,7 +86,8 @@ class CadminController extends Controller
      */
     public function show($id)
     {
-        //
+        $Cadmin = Cadmin::find($id);
+        return view('users.cshow')->with('Cadmin',$Cadmin);
     }
 
     /**
@@ -56,7 +98,7 @@ class CadminController extends Controller
      */
     public function edit($id)
     {
-        //
+       //
     }
 
     /**
@@ -68,7 +110,6 @@ class CadminController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
     }
 
     /**
@@ -79,6 +120,10 @@ class CadminController extends Controller
      */
     public function destroy($id)
     {
-        //
+         $Cadmin = Cadmin::find($id);
+        //Check for correct user
+        $Cadmin->delete();
+
+        return redirect('/user')->with('success', 'Admin has been Removed');
     }
 }

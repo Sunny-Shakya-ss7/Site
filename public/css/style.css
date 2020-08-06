@@ -70,6 +70,9 @@ body {
   color: white;
  padding-left: 1%;
 }
+hr{
+  background-color: #23242A;
+}
 /*---Media Queries --*/
 @media (max-width: 992px) {
   .container img {

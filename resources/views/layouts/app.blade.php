@@ -62,7 +62,7 @@
               <a class="nav-link" href="/community"> Community </a>
             </li>
             <!--Login And Logout -->
-            @if(Auth::guard('admins')->check() || Auth::guard('web')->check())
+            @if(Auth::guard('admins')->check() || Auth::guard('cadmin')->check() || Auth::guard('web')->check())
             @if (Route::has('login'))
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle"  id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -78,6 +78,8 @@
                         <div class="dropdown-divider"></div>
                         @if(Auth::guard('admins')->check())
                         <a class="dropdown-item" href="{{ url('admin/logout') }}">{{ __(' Admin Logout') }}</a>
+                        @elseif(Auth::guard('cadmin')->check())
+                        <a class="dropdown-item" href="{{ url('cadmin/logout') }}">{{ __('Logout') }}</a>
                         @else
                         <a class="dropdown-item" href="{{ route('logout') }}"
                          onclick="event.preventDefault();

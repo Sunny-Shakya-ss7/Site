@@ -6,7 +6,7 @@ use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
-class Cadmin extends Authenticatable
+class Cadmin extends Authenticatable 
 {
     use Notifiable;
 
@@ -16,7 +16,7 @@ class Cadmin extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name','username', 'email', 'password', 'dob','club_name', 'club_post',
+        'name', 'email', 'password', 'dob','club_name', 'club_post',
     ];
 
     /**
