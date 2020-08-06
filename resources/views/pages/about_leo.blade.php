@@ -17,7 +17,7 @@
         left: 6rem !important;
       }
     }
-
+/* nothing */
     @media (max-width: 700px) {
       .v1 {
         left: 2rem !important;

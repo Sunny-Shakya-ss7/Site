@@ -33,7 +33,7 @@
         }
       }
     </style>
-
+{{-- nothing --}}
     <img class="vertical v1" src="{{asset('graphics/logo/line.png')}}" alt="line" style="left: 6rem;" />
     <img class="vertical v2" src="{{asset('graphics/logo/line.png')}}" alt="line" style="left: 7.5rem;" />
     <img class="vertical v3" src="{{asset('graphics/logo/line.png')}}" alt="line" style="left: 9rem;" />
