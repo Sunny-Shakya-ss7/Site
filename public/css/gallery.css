@@ -1,0 +1,85 @@
+.gline {
+    width: 50%;
+    background-color: white;
+}
+
+.imgInsert {
+    background-color: rgba(0, 0, 0, 0.25);
+    padding: 2%;
+    border-radius: 10px;
+    width: 50%;
+}
+
+.imgInfo {
+    position: relative;
+    left: 4%;
+}
+
+.imgBody {
+    padding: 3%;
+    background-color: rgba(0, 0, 0, 0.25);
+    box-shadow: 5px 5px rgba(0, 0, 0, 0.3);
+    height: 100%;
+    width: 100%;
+    border-radius: 3%;
+}
+
+.imgDiv {
+    height: 250px;
+    width: 102%;
+    background-color: white;
+    border-radius: 3%;
+}
+
+.imgMain {
+    height: 100%;
+    width: 100%;
+}
+
+.imgCaption {
+    height: 70px;
+    width: 102%;
+    padding-top: 7%;
+    font-size: 0.7em;
+    overflow: hidden;
+}
+
+.delBut {
+    position: absolute;
+    left: 40%;
+}
+
+@media (max-width: 576px) {
+    .gline {
+        width: 60%;
+    }
+
+    .imgInsert {
+        width: 90%;
+    }
+
+    .p {
+        width: 93%;
+    }
+
+    .imgBody {
+        height: 100%;
+        width: 95%;
+    }
+
+    .imgDiv {
+        height: 190px;
+        width: 103%;
+    }
+
+    .imgCaption {
+        height: 60px;
+        width: 103%;
+        padding-top: 7%;
+        font-size: 0.5em;
+    }
+
+    .delBut {
+        left: 35%;
+    }
+}
