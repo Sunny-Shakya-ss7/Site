@@ -6,14 +6,12 @@
             <br><br>
          	Hey, 
         @if(Auth::guard('cadmin')->check())
-        	You Are Logged In as Admin<br>
+        {{Auth::guard('cadmin')->user()->name}}
+             You Are Logged In as Admin<br>
         @endif
         @if(Auth::guard('web')->check())
-			You Are Logged In as User Too
-		@else
-		 But You Are Logged Our as User<br>
-		 @endif
+            You Are Logged In as User 
+         @endif
         </div>
-</div>
 </div>
 @endsection

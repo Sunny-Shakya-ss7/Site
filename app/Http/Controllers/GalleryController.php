@@ -11,7 +11,7 @@ class GalleryController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('auth:admins', ['except' => ['index']]);
+        $this->middleware('auth:admins,cadmin', ['except' => ['index']]);
     }
     /**
      * Display a listing of the resource.

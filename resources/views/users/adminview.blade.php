@@ -43,6 +43,7 @@
                         {!!Form::close()!!}</td>
                     </tr>
                     @endforeach
+                        <div class="text-center"> {{$Users->links()}}</div>
                     @else
                     <tr>
                         <td>User Data Empty</td>
@@ -50,6 +51,48 @@
                         <td>User Data Empty</td>
                         <td>User Data Empty</td>
                         <td colspan="2">User Data Empty</td>
+                    </tr>
+                    @endif
+                </tbody>
+            </table>
+
+            {{-- Admin Table --}}
+            <table class="table text-white">
+                <thead>
+                         <th colspan="6" class="text-center">Admins</th>
+                    <tr class="filters">
+                        <th><input type="text" class="form-control" placeholder="ID No" disabled></th>
+                        <th><input type="text" class="form-control" placeholder="Name" disabled></th>
+                        <th><input type="text" class="form-control" placeholder="Email" disabled></th>
+                        <th><input type="text" class="form-control" placeholder="Club Name" disabled></th>
+                        <th colspan="2"><input type="text" class="form-control text-center" placeholder="Action" disabled></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @if(count($Cadmins)> 0)
+                    @foreach($Cadmins as $Cadmin)
+
+                    <tr>
+                        <td>{{$Cadmin->id}}</td>
+                        <td>{{$Cadmin->name}}</td>
+                        <td>{{$Cadmin->email}}</td>
+                        <td>{{$Cadmin->club_name}}</td>
+                        <td><a href="/cadmin/{{$Cadmin->id}}">View Details</a></td>
+                        <td>
+                        {!!Form::open(['action' => ['UserController@destroy', $Cadmin->id], 'method' => 'POST'])!!}
+                        {{Form::hidden('_method', 'DELETE' )}}
+                        {{Form::submit('Delete', ['class' => 'btn btn-danger '])}}
+                        {!!Form::close()!!}</td>
+                    </tr>
+                    @endforeach
+                        <div class="text-center"> {{$Users->links()}}</div>
+                    @else
+                    <tr>
+                        <td>Admin Data Empty</td>
+                        <td>Admin Data Empty</td>
+                        <td>Admin Data Empty</td>
+                        <td>Admin Data Empty</td>
+                        <td colspan="2">Admin Data Empty</td>
                     </tr>
                     @endif
                 </tbody>

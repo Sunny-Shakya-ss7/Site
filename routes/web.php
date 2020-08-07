@@ -47,7 +47,7 @@ Route::prefix('admin')->group(function(){
 Route::prefix('cadmin')->group(function(){
 	Route::get('/login', 'Auth\CadminLoginController@loginForm')->name('cadmin.login');
 	Route::post('/login', 'Auth\CadminLoginController@login')->name('cadmin.login.submit');
-	Route::get('/', 'CadminController@index')->name('cadmin.dashboard');
+	Route::get('/', 'CadminController@index')->name('cadmin.home');
 	Route::get('/logout', 'Auth\CadminLoginController@logout')->name('cadmin.logout');
 });
 
@@ -61,6 +61,7 @@ Route::resource('/user','UserController',[
 Route::resource('/cadmin','CadminController',[
 	'except' => ['update','edit',]
 ]);
+Route::get('/userall','AdminController@userall');
 
 //News / Events Controller
 Route::resource('/news','NewsController');

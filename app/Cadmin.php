@@ -10,6 +10,9 @@ class Cadmin extends Authenticatable
 {
     use Notifiable;
 
+    protected $table = 'cadmins';
+
+    public $primaryKey = 'id';
     /**
      * The attributes that are mass assignable.
      *
@@ -36,4 +39,7 @@ class Cadmin extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+    public function users(){
+        return $this->hasMany('App\User');
+    }
 }

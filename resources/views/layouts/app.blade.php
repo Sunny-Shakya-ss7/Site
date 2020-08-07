@@ -44,7 +44,7 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-              <a class="nav-link" href="#"> Discover </a>
+              <a class="nav-link" href="/"> Home</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="/gallery"> Gallery </a>
@@ -71,8 +71,8 @@
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="">
                       @if(Auth::guard('admins')->check())
-                        <a class="dropdown-item" href="{{ url('/admin') }}">Admin Profile</a>
-                        <a class="dropdown-item" href="{{ url('/user') }}">View Users</a>   
+                        <a class="dropdown-item" href="{{ url('/admin') }}">Super Profile</a>
+                        <a class="dropdown-item" href="{{ url('/userall') }}">View Users</a>   
                         @elseif(Auth::guard('cadmin')->check())
                         <a class="dropdown-item" href="{{ url('/cadmin') }}">Admin Profile</a>
                         <a class="dropdown-item" href="{{ url('/user') }}">View Users</a>

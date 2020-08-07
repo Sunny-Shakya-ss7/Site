@@ -1,5 +1,5 @@
 @extends('layouts.app')
-
+@section('title','SPA Report')
 @section('content')
 
     <style>
