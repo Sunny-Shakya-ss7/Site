@@ -2,7 +2,7 @@
 @section('title', 'Register')
 @section('content')
 <div class="container bg-secondary">
-        <a href="/user" class="btn btn-success">Go Back</a>
+        <a href="/userall" class="btn btn-success">Go Back</a>
         <div class="text-center">
             <h1>Register Admin</h1>
         </div>
