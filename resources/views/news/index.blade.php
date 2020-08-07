@@ -2,28 +2,33 @@
 @section('title','Events/News')
 
 @section('content')
-	<div class="container">
+
+	<hr class="gline"><h1 style="text-align: center;">LEO CLUB EVENTS</h1><hr class="gline"><br>
+
+	<div class="container evtDiv">
 		@if(Auth::guard('admins')->check())
-		<a href="/news/create" class="btn btn-success ">Post Events/News</a>
-		<hr>
+			<a href="/news/create" class="btn btn-success ">Post Events/News</a>
+			<hr>
 		@endif
 		@if(count($news)>0)
-		@foreach	($news as $new)
-		<div class="well">
-			<div class="row">
-				<div class="col-md-4 col-sm-4">
-					<img class="ml-1"src="/storage/news/{{$new->cover_image}}" alt="" style="height:80%; width: 80%;">
-				</div>
-				<div class="col-md-8 col-sm-4">
-			<h3><a href="/news/{{$new->id}}">{{$new->title}}- {{$new->slug}}</a></h3>
-			<small>{{$new->created_at}} by {{$new->signature}}</small>
-		</div>
-	</div>
-</div>
-		@endforeach
-		<div class="text-center"> {{$news->links()}}</div>
+			@foreach($news as $new)
+				<div class="well evtBody">
+					<div class="row evtCont">
+						<div class="col-md-4 col-sm-4 evtImg">
+							<img id="evtPic" src="/storage/news/{{$new->cover_image}}" alt="pic" style="height:100%; width: 100%;">
+						</div>
+						<div class="col-md-8 col-sm-4 evtInfo">
+							<h3><a style="color: white" href="/news/{{$new->id}}">{{$new->title}}- {{$new->slug}}</a></h3>
+							<br><span class="text">{{$new->body}}</span><br>
+							<small><i class="far fa-calendar-alt"></i> {{$new->created_at}} by {{$new->signature}}</small>
+						</div>
+					</div>
+				</div><br>
+			@endforeach
+			<div class="text-center"> {{$news->links()}}</div>
 		@else
-		<p>No News/Events Found</p>
+			<p>No News/Events Found</p>
 		@endif
-</div>
+	</div>
+
 @endsection

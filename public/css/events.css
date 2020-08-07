@@ -1,0 +1,47 @@
+.evtDiv {
+    background-color: black;
+    background-color: rgba(0, 0, 0, 0.1);
+    box-shadow: 5px 5px rgba(0, 0, 0, 0.2);
+    padding: 2%;
+    border-radius: 10px;
+}
+
+.evtBody {
+    background-color: black;
+    background-color: rgba(0, 0, 0, 0.25);
+    box-shadow: 5px 5px rgba(0, 0, 0, 0.3);
+    height: 10rem;
+    border-radius: 10px;
+}
+
+.evtCont {
+    height: 100%;
+    width: 100%;
+}
+
+.evtImg {
+    padding: 0;
+    left: 1rem;
+    height: 100%;
+    width: 10%;
+    border-radius: 10px 0 0 10px;
+}
+
+#evtPic {
+    margin-left: 0;
+    border-radius: 10px 0 0 10px;
+}
+
+.evtInfo {
+    left: 1rem;
+    height: 100%;
+}
+
+.text {
+    display: block;
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    font-size: 0.9em;
+}
