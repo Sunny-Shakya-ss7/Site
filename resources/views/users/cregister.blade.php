@@ -1,12 +1,15 @@
 @extends('layouts.app')
 @section('title', 'Register')
 @section('content')
-<div class="container">
-        <div class="text-center">
-            <h1>Register User</h1>
-        </div>
+<div class="container bg-secondary">
         <a href="/user" class="btn btn-success">Go Back</a>
+        <div class="text-center">
+            <h1>Register Admin</h1>
+        </div>
         <hr>
+        <div class="container" >
+             <img class="img-responsive rounded-circle" src="{{asset('graphics/logo/big_logo.jpg')}}" style="position:absolute;top:37%;left:40%;height:62%;width:34%; max-width: 100%;  height: auto;"   >
+        </div>
             {!! Form::open(['action' => 'CadminController@store', 'method' => 'POST', 'enctype' =>'multipart/form-data']) !!}
             <div class="form-group">
                     {{Form::label( 'title' , 'Name' )}}
