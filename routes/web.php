@@ -16,7 +16,6 @@ use Illuminate\Support\Facades\Route;
 //Pages Controller Routes
 Route::get('/', 'PagesController@index')->name('main.index');  
 Route::get('/index','PagesController@userindex')->name('user.index');
-Route::get('/about','PagesController@about')->name('user.about');
 Route::get('/welcome',function(){
 	return view('welcome');
 });
@@ -77,4 +76,5 @@ Route::resource('/spa','SpaController');
 
 // About Leo & Leo Clubs
 Route::get('/about', 'PagesController@about_leo')->name('about_leo.index'); 
-Route::get('/clubs', 'PagesController@leo_clubs')->name('leo_clubs.index'); 
+Route::get('/clubs', 'PagesController@leo_clubs')->name('leo_clubs.index');
+Route::get('/leaderboard', 'PagesController@pointtb')->name('points.index');

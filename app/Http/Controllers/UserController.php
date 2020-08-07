@@ -74,7 +74,7 @@ class UserController extends Controller
             'email' => $request->email,
             'password' => bcrypt($request->password),
         ]);
-        $user->created_by = Auth::guard('cadmin')->user()->id;
+        $user->cadmin_id = Auth::guard('cadmin')->user()->id;
         $user->profile_image = $fileNameToStore;
         $user->save();
 
