@@ -22,7 +22,7 @@
                         <th><input type="text" class="form-control" placeholder="ID No" disabled></th>
                         <th><input type="text" class="form-control" placeholder="Name" disabled></th>
                         <th><input type="text" class="form-control" placeholder="Email" disabled></th>
-                        <th><input type="text" class="form-control" placeholder="Created At" disabled></th>
+                        <th><input type="text" class="form-control" placeholder="Club Name" disabled></th>
                         <th colspan="2"><input type="text" class="form-control text-center" placeholder="Action" disabled></th>
                     </tr>
                 </thead>
@@ -34,7 +34,7 @@
                         <td>{{$User->id}}</td>
                         <td>{{$User->name}}</td>
                         <td>{{$User->email}}</td>
-                        <td>{{$User->created_at}}</td>
+                        <td>{{$User->club_name}}</td>
                         <td><a href="/user/{{$User->id}}">View Details</a></td>
                         <td>
                         {!!Form::open(['action' => ['UserController@destroy', $User->id], 'method' => 'POST'])!!}
@@ -79,7 +79,7 @@
                         <td>{{$Cadmin->club_name}}</td>
                         <td><a href="/cadmin/{{$Cadmin->id}}">View Details</a></td>
                         <td>
-                        {!!Form::open(['action' => ['UserController@destroy', $Cadmin->id], 'method' => 'POST'])!!}
+                        {!!Form::open(['action' => ['CadminController@destroy', $Cadmin->id], 'method' => 'POST'])!!}
                         {{Form::hidden('_method', 'DELETE' )}}
                         {{Form::submit('Delete', ['class' => 'btn btn-danger '])}}
                         {!!Form::close()!!}</td>

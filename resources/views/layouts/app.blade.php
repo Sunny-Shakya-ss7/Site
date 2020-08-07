@@ -55,10 +55,11 @@
             <li class="nav-item">
               <a class="nav-link" href="/news"> Events </a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/spa"> SPA </a>
-            </li>
-
+            @if(Auth::guard('cadmin')->check() || Auth::guard('admins')->check())
+              <li class="nav-item">
+                <a class="nav-link" href="/spa"> SPA </a>
+              </li>
+          @endif
              <li class="nav-item">
               <a class="nav-link" href="/community"> Community </a>
             </li>
