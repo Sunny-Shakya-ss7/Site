@@ -1,12 +1,15 @@
 @extends('layouts.app')
 @section('title', 'Register')
 @section('content')
-<div class="container">
+<div class="container bg-secondary">
+        <a href="/user" class="btn btn-success">Go Back</a>
         <div class="text-center">
             <h1>Register Admin</h1>
         </div>
-        <a href="/userall" class="btn btn-success">Go Back</a>
         <hr>
+        <div class="container" >
+             <img class="img-responsive rounded-circle" src="{{asset('graphics/logo/big_logo.jpg')}}" style="position:absolute;top:40%;left:43%;height:40%;width:25%; max-width: 100%;  height: auto;"   >
+        </div>
             {!! Form::open(['action' => 'CadminController@store', 'method' => 'POST', 'enctype' =>'multipart/form-data']) !!}
             <div class="form-group">
                     {{Form::label( 'title' , 'Name' )}}
@@ -80,7 +83,7 @@
                         {{$message}}
                     </div>
                     @enderror
-            {{Form::submit('Reg Admin', ['class' => 'btn btn-success', 'style'=> 'margin-left:16%;'])}}
+            {{Form::submit('Register Admin', ['class' => 'btn btn-success', 'style'=> 'margin-left:16%;'])}}
             {!! Form::close() !!}
     </div>   
 @endsection

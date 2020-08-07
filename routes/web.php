@@ -75,6 +75,13 @@ Route::resource('/community/reply','ReplyController',[
 Route::resource('/spa','SpaController');
 
 // About Leo & Leo Clubs
+Route::get('/about_leo', 'PagesController@about_leo')->name('about_leo.index'); 
+Route::get('/leo_clubs', 'PagesController@leo_clubs')->name('leo_clubs.index');
+
+Route::view('/award', 'frontend/award');
+Route::view('/calender', 'frontend/calender'); 
+
 Route::get('/about', 'PagesController@about_leo')->name('about_leo.index'); 
+Route::get('/clubs', 'PagesController@leo_clubs')->name('leo_clubs.index'); 
 Route::get('/clubs', 'PagesController@leo_clubs')->name('leo_clubs.index');
 Route::get('/leaderboard', 'PagesController@pointtb')->name('points.index');

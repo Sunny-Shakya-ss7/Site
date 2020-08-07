@@ -1,0 +1,345 @@
+body{
+    min-height: 680%;
+  
+}
+
+.background{
+    min-height: 99%;
+}
+
+/* 3 line */
+.lines{
+    position: absolute;
+    width: 4.6%;
+    height: 680%;
+    left: 5.5%;
+    top: 0%;
+}
+
+/*Logo  */
+.logo{
+    position: absolute;
+    height: 28%;
+    left: 0.6%;
+    top: 19%;
+    width: 13.5%;
+    z-index: 1;
+}
+
+/* Main header  */
+.header {
+    position: absolute;
+    width: 71%;
+    height: 9%;
+    left: 11%;
+    top: 29%;
+    background: #1a519e;
+}
+
+.header-text{
+    position: absolute;
+    font-size: 2.5em;
+    left:7%;
+    text-align: center;
+    color: #FFFFFF;
+}
+    
+/* month text are jan,feb,.......dec */
+
+.month-text{
+    position: relative;
+    font-size: 2rem;
+    left: 10%;
+    top: 7%;
+    width: 7%;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+/* h1 and event are detail information about events  */
+
+h1 {
+    position: relative;
+    font-size: 1.9rem;
+    left: 13%;
+    top:6%;
+    font-weight: bold;
+    color: #000000;
+}
+
+.event {
+    position: absolute;
+    font-size: 1.5rem;
+    left: 13%;
+    top: 30%;
+    width: 80%;
+    line-height: 1.6;
+    color: #000000;   
+}
+
+
+/* ----------------------------------BOX CSS---------------------------------------------- */
+
+
+/* January */
+.rect{
+    position: absolute;
+    width: 11%;
+    height: 7.4%;
+    left: 13%;
+    top: 47%;
+    z-index: 1;
+    background: #1A519E;
+    box-shadow: 10px 10px 4px rgba(0, 0, 0, 0.25);
+}
+
+.rect-box{
+    position: absolute;
+    width: 62%;
+    height: 43%;
+    left: 19%;
+    top: 49%;
+    background: #FBCD0F;
+    border-radius: 2%;
+}
+
+
+/* February */
+
+.rect1{
+    position: absolute;
+    width: 12%;
+    height: 7.4%;
+    left: 13%;
+    top: 100%;
+    z-index: 1;
+    background: #1A519E;
+    box-shadow: 10px 10px 4px rgba(0, 0, 0, 0.25);
+}
+
+.rect1-box{
+    position: absolute;
+    width: 62%;
+    height: 43%;
+    left: 19%;
+    top: 102%;
+    background: #FBCD0F;
+    border-radius: 2%;
+}
+/* March */
+
+.rect2{
+    position: absolute;
+    width: 9%;
+    height: 7.4%;
+    left: 13%;
+    top: 153%;
+    z-index: 1;
+    background: #1A519E;
+    box-shadow: 10px 10px 4px rgba(0, 0, 0, 0.25);
+}
+
+.rect2-box{
+    position: absolute;
+    width: 62%;
+    height: 43%;
+    left: 19%;
+    top: 155%;
+    background: #FBCD0F;
+    border-radius: 2%;
+}
+/* April */
+
+.rect3{
+    position: absolute;
+    width: 7%;
+    height: 7.4%;
+    left: 13%;
+    top: 208%;
+    z-index: 1;
+    background: #1A519E;
+    box-shadow: 10px 10px 4px rgba(0, 0, 0, 0.25);
+}
+
+.rect3-box{
+    position: absolute;
+    width: 62%;
+    height: 43%;
+    left: 19%;
+    top: 210%;
+    background: #FBCD0F;
+    border-radius: 2%;
+}
+/* May */
+.rect4{
+    position: absolute;
+    width: 7%;
+    height: 7.4%;
+    left: 13%;
+    top: 261%;
+    z-index: 1;
+    background: #1A519E;
+    box-shadow: 10px 10px 4px rgba(0, 0, 0, 0.25);
+}
+
+.rect4-box{
+    position: absolute;
+    width: 62%;
+    height: 43%;
+    left: 19%;
+    top: 263%;
+    background: #FBCD0F;
+    border-radius: 2%;
+}
+/* June */
+.rect5{
+    position: absolute;
+    width: 7%;
+    height: 7.4%;
+    left: 13%;
+    top: 314%;
+    z-index: 1;
+    background: #1A519E;
+    box-shadow: 10px 10px 4px rgba(0, 0, 0, 0.25);
+}
+
+.rect5-box{
+    position: absolute;
+    width: 62%;
+    height: 43%;
+    left: 19%;
+    top: 316%;
+    background: #FBCD0F;
+    border-radius: 2%;
+}
+/* July */
+.rect6{
+    position: absolute;
+    width: 7%;
+    height: 7.4%;
+    left: 13%;
+    top: 367%;
+    z-index: 1;
+    background: #1A519E;
+    box-shadow: 10px 10px 4px rgba(0, 0, 0, 0.25);
+}
+
+.rect6-box{
+    position: absolute;
+    width: 62%;
+    height: 43%;
+    left: 19%;
+    top: 369%;
+    background: #FBCD0F;
+    border-radius: 2%;
+}
+
+/* August */
+.rect7{
+    position: absolute;
+    width: 9%;
+    height: 7.4%;
+    left: 13%;
+    top: 420%;
+    z-index: 1;
+    background: #1A519E;
+    box-shadow: 10px 10px 4px rgba(0, 0, 0, 0.25);
+}
+
+.rect7-box{
+    position: absolute;
+    width: 62%;
+    height: 43%;
+    left: 19%;
+    top: 422%;
+    background: #FBCD0F;
+    border-radius: 2%;
+}
+
+/* September */
+.rect8{
+    position: absolute;
+    width: 13%;
+    height: 7.4%;
+    left: 12%;
+    top: 473%;
+    z-index: 1;
+    background: #1A519E;
+    box-shadow: 10px 10px 4px rgba(0, 0, 0, 0.25);
+}
+
+.rect8-box{
+    position: absolute;
+    width: 62%;
+    height: 43%;
+    left: 19%;
+    top: 475%;
+    background: #FBCD0F;
+    border-radius: 2%;
+}
+
+/* October */
+.rect9{
+    position: absolute;
+    width: 10%;
+    height: 7.4%;
+    left: 13%;
+    top: 526%;
+    z-index: 1;
+    background: #1A519E;
+    box-shadow: 10px 10px 4px rgba(0, 0, 0, 0.25);
+}
+
+.rect9-box{
+    position: absolute;
+    width: 62%;
+    height: 46%;
+    left: 19%;
+    top: 528%;
+    background: #FBCD0F;
+    border-radius: 2%;
+}
+
+/* November */
+.rect10{
+    position: absolute;
+    width: 13%;
+    height: 7.4%;
+    left: 13%;
+    top: 579%;
+    z-index: 1;
+    background: #1A519E;
+    box-shadow: 10px 10px 4px rgba(0, 0, 0, 0.25);
+}
+
+.rect10-box{
+    position: absolute;
+    width: 62%;
+    height: 43%;
+    left: 19%;
+    top: 581%;
+    background: #FBCD0F;
+    border-radius: 2%;
+}
+
+/* December */
+.rect11{
+    position: absolute;
+    width: 13%;
+    height: 7.4%;
+    left: 13%;
+    top: 632%;
+    z-index: 1;
+    background: #1A519E;
+    box-shadow: 10px 10px 4px rgba(0, 0, 0, 0.25);
+}
+
+.rect11-box{
+    position: absolute;
+    width: 62%;
+    height: 43%;
+    left: 19%;
+    top: 634%;
+    background: #FBCD0F;
+    border-radius: 2%;
+}
