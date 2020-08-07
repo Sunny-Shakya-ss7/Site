@@ -8,7 +8,7 @@
         </div>
         <hr>
         <div class="container" >
-             <img class="img-responsive rounded-circle" src="{{asset('graphics/logo/big_logo.jpg')}}" style="position:absolute;top:37%;left:40%;height:62%;width:34%; max-width: 100%;  height: auto;"   >
+             <img class="img-responsive rounded-circle" src="{{asset('graphics/logo/big_logo.jpg')}}" style="position:absolute;top:40%;left:43%;height:40%;width:25%; max-width: 100%;  height: auto;"   >
         </div>
             {!! Form::open(['action' => 'CadminController@store', 'method' => 'POST', 'enctype' =>'multipart/form-data']) !!}
             <div class="form-group">
@@ -83,7 +83,7 @@
                         {{$message}}
                     </div>
                     @enderror
-            {{Form::submit('Reg Admin', ['class' => 'btn btn-success', 'style'=> 'margin-left:16%;'])}}
+            {{Form::submit('Register Admin', ['class' => 'btn btn-success', 'style'=> 'margin-left:16%;'])}}
             {!! Form::close() !!}
     </div>   
 @endsection
