@@ -1,5 +1,5 @@
 @extends('layouts.app')
- @section('Leaderboard')
+ @section('title','Leaderboard')
 @section('content')
 
     <style>
@@ -42,13 +42,13 @@
 
     <header class="header2">
       <img class="bar2" src="{{asset('graphics/logo/bar2.png')}}" alt="bar" />
-      <h1>POINTS TABLE</h1>
+      <h1>Leo LeaderBoard</h1>
     </header>
 
     <div class="table-responsive" style="overflow-x: auto;">
       <table class="table clubtable">
         <tr>
-          <th>S.N</th>
+          <th>ID NO.</th>
           <th>Name</th>
           <th>Leo CLub Name</th>
           <th>Club Post</th>

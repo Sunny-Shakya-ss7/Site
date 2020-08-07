@@ -14,7 +14,7 @@
     		<p class="card-text">{{$post->body}}</p>
     		<h6 class="text-center">Replies</h6><hr width="30" class="bg-dark">
     		<hr class="bg-dark">
-    		<p>{{$post->reply}}</p>
+    		<p> >>{{$post->reply}}</p>
     		<hr class="bg-dark">
     		<h6 class="text-right">{{$post->reply_by}}</h6>
     		
@@ -27,16 +27,6 @@
   <div class="d-flex justify-content-center">
 			{!! Form::open(['action' =>['ReplyController@update', $post->id ], 'method' => 'POST']) !!}
 			<hr>
-			<h3 class="text-center">Post a Reply</h3>
-			<div class="form-group">
-					{{Form::label( 'title' , 'Replied By' )}}
-					{{Form::text('reply_by','',['class' => 'form-control', 'placeholder' => 'Please Specify you Name (eg: Leo Hari)'])}}
-				</div>
-					@error('title')
-					<div class="alert alert-danger">
-                        {{$message}}
-                    </div>
-                    @enderror
 			<div class="form-group">
 					{{Form::label( 'title' , 'Reply' )}}
 					{{Form::textarea('reply','',['class' => 'form-control', 'placeholder' => 'Reply Message Here'])}}
