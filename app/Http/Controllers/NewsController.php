@@ -11,7 +11,7 @@ class NewsController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('auth:admins', ['except' => ['index', 'show']]);
+        $this->middleware('auth:admins,cadmin', ['except' => ['index', 'show']]);
     }
     /**
      * Display a listing of the resource.
@@ -70,7 +70,7 @@ class NewsController extends Controller
         $news->slug = $request->input('slug');
         $news->body = $request->input('body');
         $news->user_id = auth()->user()->id;
-        $news->signature = $request->input('signature');
+        $news->club_name = $reuest->input('club_name');
         $news->cover_image = $fileNameToStore;
         $news->save();
 

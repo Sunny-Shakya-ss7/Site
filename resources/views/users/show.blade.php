@@ -7,13 +7,19 @@
 			<br>
 			<h1 class="text-center">{{$User->name}}</h1>
 		</div> 
+		@if(Auth::guard('admins')->check())
+			<a href="/userall" class="btn btn-success">Go Back</a>
+		@else
 			<a href="/user" class="btn btn-success">Go Back</a>
+		@endif
 			<div class="row">
 			<div class="col-md-4 col-sm-4 text-white">
 			ID : {{$User->id}} <br>
 			Name : {{$User->name}} <br>
 			Email : {{$User->email}} <br>
-			Created At : {{$User->created_at}}<br>
+			From Club Name : {{$User->club_name}}<br>
+			Club Post : {{$User->club_name}}<br>
+			Created At : {{$User->club_post}}<br>
 			Updated At : {{$User->updated_at}}
 		</div>
 		<div class="col-md-8 col-sm-4">

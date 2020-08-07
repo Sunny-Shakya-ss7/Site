@@ -1,5 +1,5 @@
 @extends('layouts.app')
- @section('title','Leo Clubs')
+ @section('Leaderboard')
 @section('content')
 
     <style>
@@ -42,26 +42,26 @@
 
     <header class="header2">
       <img class="bar2" src="{{asset('graphics/logo/bar2.png')}}" alt="bar" />
-      <h1>LEO CLUBS</h1>
+      <h1>POINTS TABLE</h1>
     </header>
 
     <div class="table-responsive" style="overflow-x: auto;">
       <table class="table clubtable">
         <tr>
           <th>S.N</th>
-          <th>Leo Club ID</th>
+          <th>Name</th>
           <th>Leo CLub Name</th>
-          <th>Sponsor Lions Club Name</th>
-          <th>Club ID</th>
+          <th>Club Post</th>
+          <th>Points Gained</th>
         </tr>
 
-        @foreach ($clubs as $clubs)
+        @foreach ($Users as $User)
           <tr>
-            <td>{{ $clubs->id }}</td>
-            <td>{{ $clubs->Leo_Club_ID }}</td>
-            <td>{{ $clubs->Leo_Club_Name }}</td>
-            <td>{{ $clubs->Sponsor_Lions_Club_Name }}</td>
-            <td>{{ $clubs->Club_ID }}</td>
+            <td>{{ $User->id }}</td>
+            <td>{{ $User->name}}</td>
+            <td>{{ $User->club_name}}</td>
+            <td>{{ $User->club_post}}</td>
+            <td>{{ $User->points}}</td>
           </tr>
         @endforeach
 

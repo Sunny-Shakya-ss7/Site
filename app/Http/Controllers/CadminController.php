@@ -14,7 +14,7 @@ class CadminController extends Controller
      */
      public function __construct()
     {
-        $this->middleware('auth:admins,cadmins')->except('index','logout');
+        $this->middleware('auth:admins')->except('index');
     }
     
     public function index()

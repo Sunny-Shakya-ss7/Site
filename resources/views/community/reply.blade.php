@@ -23,7 +23,7 @@
 </div>
 
 
-@if(Auth::guard('admins')->check() || Auth::guard('web')->check())
+@if(Auth::guard('admins')->check() || Auth::guard('web')->check() || Auth::guard('cadmin')->check())
   <div class="d-flex justify-content-center">
 			{!! Form::open(['action' =>['ReplyController@update', $post->id ], 'method' => 'POST']) !!}
 			<hr>
