@@ -42,4 +42,7 @@ class Cadmin extends Authenticatable
     public function users(){
         return $this->hasMany('App\User');
     }
+    public function galleries(){
+        return $this->hasMany('App\Gallery');
+    }
 }
