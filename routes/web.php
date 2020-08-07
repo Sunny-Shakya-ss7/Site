@@ -47,7 +47,7 @@ Route::prefix('admin')->group(function(){
 Route::prefix('cadmin')->group(function(){
 	Route::get('/login', 'Auth\CadminLoginController@loginForm')->name('cadmin.login');
 	Route::post('/login', 'Auth\CadminLoginController@login')->name('cadmin.login.submit');
-	Route::get('/', 'CadminController@index')->name('cadmin.dashboard');
+	Route::get('/', 'CadminController@index')->name('cadmin.home');
 	Route::get('/logout', 'Auth\CadminLoginController@logout')->name('cadmin.logout');
 });
 
@@ -59,8 +59,9 @@ Route::resource('/user','UserController',[
     'except' => ['update']
 ]);
 Route::resource('/cadmin','CadminController',[
-	'except' => ['index','update','edit',]
+	'except' => ['update','edit',]
 ]);
+Route::get('/userall','AdminController@userall');
 
 //News / Events Controller
 Route::resource('/news','NewsController');
@@ -75,9 +76,14 @@ Route::resource('/community/reply','ReplyController',[
 Route::resource('/spa','SpaController');
 
 // About Leo & Leo Clubs
+<<<<<<< HEAD
 Route::get('/about_leo', 'PagesController@about_leo')->name('about_leo.index'); 
 Route::get('/leo_clubs', 'PagesController@leo_clubs')->name('leo_clubs.index');
 
 Route::view('/award', 'frontend/award');
 Route::view('/calender', 'frontend/calender'); 
 
+=======
+Route::get('/about', 'PagesController@about_leo')->name('about_leo.index'); 
+Route::get('/clubs', 'PagesController@leo_clubs')->name('leo_clubs.index'); 
+>>>>>>> 10d3a88d4b4dd0bf8005903b12a226b4be5ca94a

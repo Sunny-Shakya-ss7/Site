@@ -6,9 +6,9 @@
 <hr class="gline"><h1 style="text-align: center;">LEO CLUB GALLERY</h1><hr class="gline">
 
 <!--Upload  Images -->
-@if(Auth::guard('admins')->check())
+@if(Auth::guard('admins')->check() || Auth::guard('cadmin')->check())
     <br><div class="container imgInsert">
-        <h3 style="text-align: center;padding-bottom: 2%;">Upload Image [Note: Only admin can see this]</h3>
+        <h3 style="text-align: center;padding-bottom: 2%;">Upload Image <br>[Note: Only admin can see this]</h3>
         {!! Form::open(['action' => 'GalleryController@store', 'method' => 'POST', 'enctype' =>'multipart/form-data']) !!}
             <div class="form-group imgInfo">
                 {{Form::label('title','[Choose Photo]')}}<br>

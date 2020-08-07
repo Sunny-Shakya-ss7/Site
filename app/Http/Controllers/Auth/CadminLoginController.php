@@ -31,9 +31,8 @@ class CadminLoginController extends Controller
     	];
     	if(Auth::guard('cadmin')->attempt($credentials,$request->remember)){
     		//If Success Redirect prev. link
-    		return redirect()->intended(route('home'));
+    		return redirect('/cadmin');
     	}
-
     	//if Unsuccess Redirect back with error
     	return redirect()->back()->withInput($request->only('email','remember'));
     }

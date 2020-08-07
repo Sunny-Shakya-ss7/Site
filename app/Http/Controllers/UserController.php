@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\User;
 use App\Cadmin;
+use Auth;
 
 class UserController extends Controller
 {
@@ -15,16 +16,17 @@ class UserController extends Controller
      */
      public function __construct()
     {
-        $this->middleware('auth:admins');
+        $this->middleware('auth:admins,cadmin');
+
     }
     
     public function index()
     {
-        $Users = User::orderBy('created_at','desc')->paginate(20);
-        $Cadmins = Cadmin::orderby('created_at','desc')->paginate(20);
+       
+        $user_id = Auth::guard('cadmin')->user()->id;
+        $cadmin = Cadmin::find($user_id);
         return view('users.index')
-                    ->with('Users', $Users)
-                    ->with('Cadmins',$Cadmins);
+                    ->with('Users', $cadmin->users);
     }
 
     /**
@@ -72,6 +74,7 @@ class UserController extends Controller
             'email' => $request->email,
             'password' => bcrypt($request->password),
         ]);
+        $user->created_by = Auth::guard('cadmin')->user()->id;
         $user->profile_image = $fileNameToStore;
         $user->save();
 

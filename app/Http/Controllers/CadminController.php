@@ -14,12 +14,12 @@ class CadminController extends Controller
      */
      public function __construct()
     {
-        $this->middleware('auth:admins');
+        $this->middleware('auth:admins,cadmins')->except('index','logout');
     }
     
     public function index()
     {
-        //
+        return view('profiles.cprofile');
     }
 
     /**
