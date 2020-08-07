@@ -78,9 +78,7 @@
                 </div>
             </div>
         </div>
-
-        <br><hr class="hrline"><h1 style="color: #FBFF3C;" class="space">Heading</h1><hr class="hrline"><br>
-        
+        <br>
         <div class="top">
             <div class=" container backimgdown">
                 <div class="contentdown">
@@ -140,10 +138,11 @@
                     </div>
                 </div>
             </div>
+            <div class="but space form-group">
+            {{Form::submit('Submit Report',['class' => 'btn btn-success '])}}
         </div>
-        <div class="but space form-group">
-            {{Form::submit('Next',['class' => 'btn btn-outline-primary'])}}
         </div>
+        
 
     {!! Form::close() !!}
 @endsection
