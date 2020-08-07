@@ -3,7 +3,7 @@
 @section('content')
 <div class="container bg-secondary ">
         <a href="/user" class="btn btn-success">Go Back</a>
-        <div class="text-center">
+        <div class="text-center text-warning">
             <h1 class="mt-1"> Register User</h1>
         </div>
         <hr>
