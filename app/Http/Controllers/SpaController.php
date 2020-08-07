@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\spa;
+use App\Cadmin;
+use Auth;
 
 class SpaController extends Controller
 {
@@ -18,7 +20,11 @@ class SpaController extends Controller
      */
     public function index()
     {
-        return view('spa.index');
+
+        $user_id = Auth::guard('cadmin')->user()->id;
+        $cadmin = Cadmin::find($user_id);
+        return view('spa.index')
+                    ->with('spas', $cadmin->spas);
     }
 
     /**
@@ -28,7 +34,7 @@ class SpaController extends Controller
      */
     public function create()
     {
-        //
+        return view('spa.create');
     }
 
     /**
@@ -69,7 +75,7 @@ class SpaController extends Controller
                 // Upload Image
                 $path = $file->storeAs('public/images', $fileNameToStore);
 
-                $data[] = $fileNameToStore;
+                $data = $fileNameToStore;
             }
         }else{
             $fileNameToStore = 'noimage.jpg';  
@@ -91,7 +97,11 @@ class SpaController extends Controller
         $spa->People_Benefited = $request->input('people_benefited');
         $spa->Overall_Points_Received = $request->input('points');
         $spa->Total_Leo_Hours = $request->input('hours');  
-        $spa->Photos = json_encode($data);
+        $spa->Photos = $data;
+        if( Auth::guard('cadmin')->check())
+        $spa->cadmin_id = Auth::guard('cadmin')->user()->id;
+        else
+        $spa->cadmin_id = Auth::guard('admins')->user()->id;
        
         $spa->save();
 
