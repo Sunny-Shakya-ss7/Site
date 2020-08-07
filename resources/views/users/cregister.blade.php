@@ -3,9 +3,9 @@
 @section('content')
 <div class="container">
         <div class="text-center">
-            <h1>Register User</h1>
+            <h1>Register Admin</h1>
         </div>
-        <a href="/user" class="btn btn-success">Go Back</a>
+        <a href="/userall" class="btn btn-success">Go Back</a>
         <hr>
             {!! Form::open(['action' => 'CadminController@store', 'method' => 'POST', 'enctype' =>'multipart/form-data']) !!}
             <div class="form-group">

@@ -127,7 +127,10 @@ class UserController extends Controller
          $User = User::find($id);
         //Check for correct user
         $User->delete();
+        if(Auth::guard('cadmin'))
+            return redirect('/user')->with('success', 'User has been Removed');
+        else
+            return redirect('/userall')->with('success', 'User has been Removed');
 
-        return redirect('/user')->with('success', 'User has been Removed');
     }
 }

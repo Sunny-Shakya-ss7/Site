@@ -10,9 +10,12 @@
             </div>
         <div class="wel clearfix">
             <hr>
+             @if(Auth::guard('admins')->check())
+            <a href="/cadmin/create" class="btn btn-success float-left" style="color:white;">Register Admins</a>
+            @endif
+            @if(Auth::guard('cadmin')->check())
             <a href="/user/create" class="btn btn-success float-left" style="color:white;">Register User</a>
-            <a href="/cadmin/create" class="btn btn-success float-right" style="color:white;">Register Admins</a>
-            
+            @endif
         </div>
         <hr>
             <table class="table text-white">

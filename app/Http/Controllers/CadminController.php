@@ -75,7 +75,7 @@ class CadminController extends Controller
         $cadmin->profile_image = $fileNameToStore;
         $cadmin->save();
 
-        return redirect('user')->with('success','Admin Created');
+        return redirect('userall')->with('success','Admin Created');
     }
 
     /**
@@ -124,6 +124,6 @@ class CadminController extends Controller
         //Check for correct user
         $Cadmin->delete();
 
-        return redirect('/user')->with('success', 'Admin has been Removed');
+        return redirect('/userall')->with('success', 'Admin has been Removed');
     }
 }
