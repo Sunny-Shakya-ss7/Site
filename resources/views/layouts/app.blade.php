@@ -22,6 +22,7 @@
     <link rel="stylesheet" href="{{asset('css/leo_clubs.css')}}">
     <link rel="stylesheet" href="{{asset('css/spa.css')}}">
     <link rel="stylesheet" href="{{asset('css/gallery.css')}}">
+    <link rel="stylesheet" href="{{asset('css/events.css')}}">
 
 </head>
   <body>
