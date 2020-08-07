@@ -14,7 +14,7 @@
             @if(Auth::guard('admins')->check())
             <a href="/cadmin/create" class="btn btn-success float-left" style="color:white;">Register Admins</a>
             @endif
-            @if(Auth::guard('admins')->check())
+            @if(Auth::guard('cadmin')->check())
             <a href="/user/create" class="btn btn-success float-left" style="color:white;">Register User</a>
             @endif
         </div>

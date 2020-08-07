@@ -55,7 +55,7 @@ Route::prefix('cadmin')->group(function(){
 
 //User and C-admin Control 
 Route::resource('/user','UserController',[
-    'except' => ['update']
+    'except' => ['update','edit']
 ]);
 Route::resource('/cadmin','CadminController',[
 	'except' => ['update','edit',]

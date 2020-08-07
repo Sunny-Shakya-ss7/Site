@@ -56,6 +56,24 @@
                         {{$message}}
                     </div>
                     @enderror
+            <div class="form-group mt-4">
+                    {{Form::label( 'title' , 'Date of Birth' )}}
+                    {{Form::date('dob','',['class' => 'form-control col-md-5 p-4', 'placeholder' => 'Date of Birth'])}}
+            </div> 
+            @error('dob')
+                    <div class="alert alert-danger col-md-5">
+                        {{$message}}
+                    </div>
+                    @enderror
+            <div class="form-group mt-4">
+                    {{Form::label( 'title' , 'Club Post' )}}
+                    {{Form::text('club_post','',['class' => 'form-control col-md-5 p-4', 'placeholder' => 'Club Current Post'])}}
+            </div> 
+            @error('club_post')
+                    <div class="alert alert-danger col-md-5">
+                        {{$message}}
+                    </div>
+                    @enderror
             {{Form::submit('Register User', ['class' => 'btn btn-primary', 'style'=> 'margin-left:16%;'])}}
             {!! Form::close() !!}
     </div>   

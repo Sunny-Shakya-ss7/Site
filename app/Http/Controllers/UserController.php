@@ -53,6 +53,8 @@ class UserController extends Controller
             'password' => 'required|min:8',
             'confim_password' => 'required_with:password|same:password|min:8',
             'profile_image' => 'image|nullable|max:1999',
+            'club_post' => 'required',
+            'dob' => 'required',
         ]);
 
          if($request->hasFile('profile_image')){
@@ -75,6 +77,9 @@ class UserController extends Controller
             'password' => bcrypt($request->password),
         ]);
         $user->cadmin_id = Auth::guard('cadmin')->user()->id;
+        $user->club_name = Auth::guard('cadmin')->user()->club_name;
+        $user->club_post = $request->club_post;
+        $user->dob = $request->dob;
         $user->profile_image = $fileNameToStore;
         $user->save();
 
@@ -101,8 +106,6 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-        $User = User::find($id);
-        return view('users.edit')->with('User',$User);
     }
 
     /**
