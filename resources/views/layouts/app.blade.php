@@ -81,6 +81,7 @@
                       @else
                         <a class="dropdown-item" href="{{ url('/home') }}">Profile</a>
                         @endif
+                        <a class="dropdown-item" href="{{ url('/leaderboard') }}">LeaderBoard</a>
                         <div class="dropdown-divider"></div>
                         @if(Auth::guard('admins')->check())
                         <a class="dropdown-item" href="{{ url('admin/logout') }}">{{ __(' Admin Logout') }}</a>

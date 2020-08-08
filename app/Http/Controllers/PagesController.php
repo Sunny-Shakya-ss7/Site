@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use DB;
 use App\User;
+use App\Cadmin;
+use Auth;
 
 class PagesController extends Controller
 {
@@ -40,7 +42,12 @@ class PagesController extends Controller
     }
     public function pointtb()
     {
-      $users = User::orderBy('points','desc')->paginate(40);
-      return view('pages.pointtb')->with('Users',$users);
-    }
+      $users = User::all();
+      $admins = Cadmin::all();
+      $merge = $admins->merge($users)->sortByDesc('points');
+      $result = $merge->all();
+        return view('pages.pointtb')
+                  ->with('Users',$result);
+  }
+
 }

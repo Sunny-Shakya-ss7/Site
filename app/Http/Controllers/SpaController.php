@@ -11,7 +11,7 @@ class SpaController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('auth:admins,cadmin');
+        $this->middleware('auth:cadmin,admins');
     }
     /**
      * Display a listing of the resource.
@@ -108,8 +108,14 @@ class SpaController extends Controller
         $spa->cadmin_id = Auth::guard('cadmin')->user()->id;
         else
         $spa->cadmin_id = Auth::guard('admins')->user()->id;
-       
         $spa->save();
+
+         if(Auth::guard('cadmin')->check()){
+            $user_id = Auth::guard('cadmin')->user()->id;
+            $cadmin = Cadmin::find($user_id);
+            $cadmin->points = $cadmin->points + $request->points;
+            $cadmin->save();
+        }
 
         return redirect('/spa')->with('success', 'SPA Submitted');
     }
