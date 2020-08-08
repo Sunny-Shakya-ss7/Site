@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use  Illuminate\Support\Facades\Storage;
 use Illuminate\Http\Request;
 use App\spa;
 use App\Cadmin;
@@ -162,6 +163,10 @@ class SpaController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $pic = spa::find($id);
+        if($pic->Photos != 'noimage.jpg')
+                    Storage::delete('storage/images/'.$pic->Photos);
+        $pic->delete();
+        return redirect('/spa')->with('success', 'Report has been Removed'); 
     }
 }

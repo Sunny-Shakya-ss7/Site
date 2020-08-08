@@ -68,7 +68,11 @@
                             <img id="evtPic" src="/storage/images/{{$spa->Photos}}" alt="pic" style="height:100%; width: 100%;">
                         </div>
                         <div class="col-md-8 col-sm-4 evtInfo">
-                        <h3>{{$spa->Leo_Club_Official_Email_Address}} <br> {{$spa->Leo_Club_Name}}</h3>
+                        <h3>{{$spa->Activity_Name}} <br> {{$spa->Leo_Club_Name}}</h3>
+                         {!!Form::open(['action' => ['SpaController@destroy', $spa->id], 'method' => 'POST'])!!}
+                        {{Form::hidden('_method', 'DELETE' )}}
+                        {{Form::submit('Delete', ['class' => 'btn btn-danger '])}}
+                        {!!Form::close()!!}
                         </div>
                     </div>
                 </div><br>

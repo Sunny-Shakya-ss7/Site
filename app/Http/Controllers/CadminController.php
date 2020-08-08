@@ -28,7 +28,8 @@ class CadminController extends Controller
                     ->with('spas', $cadmin->spas)
                     ->with('gallery',$cadmin->galleries)
                     ->with('User',$cadmin)
-                    ->with('news',$cadmin->news);
+                    ->with('news',$cadmin->news)
+                    ->with('Users',$cadmin->users);
     }
 
     /**

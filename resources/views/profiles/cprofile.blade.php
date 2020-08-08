@@ -86,7 +86,11 @@
                             <img id="evtPic" src="/storage/images/{{$spa->Photos}}" alt="pic" style="height:100%; width: 100%;">
                         </div>
                         <div class="col-md-8 col-sm-4 evtInfo">
-                        <h3>{{$spa->Leo_Club_Official_Email_Address}} <br> {{$spa->Leo_Club_Name}}</h3>
+                        <h3>{{$spa->Activity_Name}} <br> {{$spa->Leo_Club_Name}}</h3>
+                          {!!Form::open(['action' => ['SpaController@destroy', $spa->id], 'method' => 'POST'])!!}
+                        {{Form::hidden('_method', 'DELETE' )}}
+                        {{Form::submit('Delete', ['class' => 'btn btn-danger '])}}
+                        {!!Form::close()!!}
                         </div>
                     </div>
                 </div><br>
@@ -107,6 +111,10 @@
                         <div class="col-md-8 col-sm-4 evtInfo">
                             <h3><a style="color: white" href="/news/{{$new->id}}">{{$new->title}}- {{$new->slug}}</a></h3>
                             <small><i class="far fa-calendar-alt"></i> {{$new->created_at}} by {{$new->club_name}}</small>
+                            {!!Form::open(['action' => ['NewsController@destroy', $new->id], 'method' => 'POST'])!!}
+                                {{Form::hidden('_method', 'DELETE' )}}
+                                {{Form::submit('Delete', ['class' => 'btn btn-danger'])}}
+                            {!!Form::close()!!}
                         </div>
                     </div>
                 </div><br>
@@ -129,6 +137,10 @@
                             </div>
                             <div class="caption imgCaption">
                                 <p class="text-center">{{$gallery->caption}}</p>
+                                {!!Form::open(['action' => ['GalleryController@destroy', $gallery->id], 'method' => 'POST'])!!}
+                                {{Form::hidden('_method', 'DELETE' )}}
+                                {{Form::submit('Delete', ['class' => 'btn btn-danger delBut'])}}
+                            {!!Form::close()!!}
                             </div>
                         </div>
                     </div>
@@ -139,4 +151,43 @@
                 </div>
             @endif
         </div>
+    </div>
+    <div class="container evtDiv">
+            <h3>Users by You</h3>
+        <table class="table text-white">
+                <thead>
+                         <th colspan="6" class="text-center">Users</th>
+                    <tr class="filters">
+                        <th><input type="text" class="form-control" placeholder="ID No" disabled></th>
+                        <th><input type="text" class="form-control" placeholder="Name" disabled></th>
+                        <th><input type="text" class="form-control" placeholder="Email" disabled></th>
+                        <th><input type="text" class="form-control" placeholder="Club Name" disabled></th>
+                        <th><input type="text" class="form-control text-center" placeholder="Action" disabled></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @if(count($Users)> 0)
+                    @foreach($Users as $Users)
+
+                    <tr>
+                        <td>{{$Users->id}}</td>
+                        <td>{{$Users->name}}</td>
+                        <td>{{$Users->email}}</td>
+                        <td>{{$Users->club_name}}</td>
+                        <td>
+                        {!!Form::open(['action' => ['UserController@destroy', $Users->id], 'method' => 'POST'])!!}
+                        {{Form::hidden('_method', 'DELETE' )}}
+                        {{Form::submit('Delete', ['class' => 'btn btn-danger '])}}
+                        {!!Form::close()!!}</td>
+                    </tr>
+                    @endforeach
+                     </tbody>
+            </table>
+                    @else
+                    <div class="row" style="padding:2%">
+                    You Havent Created any User
+                </div>
+                    @endif
+               
+    </div>
 @endsection

@@ -72,7 +72,9 @@ Route::resource('/community/reply','ReplyController',[
 ]);
 
 //SPA Form
-Route::resource('/spa','SpaController');
+Route::resource('/spa','SpaController',[
+	'except' => ['update','edit',]
+]);
 
 // About Leo & Leo Clubs
 Route::get('/about_leo', 'PagesController@about_leo')->name('about_leo.index'); 
