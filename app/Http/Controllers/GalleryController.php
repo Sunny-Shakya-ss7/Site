@@ -62,7 +62,7 @@ class GalleryController extends Controller
         $gallery->caption = $request->input('caption');
         $gallery->image_upload = $fileNameToStore;
         $gallery->uploaded_by = Auth::guard('cadmin')->user()->name;
-        $gallery->by_id = Auth::guard('cadmin')->user()->id;
+        $gallery->cadmin_id = Auth::guard('cadmin')->user()->id;
         $gallery->save();
 
         return redirect('/gallery')->with('success','Photo has been Uploaded');

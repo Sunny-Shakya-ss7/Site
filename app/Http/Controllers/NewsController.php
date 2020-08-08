@@ -69,7 +69,7 @@ class NewsController extends Controller
         $news->title = $request->input('title');
         $news->slug = $request->input('slug');
         $news->body = $request->input('body');
-        $news->user_id = auth()->user()->id;
+        $news->cadmin_id = auth()->user()->id;
         $news->club_name = auth()->user()->club_name;
         $news->cover_image = $fileNameToStore;
         $news->save();

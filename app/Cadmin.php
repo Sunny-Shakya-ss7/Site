@@ -48,4 +48,7 @@ class Cadmin extends Authenticatable
     public function spas(){
         return $this->hasMany('App\spa');
     }
+    public function news(){
+        return $this->hasMany('App\News');
+    }
 }

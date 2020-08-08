@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Cadmin;
+use App\spa;
+use App\Gallery;
+use Auth;
 
 class CadminController extends Controller
 {
@@ -19,7 +22,13 @@ class CadminController extends Controller
     
     public function index()
     {
-        return view('profiles.cprofile');
+        $user_id = Auth::guard('cadmin')->user()->id;
+        $cadmin = Cadmin::find($user_id);
+        return view('profiles.cprofile')
+                    ->with('spas', $cadmin->spas)
+                    ->with('gallery',$cadmin->galleries)
+                    ->with('User',$cadmin)
+                    ->with('news',$cadmin->news);
     }
 
     /**
