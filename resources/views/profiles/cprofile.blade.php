@@ -53,7 +53,7 @@
     <img class="vertical3 v4" src="{{asset('graphics/logo/line.png')}}" alt="line" style="left: 10.5rem;"/>
     <img class="image" src="{{asset('graphics/logo/a.png')}}" alt="logo" />
 
-    <h1 style="color: #FBFF3C;" class="space">Admin Pofile </h1>
+    <h1 style="color: #FBFF3C;" class="text-center">Admin Pofile </h1>
         <div class="container evtDiv">
                 <div class="container" style="color:white;">
             <div class="well" >

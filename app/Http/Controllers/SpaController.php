@@ -20,11 +20,17 @@ class SpaController extends Controller
      */
     public function index()
     {
-
-        $user_id = Auth::guard('cadmin')->user()->id;
-        $cadmin = Cadmin::find($user_id);
-        return view('spa.index')
-                    ->with('spas', $cadmin->spas);
+        if(Auth::guard('admins')->check()){
+            $spas = spa::all();
+            return view('spa.index')
+                        ->with('spas', $spas);
+        }
+        if(Auth::guard('cadmin')->check()){
+            $user_id = Auth::guard('cadmin')->user()->id;
+            $cadmin = Cadmin::find($user_id);
+            return view('spa.index')
+                        ->with('spas', $cadmin->spas);
+        }
     }
 
     /**

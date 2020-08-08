@@ -6,7 +6,7 @@
 	<hr class="gline"><h1 style="text-align: center;">LEO CLUB EVENTS</h1><hr class="gline"><br>
 
 	<div class="container evtDiv">
-		@if(Auth::guard('admins')->check())
+		@if(Auth::guard('admins')->check() || Auth::guard('cadmin')->check())
 			<a href="/news/create" class="btn btn-success ">Post Events/News</a>
 			<hr>
 		@endif
