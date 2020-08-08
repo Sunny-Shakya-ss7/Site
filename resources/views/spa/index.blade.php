@@ -52,8 +52,11 @@
     <img class="vertical3 v3" src="{{asset('graphics/logo/line.png')}}" alt="line" style="left: 9rem;" />
     <img class="vertical3 v4" src="{{asset('graphics/logo/line.png')}}" alt="line" style="left: 10.5rem;"/>
     <img class="image" src="{{asset('graphics/logo/a.png')}}" alt="logo" />
-
+ @if(Auth::guard('admins')->check())
+    <h1 style="color: #FBFF3C;" class="space">All Successful Leo Club Projects Activity Reports </h1>
+@else
     <h1 style="color: #FBFF3C;" class="space">Your Successful Leo Club Projects Activity Reports </h1>
+@endif
         <div class="container evtDiv">
             <a href="/spa/create" class="btn btn-success ">Send SPA Report</a>
             <hr>
