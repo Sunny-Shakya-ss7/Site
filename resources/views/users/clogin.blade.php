@@ -9,23 +9,10 @@
 		<div class="col-md-4  col-xs-8 signin">
 			<form method="POST" action="{{ route('cadmin.login.submit') }}">
 				 @csrf
-				<div class="form-group">Admin Name
-					<label class="sr-only"for="inlineFormInputGroup"></label>
-					<div class="input-group mb-2">
-						<div class="input-group-prepend">
-							<div class="input-group-text">Leo</div>
-						</div>		
-						<input type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
-						@error('name')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-					</div>
-				</div><br>
-				<div class="form-group"> E-mail
-					<input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
-					@error('email')
+				
+				<div class="form-group"> Admin User Name
+					<input id="text" type="text" class="form-control @error('usermane') is-invalid @enderror" name="username" value="{{ old('username') }}" required autocomplete="username" autofocus>
+					@error('username')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
