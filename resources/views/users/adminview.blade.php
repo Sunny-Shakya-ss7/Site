@@ -68,7 +68,7 @@
                         <th><input type="text" class="form-control" placeholder="User Name" disabled></th>
                         <th><input type="text" class="form-control" placeholder="Club Name" disabled></th>
                         <th><input type="text" class="form-control" placeholder="Created At" disabled></th>
-                        <th><input type="text" class="form-control text-center" placeholder="Action" disabled></th>
+                        <th colspan="2"><input type="text" class="form-control text-center" placeholder="Action" disabled></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -80,6 +80,7 @@
                         <td>{{$Cadmin->username}}</td>
                         <td>{{$Cadmin->club_name}}</td>
                         <td>{{$Cadmin->created_at}}</td>
+                        <td><a href="/cadmin/{{$Cadmin->id}}">View Details</a></td>
                         <td class="text-center">
                         {!!Form::open(['action' => ['CadminController@destroy', $Cadmin->id], 'method' => 'POST'])!!}
                         {{Form::hidden('_method', 'DELETE' )}}
