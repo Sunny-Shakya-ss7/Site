@@ -186,8 +186,8 @@
     border-top: none;
 }
 
-.clubtableble th:last-child,
-.clubtableble td:last-child {
+.clubtable th:last-child,
+.clubtable td:last-child {
     border-right: 2px solid #f8cc5b;
 }
 

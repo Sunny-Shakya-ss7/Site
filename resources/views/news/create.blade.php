@@ -41,7 +41,7 @@
 				
 			<div class="form-group">
 				{{Form::label( 'title' , 'Image' )}}<br>
-				{{Form::File('cover_image')}}
+				<input type="file" name="file[]" multiple><br><br>
 			</div>
 			@error('cover_image')
 				<div class="alert alert-danger">

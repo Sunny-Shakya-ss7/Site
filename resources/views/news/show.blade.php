@@ -7,6 +7,18 @@
 		<h1>{{$new->title}}- {{$new->slug}}</h1>
 		<div class="well">
 			<img class="ml-4" src="/storage/news/{{$new->cover_image}}" alt=""><br><hr>
+			
+			
+			@foreach($new as $new)
+					
+				<?php foreach (json_decode($new->cover_image) as $picture) { ?>
+					<img src="{{ asset('/storage/app/public/news/'.$picture) }}" style="height:120px; width:200px"/>
+				<?php } ?>	
+				
+			@endforeach
+			
+			
+			
 			{!!$new->body!!}
 		</div>	
 		<hr>	
