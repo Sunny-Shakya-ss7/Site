@@ -73,7 +73,7 @@
                     </div>
                     <div class="form-group col-lg-6 col-md-6">
                         {{Form::label('title', 'Activity Level *')}}
-                        {{Form::select('activity_level', ['Club' => 'Club', 'Region' => 'Region', 'Area' => 'Area', 'District' => 'District', 'Multiple District' => 'Multiple District', 'International' => 'International'], null, ['class' => 'form-control input', 'placeholder' => '','required' => 'required'])}}
+                        {{Form::select('activity_level', ['2  Club' => 'Club', '4  Region' => 'Region', '6  Area' => 'Area', '8  District' => 'District', '10 Multiple District' => 'Multiple District', '12 International' => 'International'], null, ['class' => 'form-control input', 'placeholder' => '','required' => 'required'])}}
                     </div>
                 </div>
             </div>
@@ -85,10 +85,10 @@
                     <div class="form-group col-lg-6 col-md-6">
                         {{Form::label('Active Duration', 'Active Duration *')}}
                         <div class="form-check">
-                            {{Form::radio('active_duration', 'single', ['class' => 'form-check-input','required' => 'required'])}} Single Day
+                            {{Form::radio('active_duration', '5  single', ['class' => 'form-check-input','required' => 'required'])}} Single Day
                         </div>
                         <div class="form-check">
-                            {{Form::radio('active_duration', 'multiple')}} Multiple Day 
+                            {{Form::radio('active_duration', '10 multiple')}} Multiple Day 
                         </div>
                     </div>
                     <div class="form-group col-lg-6 col-md-6">
