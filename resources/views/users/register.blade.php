@@ -8,7 +8,7 @@
         </div>
         <hr>
         <div class="container" >
-             <img class="img-responsive rounded-circle" src="{{asset('graphics/logo/big_logo.jpg')}}" style="position:absolute;top:34%;left:45%;height:45%;width:22%"   >
+             <img class="img-responsive rounded-circle" src="{{asset('graphics/logo/big_logo.jpg')}}" style="position:absolute;top:52%;left:45%;height:45%;width:22%"   >
         </div>
             {!! Form::open(['action' => 'UserController@store', 'method' => 'POST', 'enctype' =>'multipart/form-data']) !!}
             <div class="form-group mt-4">

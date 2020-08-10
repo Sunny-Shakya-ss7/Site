@@ -5,22 +5,25 @@
 <div class="container">
 	<a href="/community" class="btn btn-success">Go Back</a>
 </div>
-	<div class="card-columns text-dark row d-flex justify-content-center">
+	<div class="card-columns text-dark row d-flex justify-content-center mt-5">
 	@if($post->approved == true)
-	<div class="card bg-light col-md-6">
-    	<div class="card-body">
+	
+	<div class="card col-md-6"  style="background:#24242a; ">
+		
+    	<div class="card-body text-light">
       		<h5 class="card-title"><i class="fas fa-question"></i>) {{$post->title}} </h5>
-      		<h6 class="pull-right">Date - {{$post->created_at}}</h6>
-    		<p class="card-text">{{$post->body}}</p>
-    		<h6 class="text-center">Replies</h6><hr width="30" class="bg-dark">
+			<div class="m-3">Asked : {{$post->created_at}}</div>
+    		<h6 class="text-center">Answer</h6>
     		<hr class="bg-dark">
-    		<p> >>{{$post->reply}}</p>
+    		<p> >> {{$post->reply}}</p>
     		<hr class="bg-dark">
     		<h6 class="text-right">{{$post->reply_by}}</h6>
     		
     	</div>
   </div>
 </div>
+<div class="container text-center">Note: This answer is replied by admin.</div>
+
 
 
 @if(Auth::guard('admins')->check() || Auth::guard('web')->check() || Auth::guard('cadmin')->check())
