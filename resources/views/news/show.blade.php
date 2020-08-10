@@ -3,27 +3,17 @@
 @section('content')
 
 	<div class="container">
-		<a href="/news" class="btn btn-default">Go Back</a>
-		<h1>{{$new->title}}- {{$new->slug}}</h1>
+		<br><a href="/news" class="btn btn-outline-primary">Go Back</a><br><br>
+		<h1 style="text-align: center">{{$new->title}}- {{$new->slug}}</h1>
 		<div class="well">
 			<img class="ml-4" src="/storage/news/{{$new->cover_image}}" alt=""><br><hr>
+						
 			
-			
-			@foreach($new as $new)
-					
-				<?php foreach (json_decode($new->cover_image) as $picture) { ?>
-					<img src="{{ asset('/storage/app/public/news/'.$picture) }}" style="height:120px; width:200px"/>
-				<?php } ?>	
-				
-			@endforeach
-			
-			
-			
-			{!!$new->body!!}
+			<div style="text-align: center">{!!$new->body!!}</div>
 		</div>	
 		<hr>	
-		<p class="text-right">Written on {{$new->created_at}}</p>
-		<p class="text-right">By {{$new->signature}}</p>
+		<p class="text-leftt">Written on {{$new->created_at}}</p>
+		<p class="text-leftt">By {{$new->signature}}</p>
 		<hr>
 		@if(Auth::guard('admins')->check())
 			<div class="clearfix">

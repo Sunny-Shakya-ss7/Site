@@ -19,6 +19,7 @@
 						</div>
 						<div class="col-md-8 col-sm-4 evtInfo">
 							<h3><a style="color: white" href="/news/{{$new->id}}">{{$new->title}}- {{$new->slug}}</a></h3>
+							<br><span class="text">{{$new->body}}</span><br>
 							<small><i class="far fa-calendar-alt"></i> {{$new->created_at}} by {{$new->club_name}}</small>
 						</div>
 					</div>

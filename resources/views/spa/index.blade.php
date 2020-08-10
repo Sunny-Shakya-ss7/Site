@@ -57,7 +57,7 @@
 @else
     <h1 style="color: #FBFF3C;" class="space">Your Successful Leo Club Projects Activity Reports </h1>
 @endif
-        <div class="container evtDiv">
+        <div class="container evtDiv spaDiv">
             <a href="/spa/create" class="btn btn-success ">Send SPA Report</a>
             <hr>
         @if(count($spas)>0)

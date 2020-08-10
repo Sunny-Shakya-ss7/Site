@@ -91,7 +91,7 @@ class NewsController extends Controller
     public function show($id)
     {
         $new = News::find($id);
-        return view('news.show', compact('new'))->with('new',$new);
+        return view('news.show')->with('new',$new);
     }
 
     /**
@@ -103,7 +103,7 @@ class NewsController extends Controller
     public function edit($id)
     {
         $new = News::find($id);
-        return view('news.edit',compact('new'))->with('new',$new);
+        return view('news.edit')->with('new',$new);
     }
 
     /**
