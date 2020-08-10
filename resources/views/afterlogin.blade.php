@@ -4,19 +4,19 @@
     @section('content')
     <link rel="stylesheet" href="{{asset('css/welcome-style.css')}}">
     <header>
-        <img class="header-bg" src="/storage/images/main-bg.png" alt="">
-        <img class="header-gold" src="/storage/images//header-gold.png" alt="">
-        <img class="header-black" src="/storage/images/header-black.png" alt="">
+        <img class="header-bg" src="/graphics/png/main-bg.png" alt="">
+        <img class="header-gold" src="/graphics/png/header-gold.png" alt="">
+        <img class="header-black" src="/graphics/png/header-black.png" alt="">
         <h1 class="header-content1">Welcome to LEO Family</h1>
-        <img class="ellipse-gold" src="/storage/images/ellipse-gold.png" alt="">
-        <img class="logo" src="/storage/images/logo.png" alt="">
-        <img class="circle-design" src="/storage/images/circle_design.png" alt="">
+        <img class="ellipse-gold" src="/graphics/png/ellipse-gold.png" alt="">
+        <img class="logo" src="/graphics/logo/logo_alt.png" alt="">
+        <img class="circle-design" src="/graphics/pngcircle_design.png" alt="">
         <h1 class="header-content2">
             “Small acts, when multiplied by millions of people, can transform the world.”
         </h1>
-        <img class="group" src="/storage/images/group.png" alt="">
-        <img class="footer-grad" src="/storage/images/footer-grad.png" alt="">
-        <img class="footer-black" src="/storage/images/footer-black.png" alt="">
+        <img class="group" src="/graphics/png/group.png" alt="">
+        <img class="footer-grad" src="/graphics/png/footer-grad.png" alt="">
+        <img class="footer-black" src="/graphics/png/footer-black.png" alt="">
         <div class="contact-menu">
                 <ul class="nav d-flex justify-content-around">
                   <li>

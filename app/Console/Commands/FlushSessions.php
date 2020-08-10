@@ -42,7 +42,7 @@ class FlushSessions extends Command
         if ( method_exists($this, $method_name) ) {
             try {
                 $this->$method_name();
-                $this->info('Session data cleaned.');
+                $this->info('Session data cleaned. Ok Cha taa');
             } catch (\Exception $e) {
                 $this->error($e->getMessage());
             }
