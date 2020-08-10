@@ -22,7 +22,7 @@
     	</div>
   </div>
 </div>
-<div class="container text-center">Note: This answer is replied by admin.</div>
+<div class="container text-center">Note: This answer is replied by Admin.</div>
 
 
 

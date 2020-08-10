@@ -61,8 +61,14 @@ class GalleryController extends Controller
         $gallery = new Gallery;
         $gallery->caption = $request->input('caption');
         $gallery->image_upload = $fileNameToStore;
-        $gallery->uploaded_by = Auth::guard('cadmin')->user()->club_name;
-        $gallery->cadmin_id = Auth::guard('cadmin')->user()->id;
+        if(Auth::guard('admins')->check()){
+            $gallery->uploaded_by = 'LDC 325 A2';
+            $gallery->cadmin_id = '0';
+        }
+        else{
+            $gallery->uploaded_by = Auth::guard('cadmin')->user()->club_name;
+            $gallery->cadmin_id = Auth::guard('cadmin')->user()->id;
+        }
         $gallery->save();
 
         return redirect('/gallery')->with('success','Photo has been Uploaded');
