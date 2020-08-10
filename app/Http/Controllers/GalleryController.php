@@ -61,7 +61,7 @@ class GalleryController extends Controller
         $gallery = new Gallery;
         $gallery->caption = $request->input('caption');
         $gallery->image_upload = $fileNameToStore;
-        $gallery->uploaded_by = Auth::guard('cadmin')->user()->username;
+        $gallery->uploaded_by = Auth::guard('cadmin')->user()->club_name;
         $gallery->cadmin_id = Auth::guard('cadmin')->user()->id;
         $gallery->save();
 
