@@ -3,6 +3,7 @@
 @section('content')
 
     <style>
+      
       @media (max-width: 1080px) {
         .v1 {
           left: 3rem !important;
@@ -33,15 +34,14 @@
         }
       }
     </style>
+    <img class="vertical2 v1" src="{{asset('graphics/png/line.png')}}" alt="line" style="left: 6rem;" />
+    <img class="vertical2 v2" src="{{asset('graphics/png/line.png')}}" alt="line" style="left: 7.5rem;" />
+    <img class="vertical2 v3" src="{{asset('graphics/png/line.png')}}" alt="line" style="left: 9rem;" />
+    <img class="vertical2 v4" src="{{asset('graphics/png/line.png')}}" alt="line" style="left: 10.5rem;"/>
+    <img class="image2" src="{{asset('graphics/logo/a.png')}}" alt="logo" />
 
-    <img class="vertical v1" src="{{asset('graphics/logo/line.png')}}" alt="line" style="left: 6rem;" />
-    <img class="vertical v2" src="{{asset('graphics/logo/line.png')}}" alt="line" style="left: 7.5rem;" />
-    <img class="vertical v3" src="{{asset('graphics/logo/line.png')}}" alt="line" style="left: 9rem;" />
-    <img class="vertical v4" src="{{asset('graphics/logo/line.png')}}" alt="line" style="left: 10.5rem;"/>
-    <img class="image" src="{{asset('graphics/logo/a.png')}}" alt="logo" />
-
-    <header class="header2">
-      <img class="bar2" src="{{asset('graphics/logo/bar2.png')}}" alt="bar" />
+    <header class="header">
+      <img class="bar" src="{{asset('graphics/png/bar.png')}}" alt="bar" />
       <h1>Leo LeaderBoard</h1>
     </header>
     <div class="table-responsive" style="overflow-x: auto;">

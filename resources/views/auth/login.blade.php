@@ -62,7 +62,7 @@
 			</form>
 		</div>
 		<div class="col-md-4 col-xs-8 slogan">
-				<img src="/storage/images/logo-circled.png" alt="" height="50%" class="slogan-img" />
+				<img src="/graphics/logo/logo-circled.png" alt="" height="50%" class="slogan-img" />
 					<h1 class="slogan-text">
 					  <a class="typewrite" data-period="2000" data-type='[ "TOGETHER WE CAN.", "TOGETHER WE WILL.", "TOGETHER WE MUST.", "LEO FOREVER." ]'>
 					    <span class="wrap"></span>

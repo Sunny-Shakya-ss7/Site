@@ -1,23 +1,12 @@
 @extends('layouts.app')
-@section('title', 'Login')
+@section('title', 'Award and Reconization')
 @section('content')
-
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset='utf-8'>
-    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>Award and Reconization</title>
-    <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' type='text/css' media='screen' href='/css/award.css'>
-   
-</head>
-<body>
     <div>
         <img src="/graphics/frontend/Vector.png" alt="" class="lines">
     </div>
     <div>
-        <img src="/graphics/frontend/logo.png" alt="" class=" logo">
+        <img src="/graphics/frontend/logo.png" alt="" class="logo">
     </div>
 
     <div class="header">
@@ -100,6 +89,4 @@
             • Adjournment of Meeting <br>   
         </div>
     </div>
-</body>
-</html>
 @endsection

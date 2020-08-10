@@ -1,23 +1,13 @@
 
 @extends('layouts.app')
-@section('title', 'Login')
+@section('title', 'Calender')
 @section('content')
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
     <link rel='stylesheet' type='text/css' media='screen' href='css/calender.css'>
-
-
-</head>
-<body>
 <div>
         <img src="/graphics/frontend/Vector.png" alt="" class="lines">
     </div>
     <div>
-        <img src="/graphics/frontend/logo.png" alt="" class=" logo">
+        <img src="/graphics/frontend/logo.png" alt="" class="logo">
     </div>
 
 
@@ -189,8 +179,4 @@
             December 2: Leo Membership Growth Month
        </div>
     </div>
-
-
-</body>
-</html>
 @endsection
