@@ -53,7 +53,7 @@
     <img class="vertical3 v4" src="{{asset('graphics/logo/line.png')}}" alt="line" style="left: 10.5rem;"/>
     <img class="image" src="{{asset('graphics/logo/a.png')}}" alt="logo" />
 
-    <h1 style="color: #FBFF3C;" class="text-center">Admin Pofile </h1>
+    <h1 style="color: #FBFF3C;" class="text-center">{{$User->club_name}}</h1>
         <div class="container evtDiv">
                 <div class="container" style="color:white;">
             <div class="well" >
@@ -62,16 +62,15 @@
             </div>
                 <div class="row">
                 <div class="col-md-4 col-sm-4 text-white">
-                ID : {{$User->id}} <br>
-                Name : {{$User->name}} <br>
-                Email : {{$User->email}} <br>
-                From Club Name : {{$User->club_name}}<br>
-                Club Post : {{$User->club_name}}<br>
-                Created At : {{$User->club_post}}<br>
-                Updated At : {{$User->updated_at}}
+                    <h4>
+                        ID : {{$User->id}} <br>
+                        Club Name : {{$User->club_name}}<br>
+                        Registed At : {{$User->created_at}}<br>
+                        Modified At : {{$User->updated_at}}
+                    </h4>
             </div>
                     <div class="col-md-8 col-sm-4">
-                        <img class="ml-4 rounded-circle" src="/storage/profile/{{$User->profile_image}}" style="height: 75%; width: 50%;">
+                        <img class="ml-4 rounded-circle" src="/storage/profile/{{$User->profile_image}}" style="height: 70%; width: 30%;">
                     </div>
                 </div>
             </div>
@@ -153,7 +152,8 @@
         </div>
     </div>
     <div class="container evtDiv">
-            <h3>Users by You</h3>
+            <h3>Users by You</h3>  
+            @if(count($Users)> 0)
         <table class="table text-white">
                 <thead>
                          <th colspan="6" class="text-center">Users</th>
@@ -166,7 +166,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @if(count($Users)> 0)
+                  
                     @foreach($Users as $Users)
 
                     <tr>
@@ -174,7 +174,7 @@
                         <td>{{$Users->name}}</td>
                         <td>{{$Users->email}}</td>
                         <td>{{$Users->club_name}}</td>
-                        <td>
+                        <td class="text-center">
                         {!!Form::open(['action' => ['UserController@destroy', $Users->id], 'method' => 'POST'])!!}
                         {{Form::hidden('_method', 'DELETE' )}}
                         {{Form::submit('Delete', ['class' => 'btn btn-danger '])}}

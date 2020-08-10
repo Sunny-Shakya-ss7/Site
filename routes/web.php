@@ -86,6 +86,7 @@ Route::view('/calender', 'frontend/calender');
 Route::get('/about', 'PagesController@about_leo')->name('about_leo.index'); 
 Route::get('/clubs', 'PagesController@leo_clubs')->name('leo_clubs.index'); 
 Route::get('/clubs', 'PagesController@leo_clubs')->name('leo_clubs.index');
-Route::middleware('auth:admins,cadmin,web')->group(function (){
-	Route::get('/leaderboard', 'PagesController@pointtb')->name('points.index');
+Route::middleware('auth:admins')->group(function (){
+	Route::put('/cadmin/update/points/{id}','AdminController@points');
 });
+	Route::get('/leaderboard', 'PagesController@pointtb')->name('points.index');

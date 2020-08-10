@@ -9,7 +9,7 @@ use App\Cadmin;
 use Auth;
 
 class SpaController extends Controller
-{
+{ 
     public function __construct()
     {
         $this->middleware('auth:cadmin,admins');
@@ -88,12 +88,21 @@ class SpaController extends Controller
             $fileNameToStore = 'noimage.jpg';  
         }
 
+        // Points Calc Logic
+           $point = substr($request->active_duration, 0, 2);
+           $point1 = trim($point);
+           $active_duration = substr($request->active_duration, 3);
+
+           $point = substr($request->activity_level, 0, 2);
+           $point2 = trim($point);
+           $activity_level = substr($request->activity_level, 3);
+
         $spa = new spa;
         $spa->Leo_Club_Official_Email_Address = $request->input('email');
         $spa->Leo_Club_Name = $request->input('club_name');
         $spa->Activity_Name = $request->input('activity_name');
-        $spa->Activity_Level = $request->input('activity_level');
-        $spa->Active_Duration = $request->input('active_duration');
+        $spa->Activity_Level = $activity_level;
+        $spa->Active_Duration = $active_duration;
         $spa->Start_Date = $request->input('start_date');
         $spa->Time = $request->input('time');
         $spa->End_Date = $request->input('end_date');
@@ -114,7 +123,7 @@ class SpaController extends Controller
          if(Auth::guard('cadmin')->check()){
             $user_id = Auth::guard('cadmin')->user()->id;
             $cadmin = Cadmin::find($user_id);
-            $cadmin->points = $cadmin->points + $request->points;
+            $cadmin->points = $cadmin->points + $point1 + $point2;
             $cadmin->save();
         }
 

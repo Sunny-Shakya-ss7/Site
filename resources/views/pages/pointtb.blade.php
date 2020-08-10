@@ -47,17 +47,15 @@
     <div class="table-responsive" style="overflow-x: auto;">
       <table class="table clubtable">
         <tr>
-          <th>Leo Name</th>
+          <th>Club ID</th>
           <th>Leo CLub Name</th>
-          <th>Club Post</th>
-          <th>Points Gained</th>
+          <th>Points</th>
         </tr>
 
         @foreach ($Users as $User)
           <tr>
-            <td>{{ $User->name}}</td>
-            <td>{{ $User->club_name}}</td>
-            <td>{{ $User->club_post}}</td>
+            <td>{{ $User->id}}</td>
+            <td class="clearfix"><img src="storage/profile/{{$User->profile_image}}" alt="" height="7%" width="5%" class="rounded float-left"><label>{{ $User->club_name}}</label></td>
             <td>{{ $User->points}}</td>
           </tr>
         @endforeach

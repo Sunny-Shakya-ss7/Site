@@ -5,7 +5,7 @@
 		<div class="text-center">
 			<h1>Create Post</h1>
 		</div>
-		<a href="/news" class="btn btn-default">Go Back</a>
+		<a href="/news" class="btn btn-success">Go Back</a>
 		<hr>
 		{!! Form::open(['action' => 'NewsController@store', 'method' => 'POST', 'enctype' =>'multipart/form-data']) !!}
 			<div class="form-group">
@@ -38,7 +38,6 @@
         	    </div>
         	@enderror
 				
-				
 			<div class="form-group">
 				{{Form::label( 'title' , 'Image' )}}<br>
 				<input type="file" name="file[]" multiple><br><br>
@@ -47,16 +46,6 @@
 				<div class="alert alert-danger">
         	        {{$message}}
         	    </div>
-        	@enderror
-				
-			<div class="form-group">
-				{{Form::label( 'title' , 'Signature' )}}
-				{{Form::text('signature','',['class' => 'form-control', 'placeholder' => 'Name or Signature'])}}
-			</div>
-			@error('signature')
-				<div class="alert alert-danger">
-					{{$message}}
-				</div>
         	@enderror
 				
 			{{Form::submit('Submit', ['class' => 'btn btn-primary'])}}

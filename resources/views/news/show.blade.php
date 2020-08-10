@@ -3,7 +3,7 @@
 @section('content')
 
 	<div class="container">
-		<br><a href="/news" class="btn btn-outline-primary">Go Back</a><br><br>
+		<br><a href="/news" class="btn btn-success">Go Back</a><br><br>
 		<h1 style="text-align: center">{{$new->title}}- {{$new->slug}}</h1>
 		<div class="well">
 			<img class="ml-4" src="/storage/news/{{$new->cover_image}}" alt=""><br><hr>
@@ -12,8 +12,8 @@
 			<div style="text-align: center">{!!$new->body!!}</div>
 		</div>	
 		<hr>	
-		<p class="text-leftt">Written on {{$new->created_at}}</p>
-		<p class="text-leftt">By {{$new->signature}}</p>
+		<p class="text-right">Written on {{$new->created_at}}</p>
+		<p class="text-right">By {{$new->club_name}}</p>
 		<hr>
 		@if(Auth::guard('admins')->check())
 			<div class="clearfix">

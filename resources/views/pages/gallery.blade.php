@@ -43,8 +43,9 @@
                         <img class="rounded imgMain" src="/storage/gallery/{{$pic->image_upload}}" alt="Lights">
                     </div>
                     <div class="caption imgCaption">
-                        <p class="text-center">{{$pic->caption}}</p>
+                        <p class="text-center">{{$pic->caption}}<br>Posted By {{$pic->uploaded_by}}</p> 
                         @if(Auth::guard('admins')->check())
+
                             {!!Form::open(['action' => ['GalleryController@destroy', $pic->id], 'method' => 'POST'])!!}
                                 {{Form::hidden('_method', 'DELETE' )}}
                                 {{Form::submit('Delete', ['class' => 'btn btn-danger delBut'])}}
