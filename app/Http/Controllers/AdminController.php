@@ -35,4 +35,11 @@ class AdminController extends Controller
                         ->with('Users', $Users)
                         ->with('Cadmins',$Cadmins);
     }
+    public function points(Request $request,$id)
+    {
+        $cadmin = Cadmin::find($id);
+        $cadmin->points = $cadmin->points + $request->points;
+        $cadmin->save();
+        return redirect('cadmin/'.$id)->with('success',$request->points.' Points Added');
+    }
 }

@@ -1,30 +1,21 @@
 @extends('layouts.app')
 @section('title', 'Register')
 @section('content')
-<div class="container bg-secondary">
+<div class="container bg-secondary rounded"><br>
         <a href="/userall" class="btn btn-success">Go Back</a>
         <div class="text-center">
             <h1>Register Admin</h1>
         </div>
         <hr>
         <div class="container" >
-             <img class="img-responsive rounded-circle" src="{{asset('graphics/logo/big_logo.jpg')}}" style="position:absolute;top:40%;left:43%;height:40%;width:25%; max-width: 100%;  height: auto;"   >
+             <img class="img-responsive rounded-circle" src="{{asset('graphics/logo/big_logo.jpg')}}" style="position:absolute;top:30%;left:43%;height:40%;width:25%; max-width: 100%;  height: auto;"   >
         </div>
             {!! Form::open(['action' => 'CadminController@store', 'method' => 'POST', 'enctype' =>'multipart/form-data']) !!}
             <div class="form-group">
-                    {{Form::label( 'title' , 'Name' )}}
-                    {{Form::text('name','',['class' => 'form-control col-md-5', 'placeholder' => 'Full Name'])}}
+                    {{Form::label( 'title' , 'User Name' )}}
+                    {{Form::text('username','',['class' => 'form-control col-md-5', 'placeholder' => 'User Name'])}}
             </div> 
-            @error('name')
-                    <div class="alert alert-danger col-md-5">
-                        {{$message}}
-                    </div>
-                    @enderror
-            <div class="form-group">
-                    {{Form::label( 'title' , 'Email' )}}
-                    {{Form::email('email','',['class' => 'form-control col-md-5', 'placeholder' => 'Email Address'])}}
-            </div>
-            @error('email')
+            @error('username')
                     <div class="alert alert-danger col-md-5">
                         {{$message}}
                     </div>
@@ -47,17 +38,8 @@
                         {{$message}}
                     </div>
                     @enderror
-             <div class="form-group">
-                    {{Form::label( 'title' , 'Date of Birth' )}}
-                    {{Form::date('dob','',['class' => 'form-control col-md-5', 'placeholder' => ''])}}
-            </div> 
-            @error('dob')
-                    <div class="alert alert-danger col-md-5">
-                        {{$message}}
-                    </div>
-            @enderror
             <div class="form-group">
-                {{Form::label('title','Profile Photo [Optional]')}}<br>
+                {{Form::label('title','Official Club Logo')}}<br>
                 {{Form::File('profile_image')}}
             </div> 
             @error('profile_image')
@@ -73,17 +55,8 @@
                     <div class="alert alert-danger col-md-5">
                         {{$message}}
                     </div>
-                    @enderror
-            <div class="form-group">
-                    {{Form::label( 'title' , 'Club Post' )}}
-                    {{Form::text('club_post','',['class' => 'form-control col-md-5', 'placeholder' => 'Club Post'])}}
-            </div> 
-            @error('club_post')
-                    <div class="alert alert-danger col-md-5">
-                        {{$message}}
-                    </div>
-                    @enderror
+                    @enderror<br>
             {{Form::submit('Register Admin', ['class' => 'btn btn-success', 'style'=> 'margin-left:16%;'])}}
-            {!! Form::close() !!}
+            {!! Form::close() !!}<br><br>
     </div>   
 @endsection

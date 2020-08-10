@@ -8,7 +8,7 @@ use App\News;
 use Auth;
 
 class NewsController extends Controller
-{
+{ 
     public function __construct()
     {
         $this->middleware('auth:cadmin,admins', ['except' => ['index', 'show']]);
@@ -47,7 +47,6 @@ class NewsController extends Controller
             'slug' => 'required',
             'body' => 'required',
             'cover_image' => 'image|nullable|max:1999',
-            'signature' => 'required'
         ]);
 
         if($request->hasFile('cover_image')){

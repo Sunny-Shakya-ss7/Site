@@ -34,7 +34,7 @@
                     @foreach($Users as $User)
 
                     <tr>
-                        <td>{{$User->id}}</td>
+                        <td class="text-center">{{$User->id}}</td>
                         <td>{{$User->name}}</td>
                         <td>{{$User->email}}</td>
                         <td>{{$User->club_name}}</td>
@@ -65,9 +65,9 @@
                          <th colspan="6" class="text-center">Admins</th>
                     <tr class="filters">
                         <th><input type="text" class="form-control" placeholder="ID No" disabled></th>
-                        <th><input type="text" class="form-control" placeholder="Name" disabled></th>
-                        <th><input type="text" class="form-control" placeholder="Email" disabled></th>
+                        <th><input type="text" class="form-control" placeholder="User Name" disabled></th>
                         <th><input type="text" class="form-control" placeholder="Club Name" disabled></th>
+                        <th><input type="text" class="form-control" placeholder="Created At" disabled></th>
                         <th colspan="2"><input type="text" class="form-control text-center" placeholder="Action" disabled></th>
                     </tr>
                 </thead>
@@ -76,12 +76,12 @@
                     @foreach($Cadmins as $Cadmin)
 
                     <tr>
-                        <td>{{$Cadmin->id}}</td>
-                        <td>{{$Cadmin->name}}</td>
-                        <td>{{$Cadmin->email}}</td>
+                        <td class="text-center">{{$Cadmin->id}}</td>
+                        <td>{{$Cadmin->username}}</td>
                         <td>{{$Cadmin->club_name}}</td>
+                        <td>{{$Cadmin->created_at}}</td>
                         <td><a href="/cadmin/{{$Cadmin->id}}">View Details</a></td>
-                        <td>
+                        <td class="text-center">
                         {!!Form::open(['action' => ['CadminController@destroy', $Cadmin->id], 'method' => 'POST'])!!}
                         {{Form::hidden('_method', 'DELETE' )}}
                         {{Form::submit('Delete', ['class' => 'btn btn-danger '])}}

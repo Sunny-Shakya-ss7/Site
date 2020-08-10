@@ -20,13 +20,13 @@ class CadminLoginController extends Controller
 
     	//Validate the request
     	$this->validate($request,[
-    		'email' => 'required|email',
+    		'username' => 'required',
     		'password' => 'required|min:8'
     	]);
 
     	//Login attempt
     	$credentials =[
-    		'email' => $request->email,
+    		'username' => $request->username,
     		'password' => $request->password
     	];
     	if(Auth::guard('cadmin')->attempt($credentials,$request->remember)){
@@ -34,7 +34,7 @@ class CadminLoginController extends Controller
     		return redirect('/cadmin');
     	}
     	//if Unsuccess Redirect back with error
-    	return redirect()->back()->withInput($request->only('email','remember'));
+    	return redirect()->back()->withInput($request->only('username','remember'));
     }
 
     public function logout(){

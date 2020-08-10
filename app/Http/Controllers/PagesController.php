@@ -42,12 +42,9 @@ class PagesController extends Controller
     }
     public function pointtb()
     {
-      $users = User::all();
-      $admins = Cadmin::all();
-      $merge = $admins->merge($users)->sortByDesc('points');
-      $result = $merge->all();
+      $admins = Cadmin::all()->sortByDesc('points');
         return view('pages.pointtb')
-                  ->with('Users',$result);
+                  ->with('Users',$admins);
   }
 
 }

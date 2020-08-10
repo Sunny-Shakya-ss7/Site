@@ -19,7 +19,7 @@ class Cadmin extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password', 'dob','club_name', 'club_post',
+        'username', 'password','club_name'
     ];
 
     /**

@@ -51,13 +51,11 @@ class CadminController extends Controller
     public function store(Request $request)
     {
         $this-> validate($request,[
-            'name' => 'required',
-            'email' => 'required|email',
+            'username' => 'required',
             'password' => 'required|min:8',
             'confim_password' => 'required_with:password|same:password|min:8',
-            'profile_image' => 'image|nullable|max:2048',
+            'profile_image' => 'image|nullable|max:2048|required',
             'club_name' => 'required',
-            'club_post' => 'required'
         ]);
 
          if($request->hasFile('profile_image')){
@@ -75,12 +73,9 @@ class CadminController extends Controller
         }
 
         $cadmin = new Cadmin([
-            'name' => $request->name,
-            'email' => $request->email,
+            'username' => $request->input('username'),
             'password' => bcrypt($request->password),
-            'dob' => $request->dob,
             'club_name' => $request->club_name,
-            'club_post' => $request->club_post,
         ]);
         $cadmin->profile_image = $fileNameToStore;
         $cadmin->save();
