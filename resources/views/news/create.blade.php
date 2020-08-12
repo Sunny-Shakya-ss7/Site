@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('title','Create Event')
 @section('content')
-	<div class="container">
+	<div class="container col-6 bg-secondary">
 		<div class="text-center">
 			<h1>Create Post</h1>
 		</div>
