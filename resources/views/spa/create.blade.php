@@ -6,13 +6,17 @@
         .vertical3 { 
             position: absolute;
             width: 9px;
-            min-height: 350%;
+            min-height: 320%;
         }
 
         @media (max-width: 500px) {
             .vertical3 {
                 width: 5px;
-                min-height: 364%;
+                min-height: 335%;
+            }
+
+            .smallhead {
+                left: 10%;
             }
         }
 
@@ -47,13 +51,13 @@
         }
     </style>
 
-    <img class="vertical3 v1" src="{{asset('graphics/logo/line.png')}}" alt="line" style="left: 6rem;" />
-    <img class="vertical3 v2" src="{{asset('graphics/logo/line.png')}}" alt="line" style="left: 7.5rem;" />
-    <img class="vertical3 v3" src="{{asset('graphics/logo/line.png')}}" alt="line" style="left: 9rem;" />
-    <img class="vertical3 v4" src="{{asset('graphics/logo/line.png')}}" alt="line" style="left: 10.5rem;"/>
+    <img class="vertical3 v1" src="{{asset('graphics/png/line.png')}}" alt="line" style="left: 6rem;" />
+    <img class="vertical3 v2" src="{{asset('graphics/png/line.png')}}" alt="line" style="left: 7.5rem;" />
+    <img class="vertical3 v3" src="{{asset('graphics/png/line.png')}}" alt="line" style="left: 9rem;" />
+    <img class="vertical3 v4" src="{{asset('graphics/png/line.png')}}" alt="line" style="left: 10.5rem;"/>
     <img class="image" src="{{asset('graphics/logo/a.png')}}" alt="logo" />
 
-    <h1 style="color: #FBFF3C;" class="space">Successful Leo Club Projects Activity</h1>
+    <h1 style="color: #FBFF3C;" class="container col-lg-6 col-md-6 col-sm-6 col-9 smallhead">Successful Leo Club Projects Activity</h1>
     {!! Form::open(['action' => 'SpaController@store', 'method' => 'POST', 'enctype' => 'multipart/form-data']) !!}
 
         <div class="top">
@@ -138,8 +142,8 @@
                     </div>
                 </div>
             </div>
-            <div class="but space form-group">
-            {{Form::submit('Submit Report',['class' => 'btn btn-success '])}}
+            <div class="space form-group">
+            {{Form::submit('Submit Report',['class' => 'btn btn-success'])}}
         </div>
         </div>
         

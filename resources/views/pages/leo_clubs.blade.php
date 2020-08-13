@@ -34,14 +34,14 @@
       }
     </style>
 
-    <img class="vertical v1" src="{{asset('graphics/logo/line.png')}}" alt="line" style="left: 6rem;" />
-    <img class="vertical v2" src="{{asset('graphics/logo/line.png')}}" alt="line" style="left: 7.5rem;" />
-    <img class="vertical v3" src="{{asset('graphics/logo/line.png')}}" alt="line" style="left: 9rem;" />
-    <img class="vertical v4" src="{{asset('graphics/logo/line.png')}}" alt="line" style="left: 10.5rem;"/>
+    <img class="vertical v1" src="{{asset('graphics/png/line.png')}}" alt="line" style="left: 6rem;" />
+    <img class="vertical v2" src="{{asset('graphics/png/line.png')}}" alt="line" style="left: 7.5rem;" />
+    <img class="vertical v3" src="{{asset('graphics/png/line.png')}}" alt="line" style="left: 9rem;" />
+    <img class="vertical v4" src="{{asset('graphics/png/line.png')}}" alt="line" style="left: 10.5rem;"/>
     <img class="image" src="{{asset('graphics/logo/a.png')}}" alt="logo" />
 
     <header class="header2">
-      <img class="bar2" src="{{asset('graphics/logo/bar2.png')}}" alt="bar" />
+      <img class="bar2" src="{{asset('graphics/png/bar2.png')}}" alt="bar" />
       <h1>LEO CLUBS</h1>
     </header>
 

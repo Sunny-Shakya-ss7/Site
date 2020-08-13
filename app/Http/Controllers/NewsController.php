@@ -6,7 +6,6 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use App\News;
 use Auth;
-use DB;
 
 class NewsController extends Controller
 { 
@@ -21,7 +20,7 @@ class NewsController extends Controller
      */
     public function index()
     {
-        $news = News::orderBy('id','desc')->paginate(10);
+        $news = News::orderBy('id','desc')->paginate(5);
         return view('news.index')->with('news',$news);
     }
 

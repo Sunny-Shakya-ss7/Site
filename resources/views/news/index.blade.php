@@ -15,11 +15,24 @@
 				<div class="well evtBody">
 					<div class="row evtCont">
 						<div class="col-md-4 col-sm-4 evtImg">
-							<img id="evtPic" src="/storage/news/{{$new->cover_image}}" alt="pic" style="height:100%; width: 100%;">
+						
+							<?php
+								$image = str_split($new->cover_image);
+								$img = "";
+								for ($i=2; $i < sizeof($image) ; $i++) { 
+									if ($image[$i] == "\"") {
+										break;
+									}
+									$img .= $image[$i];
+								}
+							?>
+							
+							<img id="evtPic" src="/storage/news/{{$img}}" alt="pic" style="height:100%; width: 100%;">
+							
 						</div>
 						<div class="col-md-8 col-sm-4 evtInfo">
 							<h3><a style="color: white" href="/news/{{$new->id}}">{{$new->title}}- {{$new->slug}}</a></h3>
-							<br><span class="text">{{$new->body}}</span><br>
+							<span class="text">{{$new->body}}</span>
 							<small><i class="far fa-calendar-alt"></i> {{$new->created_at}} by {{$new->club_name}}</small>
 						</div>
 					</div>
