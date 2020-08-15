@@ -11,4 +11,5 @@ class News extends Model
 	public $primaryKey = 'id';
 
 	public $timestamps = true;
+
 }

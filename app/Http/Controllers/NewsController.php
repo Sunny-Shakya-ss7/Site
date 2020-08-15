@@ -20,7 +20,7 @@ class NewsController extends Controller
      */
     public function index()
     {
-        $news = News::orderBy('id','desc')->paginate(10);
+        $news = News::orderBy('id','desc')->paginate(5);
         return view('news.index')->with('news',$news);
     }
 
@@ -49,17 +49,21 @@ class NewsController extends Controller
             'cover_image' => 'image|nullable|max:1999',
         ]);
 
-        if($request->hasFile('cover_image')){
-            $filenameWithExt = $request->file('cover_image')->getClientOriginalName();
-            //Get just file name
-            $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
-            //Get just extension
-            $extension = $request->file('cover_image')->getClientOriginalExtension();
-            //File name to store
-            $fileNameToStore = $filename.'_'.time().'.'.$extension;
-            //Upload Image
-            $path = $request->file('cover_image')->storeAs('public/news',$fileNameToStore);
+        if($request->hasFile('file')){
+            foreach ($request->file as $file) {
+                $filenameWithExt = $file->getClientOriginalName();
+                //Get just file name
+                $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
+                //Get just extension
+                $extension = $file->getClientOriginalExtension();
+                //File name to store
+                $fileNameToStore = $filename.'_'.time().'.'.$extension;
+                //Upload Image
+                $path = $file->storeAs('public/news',$fileNameToStore);
 
+                $data[] = $fileNameToStore;
+            }
+            
         }else{
             $fileNameToStore = 'noimage.jpg';
         }
@@ -70,7 +74,7 @@ class NewsController extends Controller
         $news->body = $request->input('body');
         $news->cadmin_id = auth()->user()->id;
         $news->club_name = auth()->user()->club_name;
-        $news->cover_image = $fileNameToStore;
+        $news->cover_image = json_encode($data);
         $news->save();
 
         return redirect('/news')->with('success','News/Event has been Created');

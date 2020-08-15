@@ -82,7 +82,7 @@ class SpaController extends Controller
                 // Upload Image
                 $path = $file->storeAs('public/images', $fileNameToStore);
 
-                $data = $fileNameToStore;
+                $data[] = $fileNameToStore;
             }
         }else{
             $fileNameToStore = 'noimage.jpg';  
@@ -113,7 +113,7 @@ class SpaController extends Controller
         $spa->People_Benefited = $request->input('people_benefited');
         $spa->Overall_Points_Received = $request->input('points');
         $spa->Total_Leo_Hours = $request->input('hours');  
-        $spa->Photos = $data;
+        $spa->Photos = json_encode($data);
         if( Auth::guard('cadmin')->check())
         $spa->cadmin_id = Auth::guard('cadmin')->user()->id;
         else
