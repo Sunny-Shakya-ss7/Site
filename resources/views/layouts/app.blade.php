@@ -17,7 +17,6 @@
 
     <!--CSS / SCSS -->
     <link rel="stylesheet" href="{{asset('css/style.css')}}" />
-    <link rel="stylesheet" href="{{asset('css/button.css')}}">
     <link rel="stylesheet" href="{{asset('css/about_leo.css')}}">
     <link rel="stylesheet" href="{{asset('css/leo_clubs.css')}}">
     <link rel="stylesheet" href="{{asset('css/spa.css')}}">
@@ -31,7 +30,7 @@
       <div class="container-fluid">
         <a class="navbar-brand" href="/" >
           <img class="rounded" 
-            src="{{asset('graphics/logo/logo.png')}}"
+            src="{{asset('graphics/logo/logo_alt.png')}}"
             width="40px" />
           <label style="cursor: pointer; font-size: 3vh; font-weight: 500;"> LDC 325 A2</label>
         </a>
