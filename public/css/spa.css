@@ -22,9 +22,18 @@
 }
 
 .space {
-    margin-left: 26%;
-    padding-bottom: 2%;
-    padding-top: 2%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 3%;
+}
+
+.space2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2%;
+    margin-left: 12%;
 }
 
 .top {
@@ -88,15 +97,17 @@
     .length {
         width: 19rem;
     }
-
-    .but {
-        padding-top: 5%;
-        left: 15%;
-    }
 }
 
 @media (max-width: 576px) {
     .editor {
         width: 40%;
     }
+}
+
+/* -------------------- index ------------------- */
+
+.spaDiv {
+    position: absolute;
+    left: 19%;
 }
