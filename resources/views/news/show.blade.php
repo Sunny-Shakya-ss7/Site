@@ -2,7 +2,7 @@
 @section('title', $new->title)
 @section('content')
 
-	<br><a href="/news" class="btn btn-success" style="margin-left: 10rem;">Go Back</a><br><br>
+	<br><a href="/news" class="btn btn-success gb">Go Back</a><br><br>
 	<h1 style="text-align: center">{{$new->title}}- {{$new->slug}}</h1><br>
 	
 	<div class="evtImgBody">
@@ -35,10 +35,10 @@
 		<div class="evtDet">
 			{!!$new->body!!}
 		</div>
-		<hr>	
+		<hr class="evthr">	
 			<p class="text-right">Written on {{$new->created_at}}</p>
 			<p class="text-right">By {{$new->club_name}}</p>
-		<hr>
+		<hr class="evthr">
 		@if(Auth::guard('admins')->check())
 			<div class="clearfix">
 				<a href="/news/{{$new->id}}/edit" class="btn btn-primary float-left">Edit</a>
