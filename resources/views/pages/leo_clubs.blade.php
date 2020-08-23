@@ -3,8 +3,8 @@
 @section('content')
 
     <style>
-      .vertical2{
-          height: 312vh !important;
+      .vertical1{
+          height: 323vh !important;
         }
       @media (max-width: 1080px) {
         .v1 {
@@ -34,16 +34,20 @@
         .v4 {
           left: 5rem !important;
         }
+      
+      .vertical1{
+          height: 333vh !important;
+        }
       }
     </style>
 
-    <img class="vertical2 v1" src="{{asset('graphics/png/line.png')}}" alt="line" style="left: 6rem;" />
-    <img class="vertical2 v2" src="{{asset('graphics/png/line.png')}}" alt="line" style="left: 7.5rem;" />
-    <img class="vertical2 v3" src="{{asset('graphics/png/line.png')}}" alt="line" style="left: 9rem;" />
-    <img class="vertical2 v4" src="{{asset('graphics/png/line.png')}}" alt="line" style="left: 10.5rem;"/>
-    <img class="image2" src="{{asset('graphics/logo/a.png')}}" alt="logo" />
+    <img class="vertical1 v1" src="{{asset('graphics/png/line.png')}}" alt="line" style="left: 5rem;" />
+    <img class="vertical1 v2" src="{{asset('graphics/png/line.png')}}" alt="line" style="left: 6.5rem;" />
+    <img class="vertical1 v3" src="{{asset('graphics/png/line.png')}}" alt="line" style="left: 8rem;" />
+    <img class="vertical1 v4" src="{{asset('graphics/png/line.png')}}" alt="line" style="left: 9.5rem;"/>
+    <img class="image1" src="{{asset('graphics/logo/a.png')}}" alt="logo" />
 
-    <header class="header">
+    <header class="header1">
       <img class="bar" src="{{asset('graphics/png/bar.png')}}" alt="bar" />
       <h1>LEO CLUBS</h1>
     </header>
