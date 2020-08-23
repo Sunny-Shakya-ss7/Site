@@ -90,3 +90,5 @@ Route::middleware('auth:admins')->group(function (){
 	Route::put('/cadmin/update/points/{id}','AdminController@points');
 });
 	Route::get('/leaderboard', 'PagesController@pointtb')->name('points.index');
+
+Route::resource('/report','MonthreportController');
