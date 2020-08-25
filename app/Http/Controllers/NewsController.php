@@ -118,30 +118,34 @@ class NewsController extends Controller
             'slug' => 'required',
             'body' => 'required',
             'cover_image' => 'image|nullable|max:1999',
-            'signature' => 'required'
               ]);
 
-             if($request->hasFile('cover_image')){
-            $filenameWithExt = $request->file('cover_image')->getClientOriginalName();
-            //Get just file name
-            $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
-            //Get just extension
-            $extension = $request->file('cover_image')->getClientOriginalExtension();
-            //File name to store
-            $fileNameToStore = $filename.'_'.time().'.'.$extension;
-            //Upload Image
-            $path = $request->file('cover_image')->storeAs('public/news',$fileNameToStore);
+              if($request->hasFile('file')){
+            foreach ($request->file as $file) {
+                $filenameWithExt = $file->getClientOriginalName();
+                //Get just file name
+                $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
+                //Get just extension
+                $extension = $file->getClientOriginalExtension();
+                //File name to store
+                $fileNameToStore = $filename.'_'.time().'.'.$extension;
+                //Upload Image
+                $path = $file->storeAs('public/news',$fileNameToStore);
+
+                $data[] = $fileNameToStore;
             }
+            
+        }else{
+            $fileNameToStore = 'noimage.jpg';
+        }
 
      
         $news =  News::find($id);
         $news->title = $request->input('title');
         $news->slug = $request->input('slug');
         $news->body = $request->input('body');
-        $news->user_id = auth()->user()->id;
-        $news->signature = $request->input('signature');
         if($request->hasFile('cover_image'))
-            $news->cover_image = $fileNameToStore;
+            $news->cover_image = json_encode($data);
         $news->save();
 
         return redirect('/news')->with('success','News/Event has been Updated');

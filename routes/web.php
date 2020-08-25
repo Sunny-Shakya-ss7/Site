@@ -19,10 +19,13 @@ Route::get('/index','PagesController@userindex')->name('user.index');
 Route::get('/welcome',function(){
 	return view('welcome');
 });
-
+Route::post('/contact','PagesController@store')->name('contact');
+Route::get('/mailbox','PagesController@mail')->name('contact.show');
+Route::delete('/mailbox/{$id}','AdminController@delete')->name('contact.delete');
 Route::resource('/gallery','GalleryController',[
 	'except' => ['update','show','edit','create']
 ]);
+Route::get('/downloadPDF/{id}','SpaController@downloadPDF');
 
 //Authentication Routes
 Auth::routes([
@@ -89,4 +92,4 @@ Route::get('/clubs', 'PagesController@leo_clubs')->name('leo_clubs.index');
 Route::middleware('auth:admins')->group(function (){
 	Route::put('/cadmin/update/points/{id}','AdminController@points');
 });
-	Route::get('/leaderboard', 'PagesController@pointtb')->name('points.index');
+Route::get('/leaderboard', 'PagesController@pointtb')->name('points.index');

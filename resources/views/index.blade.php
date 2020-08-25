@@ -16,6 +16,43 @@
 <link rel="stylesheet" type="text/css" href="css/index_style.css"/>
 <link rel="stylesheet" type="text/css" href="css/carousel_1.css"/>
 <!--CSS / SCSS -->
+<style>
+    .navbar-brand label{
+        cursor:pointer; 
+        font-size:4vh; 
+        font-weight:500;
+        margin-left:25%;
+        margin-top:2%;
+    }
+    #navbarResponsive{
+        margin-left: 30%;
+    }
+    .team{margin:5px;}
+    .team img{
+      height: 400px;
+    }
+    @media only screen and (max-width: 797px){
+        #navbarResponsive{
+            margin-left:5%;
+        }
+        .navbar-brand label{
+            position:absolute;
+            margin-left:-10%;
+            margin-top:1%;
+            font-size:3vh;
+            transition:all 0.5s linear;
+        }
+        .navbar-brand img{
+            margin-left:-20%;
+            transition:all 0.5s linear;
+        }
+        .navbar-toggler{
+            margin-left:20%;
+            transition:all 0.5s linear;
+        }
+        
+    }
+</style>
 
 </head>
   <body>
@@ -25,7 +62,7 @@
           <img class="rounded" 
             src="{{asset('graphics/logo/logo_alt.png')}}"
             width="40px"  style="position:absolute;"/>
-          <label style="cursor: pointer; font-size: 3vh; font-weight: 500;margin-left: 20%;margin-top:2%;"> Leo District Club 325 A2</label>
+          <label> LDC 325 A2</label>
         </a>
         <button
           class="navbar-toggler"
@@ -34,7 +71,7 @@
           data-target="#navbarResponsive">
           <span class="navbar-toggler-icon"> </span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarResponsive" style="margin-left: 30%;">
+        <div class="collapse navbar-collapse" id="navbarResponsive" >
           <ul class="navbar-nav ml-auto">
             <li class="nav-item">
               <a class="nav-link" href="/"> Home</a>
@@ -108,17 +145,17 @@
 <ul >
 <li data-transition="fade" data-slotamount="1" data-masterspeed="500" data-thumb="" data-saveperformance="off" data-title="Slide">
 <img src="graphics/png/bg2.jpg" alt="" data-bgposition="center top" data-bgfit="cover" data-bgrepeat="no-repeat">
-<div class="tp-caption slider_layer_01 text-center lft tp-resizeme" data-x="center" data-y="220" data-speed="1000" data-start="600" data-easing="Power3.easeInOut" data-splitin="none" data-splitout="none" data-elementdelay="0.1" data-endelementdelay="0.1" data-endspeed="1000" style="z-index: 9; max-width: auto; max-height: auto; white-space: nowrap;">LOGO
+<div class="tp-caption slider_layer_01 text-center lft tp-resizeme" data-x="center" data-y="220" data-speed="1000" data-start="600" data-easing="Power3.easeInOut" data-splitin="none" data-splitout="none" data-elementdelay="0.1" data-endelementdelay="0.1" data-endspeed="1000" style="z-index: 9; max-width: auto; max-height: auto; white-space: nowrap;border-radius: 40px; "> <img src="/graphics/png/frame1.png" height="50%" width="50%" alt="">
 </div>
 </li>
 <li data-transition="fade" data-slotamount="1" data-masterspeed="500" data-thumb="" data-saveperformance="off" data-title="Slide">
 <img src="graphics/png/bg1.jpg" alt="fullslide1" data-bgposition="center top" data-bgfit="cover" data-bgrepeat="no-repeat">
-<div class="tp-caption slider_layer_01 text-center lft tp-resizeme" data-x="center" data-y="250" data-speed="1000" data-start="600" data-easing="Power3.easeInOut" data-splitin="none" data-splitout="none" data-elementdelay="0.1" data-endelementdelay="0.1" data-endspeed="1000" style="z-index: 9; max-width: auto; max-height: auto; white-space: nowrap;">LOGO
+<div class="tp-caption slider_layer_01 text-center lft tp-resizeme" data-x="center" data-y="250" data-speed="1000" data-start="600" data-easing="Power3.easeInOut" data-splitin="none" data-splitout="none" data-elementdelay="0.1" data-endelementdelay="0.1" data-endspeed="1000" style="z-index: 9; max-width: auto; max-height: auto; white-space: nowrap;border-radius: 40px; "><img src="/graphics/png/frame1.png" height="50%" width="50%" alt="">
 </div>
 </li>
 <li data-transition="fade" data-slotamount="1" data-masterspeed="500" data-thumb="" data-saveperformance="off" data-title="Slide">
 <img src="graphics/png/bg3.jpg" alt="fullslide1" data-bgposition="center top" data-bgfit="cover" data-bgrepeat="no-repeat">
-<div class="tp-caption slider_layer_01 text-center lft tp-resizeme" data-x="center" data-y="250" data-speed="1000" data-start="600" data-easing="Power3.easeInOut" data-splitin="none" data-splitout="none" data-elementdelay="0.1" data-endelementdelay="0.1" data-endspeed="1000" style="z-index: 9; max-width: auto; max-height: auto; white-space: nowrap;">LOGO
+<div class="tp-caption slider_layer_01 text-center lft tp-resizeme" data-x="center" data-y="250" data-speed="1000" data-start="600" data-easing="Power3.easeInOut" data-splitin="none" data-splitout="none" data-elementdelay="0.1" data-endelementdelay="0.1" data-endspeed="1000" style="z-index: 9; max-width: auto; max-height: auto; white-space: nowrap;border-radius: 40px; "><img src="/graphics/png/frame1.png" height="50%" width="50%" alt="">
 </div>
 </li>
 </ul>
@@ -131,14 +168,15 @@
 <div class="row">
 <div class="col-md-12">
 <div class="section-title text-center">
-<h4>What is Lorem Ipsum?</h4>
+<h4>LEO DISTRICT COUNCIL 325 A2 Nepal</h4>
 </div>
 </div>
 </div>
 <div class="row service-center">
 <div class="col-md-4 col-sm-6">
 <div class="feature-list text-justify">
-<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+<p>Leo District Council 325 A2, Nepal is the governing body for the Leo Clubs in the region from Kathmandu to Janakpur under the vision of Leo Club Program. Leos interested in further developing leadership skills have the opportunity to serve as district  officers. Leo district plays a role for enhancing and maintaing check and balance between all the Leo Clubs present in the particular district.  
+</p>
 </div>
 </div>
 <div class="col-md-4 col-sm-6">
@@ -148,7 +186,7 @@
 </div>
 <div class="col-md-4 col-sm-6">
 <div class="feature-list text-justify">
-<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+<p>Leo district and multiple district officers provide leadership training seminars,orientataion sessions explaining their roles in their clubs. Leo district also help clubs in their district to generate ideas for the programs that can be contducted. We also promote unified service activities and/or fundraising campaigns and encourage active involvement in the Leo Club Program.</p>
 </div>
 </div>
 </div>
@@ -165,26 +203,21 @@
 <div class="section-container nopadding">
 <div class="textrotate">
 <ul class="bxslider">
-<li>
-<div class="big-title">
-<h3><span>WHO</span> WE ARE</h3>
-<div class="border-title"></div>
-</div>
-<p class="text-justify">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-</li>
+
 <li>
 <div class="big-title">
 <h3><span>WHAT</span> WE DO</h3>
 <div class="border-title"></div>
 </div>
-<p class="text-justify">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+<p class="text-left">Leo district officers provide leadership training seminars, orientataion sessions explaining their roles in their clubs. <br>Leo district also help clubs in their district to generate ideas for the programs that can be contducted. <br>We also promote unified service activities and fundraising campaigns and encourage active involvement in the Leo Club Program.</p>
 </li>
 <li>
 <div class="big-title">
 <h3><span>OUR</span> MISSION</h3>
 <div class="border-title"></div>
 </div>
-<p class="text-justify">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+<p class="text-left">1. Organize a Leo Leadership Event   <br> 
+   2. Promote Join Service Projects<br> 3. Encourage Leo Clubs to send reports<br> 4. Provide Orientation sessions for Leos for conducting tasks with fluency</p>
 </li>
 </ul>
 </div>
@@ -204,78 +237,39 @@
 </div>
 </div>
 <div class="row blog-widget">
+
+@if(count($news)>0)
+@foreach( $news as $new)
 <div class="col-md-4 col-sm-6">
 <div class="blog-wrapper">
 <div class="blog-title">
-<h2><a href="single.html" title="">We are rocking the Events</a></h2>
+<h2><a href="/news/{{$new->id}}" title="">{{$new->title}}</a></h2>
 <div class="post-meta">
 <span>
 <i class="fa fa-user"></i>
-<a href="#">Leo Club Name</a>
+<a>{{$new->club_name}}</a>
 </span>
 <span>
 <i class="fa fa-clock"></i>
-<a href="#">2020/06/10</a>
+<a>{{$new->created_at}}</a>
 </span>
 </div>
 </div>
 <div class="blog-image">
-<a href="single.html" title=""><img src="graphics/png/bg4.jpg" alt="" class="img-responsive"></a>
+  <?php $img = json_decode($new->cover_image,true) ?>
+<a title=""><img src="storage/news/{{$img[0]}}" alt="" class="img-responsive"></a>
 </div>
 <div class="blog-desc">
-<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since theown printer took.</p>
-<a href="single.html" class="btn btn-default btn-block">Read More</a>
+  <?php $data = substr($new->body,0,150) ?>
+<p>{{$data}}.........</p>
+<a href="news/{{$new->id}}" class="btn btn-default btn-block">Read More</a>
 </div>
 </div>
 </div>
-<div class="col-md-4 col-sm-6">
-<div class="blog-wrapper">
-<div class="blog-title">
-<h2><a href="single.html" title="">We are rocking the Events</a></h2>
-<div class="post-meta">
-<span>
-<i class="fa fa-user"></i>
-<a href="#">Sagar Chhetri</a>
-</span>
-<span>
-<i class="fa fa-clock"></i>
-<a href="#">2020/06/10</a>
-</span>
-</div>
-</div>
-<div class="blog-image">
-<a href="single.html" title=""><img src="graphics/png/bg2.jpg" alt="" class="img-responsive"></a>
-</div>
-<div class="blog-desc">
-<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since theown printer took.</p>
-<a href="single.html" class="btn btn-default btn-block">Read More</a>
-</div>
-</div>
-</div>
-<div class="col-md-4 col-sm-6">
-<div class="blog-wrapper">
-<div class="blog-title">
-<h2><a href="single.html" title="">We are rocking the Events</a></h2>
-<div class="post-meta">
-<span>
-<i class="fa fa-user"></i>
-<a href="#">Leo Club Name</a>
-</span>
-<span>
-<i class="fa fa-clock"></i>
-<a href="#">2020/06/10</a>
-</span>
-</div>
-</div>
-<div class="blog-image">
-<a href="single.html" title=""><img src="graphics/png/bg3.jpg" alt="" class="img-responsive"></a>
-</div>
-<div class="blog-desc">
-<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since theown printer took.</p>
-<a href="single.html" class="btn btn-default btn-block">Read More</a>
-</div>
-</div>
-</div>
+@endforeach
+@endif
+
+
 </div>
 </div>
 </section>
@@ -284,8 +278,8 @@
 <div class="row">
 <div class="col-md-12">
 <div class="section-title text-center">
-<h4>Our Official Representatives</h4>
-<p>Together We Can</p>
+<h4>WORDS FROM DISTRICT HERO's</h4>
+<p>Achieving Goals Together</p>
 </div>
 </div>
 </div>
@@ -295,44 +289,88 @@
 <div class="team-members row">
 <div class="col-md-3 col-sm-6 col-xs-12">
 <div class="team">
-<img src="graphics/png/profile_1.jpg" alt="" class="rounded img-responsive wow fadeInUp">
+<img src="graphics/png/Alish_Pradhan.jpg" alt="" class="rounded img-responsive wow fadeInUp">
 <div class="team-hover-content">
-<h5>Jenny Kennedy</h5>
-<span>Advertising Manager</span>
-<quote>"Curabitur ultrices nec est nec vestibulum. Maecenas tincidunt pretium lacinia. Nullam purus dolor, tempor et lacinia quis, viverra quis erat"</quote>
+<h5>Alish Pradhan</h5>
+<span>District President</span>
+<quote>"With the vision of "Achieving Goals Together", This year let us all work together to make our Leo District 325A2 even more Qualitative."</quote>
 </div>
 </div>
 </div>
 <div class="col-md-3 col-sm-6 col-xs-12">
 <div class="team">
-<img src="graphics/png/profile_1.jpg" alt="" class="img-responsive wow fadeInUp">
+<img src="graphics/png/Dipesh_Bhattarai.jpg" alt="" class="img-responsive wow fadeInUp">
 <div class="team-hover-content">
-<h5>Jenny Kennedy</h5>
-<span>Advertising Manager</span>
-<quote>"Curabitur ultrices nec est nec vestibulum. Maecenas tincidunt pretium lacinia. Nullam purus dolor, tempor et lacinia quis, viverra quis erat"</quote>
+<h5>Dipesh Bhattarai</h5>
+<span>District Vice President</span>
+<quote>"LEO - Leadership, Experience & Opportunity, Ready to serve Ready to roar!!"</quote>
 </div>
 </div>
 </div>
 <div class="col-md-3 col-sm-6 col-xs-12">
 <div class="team">
-<img src="graphics/png/profile_1.jpg" alt="" class="img-responsive wow fadeInUp">
+<img src="graphics/png/Akash_Dahal.jpg" alt="" class="img-responsive wow fadeInUp">
 <div class="team-hover-content">
-<h5>Jenny Kennedy</h5>
-<span>Advertising Manager</span>
-<quote>"Curabitur ultrices nec est nec vestibulum. Maecenas tincidunt pretium lacinia. Nullam purus dolor, tempor et lacinia quis, viverra quis erat"</quote>
+<h5>Akash Dahal</h5>
+<span>District Secretary</span>
+<quote>"Everyone has dreams . Maybe be different but in certain we’ve. This is a place , a platform to make that thing turn into reality.
+Not only gives opportunities , experience and leadership but a family to depend upon."</quote>
 </div>
 </div>
 </div>
 <div class="col-md-3 col-sm-6 col-xs-12">
 <div class="team">
-<img src="graphics/png/profile_1.jpg" alt="" class="img-responsive wow fadeInUp">
+<img src="graphics/png/Sumit_Manandhar.jpg" alt="" class="img-responsive wow fadeInUp">
 <div class="team-hover-content">
-<h5>Jenny Kennedy</h5>
-<span>Advertising Manager</span>
-<quote>"Curabitur ultrices nec est nec vestibulum. Maecenas tincidunt pretium lacinia. Nullam purus dolor, tempor et lacinia quis, viverra quis erat"</quote>
+<h5>Sumit Manandhar</h5>
+<span>District Treasurer</span>
+<quote>"Grow Leadership<br>
+              Get Experience<br>
+              Grab Opportunities"</quote>
 </div>
 </div>
 </div>
+<div class="col-md-3 col-sm-6 col-xs-12">
+<div class="team">
+<img src="graphics/png/Rajendra_Ghimire.jpeg" alt="" class="img-responsive wow fadeInUp">
+<div class="team-hover-content">
+<h5>Rajendra Ghimire</h5>
+<span>Joint Secretary</span>
+<quote>"Leo is a family, school and selfless journey. Invest your time and energy despite the opportunity cost, the result will amaze you."</quote>
+</div>
+</div>
+</div>
+<div class="col-md-3 col-sm-6 col-xs-12">
+<div class="team">
+<img src="graphics/png/Sujeena_Shrestha.jpeg" alt="" class="img-responsive wow fadeInUp">
+<div class="team-hover-content">
+<h5>Sujeena Shrestha</h5>
+<span>Tamer</span>
+<quote>"Leo isn't just about social work, its a platform providing us opportunities to grow ourselves into our best version, meet leaders from around the world and build networks for life. Leo is a family."</quote>
+</div>
+</div>
+</div>
+<div class="col-md-3 col-sm-6 col-xs-12">
+<div class="team">
+<img src="graphics/png/Nishan_Shrestha.jpg" alt="" class="img-responsive wow fadeInUp">
+<div class="team-hover-content">
+<h5>Nishan Shrestha</h5>
+<span>Designing Committee Chairperson</span>
+<quote>"In LEO, Opportunities comes first and then the Leadership while Experience is in progress. We can't hurry for leadership and experience. All, it's the matter of patience and time."</quote>
+</div>
+</div>
+</div>
+<div class="col-md-3 col-sm-6 col-xs-12">
+<div class="team">
+<img src="graphics/png/Wakka_Vlogs.jpg" alt="" class="img-responsive wow fadeInUp">
+<div class="team-hover-content">
+<h5>Shreeyesh Neupane</h5>
+<span>Media & IT Committee Chairperson</span>
+<quote>"Leo always provides you with opportunities and a field to showcase your skills. Developing the website of Leo District Council 325 A2 has been amazing through out. Thank you LEO family !"</quote>
+</div>
+</div>
+</div>
+
 </div>
 </div>
 </div>
@@ -358,39 +396,21 @@
 <li class="bbp-forum-topic-count">Points</li>
 </ul>
 </li>
+@if(count($clubs)>0)
+@foreach($clubs as $club)
 <li class="bbp-body">
 <ul class="forum type-forum">
 <li class="bbp-forum-info">
-<img src="graphics/logo/logo_alt.png" alt="" class="alignleft img-thumbnail">
-<h3 class="bbp-forum-title" title="General">Binary Beasts</h3>
+<img src="/storage/profile/{{$club->profile_image}}" alt="" class="alignleft img-thumbnail">
+<h3 class="bbp-forum-title" title="General">{{$club->club_name}}</h3>
 </li>
-<li class="bbp-forum-reply-count">21</li>
+<li class="bbp-forum-reply-count">{{$club->points}}</li>
 </p>
 </li>
 </ul>
 </li>
-<li class="bbp-body">
-<ul class="forum type-forum">
-<li class="bbp-forum-info">
-<img src="graphics/logo/logo_alt.png" alt="" class="alignleft img-thumbnail">
-<h3 class="bbp-forum-title" title="General">Binary Beasts</h3>
-</li>
-<li class="bbp-forum-reply-count">44</li>
-</p>
-</li>
-</ul>
-</li>
-<li class="bbp-body">
-<ul class="forum type-forum">
-<li class="bbp-forum-info">
-<img src="graphics/logo/logo_alt.png" alt="" class="alignleft img-thumbnail">
-<h3 class="bbp-forum-title" title="General">Binary Beasts</h3>
-</li>
-<li class="bbp-forum-reply-count">146</li>
-</p>
-</li>
-</ul>
-</li>
+@endforeach
+@endif
 </ul>
 </div>
 </div>
@@ -414,15 +434,16 @@
 </div>
 <div id="contact_form" class="contact_form row">
 <div id="message"></div>
-<form id="contactform" action="http://templatevisual.com/demo/learnplus/contact.php" name="contactform" method="post">
+<form id="contactform" action="{{route('contact')}}" name="contactform" method="post">
+  @csrf
 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
 <input type="text" name="name" id="name" class="form-control" placeholder="Name *">
 <input type="text" name="email" id="email" class="form-control" placeholder="Email *">
-<input type="text" name="topic" id="topic" class="form-control" placeholder="Topic *">
+<input type="text" name="designation" id="designation" class="form-control" placeholder="Designation *">
 </div>
 <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
 <textarea class="form-control" name="comments" id="comments" rows="6" placeholder=""></textarea>
-<button type="submit" value="SEND" id="submit" class="btn btn-primary btn-block">Send Message</button>
+<input type="submit" value="Send Message" id="submit" class="btn btn-primary btn-block">
 </div>
 </form>
 </div>
@@ -434,10 +455,10 @@
 </div>
 <div class="contact-list">
 <ul class="contact-details">
-<li><i class="fa fa-link"></i> <a href="#">www.yoursite.com</a></li>
-<li><i class="fa fa-envelope"></i> <a href="mailto:info@yoursite.com">info@yoursite.com</a></li>
-<li><i class="fa fa-phone"></i> +977-984444444</li>
-<li><i class="fa fa-home"></i> Kathmandu, Nepal</li>
+<li><i class="fa fa-link"></i> <a href="/">www.ldc325a2.org.np</a></li>
+<li><i class="fa fa-envelope"></i> <a href="mailto:leodistrict325a2@gmail.com">leodistrict325a2@gmail.com</a></li>
+<li><i class="fa fa-phone"></i> +977-9801235522</li>
+<li><i class="fa fa-home"></i> Stupa Clony, Buddhanagar, Kathmandu, Nepal</li>
 </ul>
 </div>
 </div>
@@ -448,12 +469,12 @@
 <div class="container">
 <div class="row">
 <div class="col-md-6 text-left">
-<p>Developed by Binary Beasts  &copy; <a href="#"> Leo Districat Club 325 A2</a></p>
+<p> <a href="https://www.facebook.com/binarybb/">Developed by Binary Beasts</a>   &copy; <a href="#"> Leo Districat Club 325 A2</a></p>
 </div>
 <div class="col-md-6 text-right">
 <ul class="list-inline">
-<li><i class="fab fa-facebook"></i><a href="#">&nbsp; Facebook </a></li>
-<li><i class="fab fa-instagram"></i><a href="#"> Instagram </a></li>
+<li><i class="fab fa-facebook"></i><a href="https://www.facebook.com/LDC325A2Nepal/">&nbsp; Facebook </a></li>
+<li><i class="fab fa-instagram"></i><a href="https://instagram.com/leodc325a2?igshid=139qi4ti5c8eg"> Instagram </a></li>
 <li><i class="fab fa-twitter"></i><a href="#"> Twitter </a></li>
 </ul>
 </div>
