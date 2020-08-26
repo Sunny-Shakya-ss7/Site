@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\spa;
 use App\Cadmin;
 use Auth;
+use PDF;
 
 class SpaController extends Controller
 { 
@@ -138,7 +139,8 @@ class SpaController extends Controller
      */
     public function show($id)
     {
-        //
+        $spa = spa::find($id);
+        return view('spa.show')->with('spa',$spa);
     }
 
     /**
@@ -178,4 +180,13 @@ class SpaController extends Controller
         $pic->delete();
         return redirect('/spa')->with('success', 'Report has been Removed'); 
     }
+
+public function downloadPDF($id)
+{
+     $spa = spa::find($id);
+    $pdf = PDF::loadView('spa.pdf', compact('spa'));
+        
+    return $pdf->download('Report_SPA.pdf');
+}
+
 }

@@ -15,6 +15,7 @@
         @if(Auth::guard('web')->check())
 			You Are Logged In as User 
 		 @endif
+         <a href="/mailbox" class="btn btn-success">Check Mail Box</a>
         </div>
 </div>
 </div>

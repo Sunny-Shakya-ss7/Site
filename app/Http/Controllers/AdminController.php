@@ -42,4 +42,10 @@ class AdminController extends Controller
         $cadmin->save();
         return redirect('cadmin/'.$id)->with('success',$request->points.' Points Added');
     }
+    public function delete($id)
+  {
+    $mails = Contact::find($id);
+    $mails->destroy();
+    return redirect('/mailbox')->with('success','Mail Deleted');
+  }
 }

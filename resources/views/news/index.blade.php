@@ -15,19 +15,8 @@
 				<div class="well evtBody">
 					<div class="row evtCont">
 						<div class="col-md-4 col-sm-4 evtImg">
-						
-							<?php
-								$image = str_split($new->cover_image);
-								$img = "";
-								for ($i=2; $i < sizeof($image) ; $i++) { 
-									if ($image[$i] == "\"") {
-										break;
-									}
-									$img .= $image[$i];
-								}
-							?>
-							
-							<img id="evtPic" src="/storage/news/{{$img}}" alt="pic" style="height:100%; width: 100%;">
+							<?php $img = json_decode($new->cover_image);?>
+							<img id="evtPic" src="/storage/news/{{$img[0]}}" alt="pic" style="height:100%; width: 100%;">
 							
 						</div>
 						<div class="col-md-8 col-sm-4 evtInfo">
@@ -38,7 +27,7 @@
 					</div>
 				</div><br>
 			@endforeach
-			<div class="text-center"> {{$news->links()}}</div>
+			<div class="d-flex justify-content-center text-center"> {{$news->links()}}</div>
 		@else
 			<p>No News/Events Found</p>
 		@endif
