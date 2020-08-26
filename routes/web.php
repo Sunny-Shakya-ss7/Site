@@ -92,3 +92,6 @@ Route::middleware('auth:admins')->group(function (){
 	Route::get('/leaderboard', 'PagesController@pointtb')->name('points.index');
 
 Route::resource('/report','MonthreportController');
+
+Route::resource('/treasurer','TreasurerController');
+// Route::get('/test','TreasurerController@store');

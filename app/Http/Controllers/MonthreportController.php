@@ -14,8 +14,8 @@ class MonthreportController extends Controller
      */
     public function index()
     {
-        $monthreports = monthreport::all();
-        return view('monthly_report.show')
+        $monthreports = monthreport::orderBy('id','desc')->paginate(5);
+        return view('monthly_report.index')
                     ->with('monthreport', $monthreports);
 
     }
@@ -27,7 +27,7 @@ class MonthreportController extends Controller
      */
     public function create(Request $req)
     {
-        return view('monthly_report/index');
+        return view('monthly_report/create');
     }
 
     /**
@@ -61,8 +61,7 @@ class MonthreportController extends Controller
         ]);
         $monthreports->save();
         $monthreports = monthreport::all();
-        return view('monthly_report.show')
-                    ->with('monthreport', $monthreports);
+        return redirect('/report')->with('success','Report has been Updated');
     }
 
     /**
@@ -71,9 +70,10 @@ class MonthreportController extends Controller
      * @param  \App\Monthreport  $monthreport
      * @return \Illuminate\Http\Response
      */
-    public function show(Monthreport $monthreport)
+    public function show($id)
     {
-      
+        $monthreport= Monthreport::find($id);
+        return view('monthly_report.show')->with('monthreport',$monthreport);
     }
 
     /**
@@ -105,8 +105,12 @@ class MonthreportController extends Controller
      * @param  \App\Monthreport  $monthreport
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Monthreport $monthreport)
+    public function destroy($id)
     {
-        //
+        $monthreport = Monthreport::find($id);
+        //Check for correct user
+        $monthreport->delete();
+        return redirect('/report')->with('success', 'Report has been Removed');
+
     }
 }
