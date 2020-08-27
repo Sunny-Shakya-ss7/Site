@@ -22,7 +22,7 @@ td{
 </style>
 <div class="container">
     <div><a href="/report" class="btn btn-success float-left">Go Back</a></div>
-    <hr>
+  
     <br><br><br>
     <div style="overflow-x:auto;">
             <h3 class="text-center">Report of {{$monthreport->month_name}}</h3>  <br>

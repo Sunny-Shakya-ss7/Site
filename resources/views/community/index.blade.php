@@ -3,8 +3,9 @@
 
 @section('content')
 
+<div class="container evtDiv spaDiv">
 <div class="container mt-4 mb-4 text-center"> 
-	<h1>Welcome to our forum</h1>
+	<hr class="gline"><h1>Welcome to our forum</h1><hr class="gline">
 </div>
 <div class="container mb-4 text-center">
 	<a href="community/create" class="btn btn-success align-center">Ask question</a>
@@ -14,7 +15,7 @@
 	@foreach($posts as $post)
 	@if($post->approved == true)
 	
-	<div class="card col-md-6 text-light" style="font-family:Times New Roman;background:#24242a;">
+	<div class="card  text-light evtDiv" style="font-family:Times New Roman;background:#24242a;">
     	<div class="card-body ">
 			<h4 class="card-title mb-4 "><i class="fas fa-question"></i>) {{$post->title}} </h4>
 			<h5 class="m-4">{{$post->body}}</h5>
@@ -31,7 +32,7 @@
   </div>
   @endif
 @endforeach
-
+</div>
 @foreach($posts as $post)
 @if($post->approved == false)
  @if(Auth::guard('admins')->check())
