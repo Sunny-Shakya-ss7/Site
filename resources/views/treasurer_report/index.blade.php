@@ -6,7 +6,7 @@
             position: absolute;
             width: 9px;
             height:100%;
-            min-height: 182%;
+            min-height: 192%;
         }
 
         @media (max-width: 500px) {
