@@ -56,8 +56,15 @@
               <a class="nav-link" href="/news"> Events </a>
             </li>
             @if(Auth::guard('cadmin')->check() || Auth::guard('admins')->check())
-              <li class="nav-item">
-                <a class="nav-link" href="/spa"> SPA </a>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Reports
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" href="/spa">SPA</a>
+                  <a class="dropdown-item" href="/report">Monthly</a>
+                  <a class="dropdown-item" href="/treasurer">Treasurer</a>
+                </div>
               </li>
           @endif
              <li class="nav-item">

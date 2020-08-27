@@ -2,56 +2,7 @@
 @section('title','Admin Profile')
 @section('content')
 
-    <style>
-        .vertical3 { 
-            position: absolute;
-            width: 9px;
-            min-height: 100%;
-        }
-
-        @media (max-width: 500px) {
-            .vertical3 {
-                width: 5px;
-                min-height: 100%;
-            }
-        }
-
-        @media (max-width: 1080px) {
-        .v1 {
-            left: 3rem !important;
-        }
-        .v2 {
-            left: 4rem !important;
-        }
-        .v3 {
-            left: 5rem !important;
-        }
-        .v4 {
-            left: 6rem !important;
-        }
-        }
-
-        @media (max-width: 700px) {
-        .v1 {
-            left: 2rem !important;
-        }
-        .v2 {
-            left: 3rem !important;
-        }
-        .v3 {
-            left: 4rem !important;
-        }
-        .v4 {
-            left: 5rem !important;
-        }
-        }
     </style>
-
-    <img class="vertical3 v1" src="{{asset('graphics/logo/line.png')}}" alt="line" style="left: 6rem;" />
-    <img class="vertical3 v2" src="{{asset('graphics/logo/line.png')}}" alt="line" style="left: 7.5rem;" />
-    <img class="vertical3 v3" src="{{asset('graphics/logo/line.png')}}" alt="line" style="left: 9rem;" />
-    <img class="vertical3 v4" src="{{asset('graphics/logo/line.png')}}" alt="line" style="left: 10.5rem;"/>
-    <img class="image" src="{{asset('graphics/logo/a.png')}}" alt="logo" />
 
     <h1 style="color: #FBFF3C;" class="text-center">{{$User->club_name}}</h1>
         <div class="container evtDiv">

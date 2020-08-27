@@ -31,6 +31,9 @@
     .team img{
       height: 400px;
     }
+  .for_mb{
+    display: none;
+  }
     @media only screen and (max-width: 797px){
         #navbarResponsive{
             margin-left:5%;
@@ -50,6 +53,18 @@
             margin-left:20%;
             transition:all 0.5s linear;
         }
+        .for_mb{
+          display: block;
+          font-size: 3vh;
+
+        }
+        .for_pc{
+          display: none;
+        }
+        .myimg img{
+          display: none;
+        }
+
         
     }
 </style>
@@ -86,8 +101,15 @@
               <a class="nav-link" href="/news"> Events </a>
             </li>
             @if(Auth::guard('cadmin')->check() || Auth::guard('admins')->check())
-              <li class="nav-item">
-                <a class="nav-link" href="/spa"> SPA </a>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Reports
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" href="/spa">SPA</a>
+                  <a class="dropdown-item" href="/report">Monthly</a>
+                  <a class="dropdown-item" href="/treasurer">Treasurer</a>
+                </div>
               </li>
           @endif
              <li class="nav-item">
@@ -145,17 +167,20 @@
 <ul >
 <li data-transition="fade" data-slotamount="1" data-masterspeed="500" data-thumb="" data-saveperformance="off" data-title="Slide">
 <img src="graphics/png/bg2.jpg" alt="" data-bgposition="center top" data-bgfit="cover" data-bgrepeat="no-repeat">
-<div class="tp-caption slider_layer_01 text-center lft tp-resizeme" data-x="center" data-y="220" data-speed="1000" data-start="600" data-easing="Power3.easeInOut" data-splitin="none" data-splitout="none" data-elementdelay="0.1" data-endelementdelay="0.1" data-endspeed="1000" style="z-index: 9; max-width: auto; max-height: auto; white-space: nowrap;border-radius: 40px; "> <img src="/graphics/png/frame1.png" height="50%" width="50%" alt="">
+<div class="tp-caption slider_layer_01 text-center lft tp-resizeme" data-x="center" data-y="220" data-speed="1000" data-start="600" data-easing="Power3.easeInOut" data-splitin="none" data-splitout="none" data-elementdelay="0.1" data-endelementdelay="0.1" data-endspeed="1000" style="z-index: 9; max-width: auto; max-height: auto; white-space: nowrap;border-radius: 40px; "> <img class="for_pc" src="/graphics/png/frame1.png" height="50%" width="50%" alt="">
+  <label class="for_mb">Achieving Goals Together</label>
 </div>
 </li>
 <li data-transition="fade" data-slotamount="1" data-masterspeed="500" data-thumb="" data-saveperformance="off" data-title="Slide">
 <img src="graphics/png/bg1.jpg" alt="fullslide1" data-bgposition="center top" data-bgfit="cover" data-bgrepeat="no-repeat">
-<div class="tp-caption slider_layer_01 text-center lft tp-resizeme" data-x="center" data-y="250" data-speed="1000" data-start="600" data-easing="Power3.easeInOut" data-splitin="none" data-splitout="none" data-elementdelay="0.1" data-endelementdelay="0.1" data-endspeed="1000" style="z-index: 9; max-width: auto; max-height: auto; white-space: nowrap;border-radius: 40px; "><img src="/graphics/png/frame1.png" height="50%" width="50%" alt="">
+<div class="tp-caption slider_layer_01 text-center lft tp-resizeme" data-x="center" data-y="250" data-speed="1000" data-start="600" data-easing="Power3.easeInOut" data-splitin="none" data-splitout="none" data-elementdelay="0.1" data-endelementdelay="0.1" data-endspeed="1000" style="z-index: 9; max-width: auto; max-height: auto; white-space: nowrap;border-radius: 40px; "><img class="for_pc"  src="/graphics/png/frame1.png" height="50%" width="50%" alt="">
+  <label class="for_mb">Achieving Goals Together</label>
 </div>
 </li>
 <li data-transition="fade" data-slotamount="1" data-masterspeed="500" data-thumb="" data-saveperformance="off" data-title="Slide">
 <img src="graphics/png/bg3.jpg" alt="fullslide1" data-bgposition="center top" data-bgfit="cover" data-bgrepeat="no-repeat">
-<div class="tp-caption slider_layer_01 text-center lft tp-resizeme" data-x="center" data-y="250" data-speed="1000" data-start="600" data-easing="Power3.easeInOut" data-splitin="none" data-splitout="none" data-elementdelay="0.1" data-endelementdelay="0.1" data-endspeed="1000" style="z-index: 9; max-width: auto; max-height: auto; white-space: nowrap;border-radius: 40px; "><img src="/graphics/png/frame1.png" height="50%" width="50%" alt="">
+<div class="tp-caption slider_layer_01 text-center lft tp-resizeme" data-x="center" data-y="250" data-speed="1000" data-start="600" data-easing="Power3.easeInOut" data-splitin="none" data-splitout="none" data-elementdelay="0.1" data-endelementdelay="0.1" data-endspeed="1000" style="z-index: 9; max-width: auto; max-height: auto; white-space: nowrap;border-radius: 40px; "><img class="for_pc" src="/graphics/png/frame1.png" height="50%" width="50%" alt="">
+  <label class="for_mb">Achieving Goals Together</label>
 </div>
 </li>
 </ul>
