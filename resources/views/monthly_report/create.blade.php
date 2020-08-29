@@ -1,13 +1,64 @@
 @extends('layouts.app')
 @section('title', 'Award and Reconization')
 @section('content')
+<style>
+        .vertical3 { 
+            position: absolute;
+            width: 9px;
+            height:100%;
+            min-height: 334%;
+        }
+
+        @media (max-width: 500px) {
+            .vertical3 {
+                width: 5px;
+                min-height: 364%;
+            }
+        }
+
+        @media (max-width: 1080px) {
+        .v1 {
+            left: 3rem !important;
+        }
+        .v2 {
+            left: 4rem !important;
+        }
+        .v3 {
+            left: 5rem !important;
+        }
+        .v4 {
+            left: 6rem !important;
+        }
+        }
+
+        @media (max-width: 700px) {
+        .v1 {
+            left: 2rem !important;
+        }
+        .v2 {
+            left: 3rem !important;
+        }
+        .v3 {
+            left: 4rem !important;
+        }
+        .v4 {
+            left: 5rem !important;
+        }
+        }
+</style>
+
+    <img class="vertical3 v1" src="{{asset('graphics/png/line.png')}}" alt="line" style="left: 6rem;" />
+    <img class="vertical3 v2" src="{{asset('graphics/png/line.png')}}" alt="line" style="left: 7.5rem;" />
+    <img class="vertical3 v3" src="{{asset('graphics/png/line.png')}}" alt="line" style="left: 9rem;" />
+    <img class="vertical3 v4" src="{{asset('graphics/png/line.png')}}" alt="line" style="left: 10.5rem;"/>
+    <img class="image" src="{{asset('graphics/logo/a.png')}}" alt="logo" />
 <div class="text-center">
-<b><h1>MONTHLY PROGRESSIVE REPORT</h1></b> 
+    <b><h1>MONTHLY PROGRESSIVE REPORT</h1></b> 
 </div>
 <div class="text-center">
-<b><h4>Leo District Council 325-A2, MD 325, Nepal</h4></b> 
+    <b><h4>Leo District Council 325-A2, MD 325, Nepal</h4></b> 
 </div>
-<div class="container">
+<div class="container evtDiv">
     {!! Form::open(['action' => 'MonthreportController@store', 'method' => 'POST']) !!}    
     <div  class="form-group mt-3" style="width:40%">
         <h5> {{Form::label('title', 'Leo Club Name *')}}</h5>

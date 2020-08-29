@@ -4,7 +4,60 @@
 @section('title', 'form_register')
 @section('content')
 
-<div class="container">
+<style>
+        .vertical3 { 
+            position: absolute;
+            width: 9px;
+            height:100%;
+            min-height: 235%;
+        }
+
+        @media (max-width: 500px) {
+            .vertical3 {
+                width: 5px;
+                min-height: 364%;
+            }
+        }
+
+        @media (max-width: 1080px) {
+        .v1 {
+            left: 3rem !important;
+        }
+        .v2 {
+            left: 4rem !important;
+        }
+        .v3 {
+            left: 5rem !important;
+        }
+        .v4 {
+            left: 6rem !important;
+        }
+        }
+
+        @media (max-width: 700px) {
+        .v1 {
+            left: 2rem !important;
+        }
+        .v2 {
+            left: 3rem !important;
+        }
+        .v3 {
+            left: 4rem !important;
+        }
+        .v4 {
+            left: 5rem !important;
+        }
+        }
+</style>
+<div >
+    <img class="vertical3 v1" src="{{asset('graphics/png/line.png')}}" alt="line" style="left: 6rem;" />
+    <img class="vertical3 v2" src="{{asset('graphics/png/line.png')}}" alt="line" style="left: 7.5rem;" />
+    <img class="vertical3 v3" src="{{asset('graphics/png/line.png')}}" alt="line" style="left: 9rem;" />
+    <img class="vertical3 v4" src="{{asset('graphics/png/line.png')}}" alt="line" style="left: 10.5rem;"/>
+    <img class="image" src="{{asset('graphics/logo/a.png')}}" alt="logo" />
+</div>
+
+<div class="container" >
      <div class="text-center">
         <h1>Treasurer Report 2020/2021</h1>
      </div>
@@ -30,10 +83,10 @@
               <th>Amount(Rs.)</th>
             </tr>
             <tr >
-              <td><input type="text" name="admin_expenses[]" placeholder="Expenditure	" class="form-control name_list" /></td> 
-              <td><input type="number" name="admin_amount1[]" placeholder=" Amount" class="form-control name_list" /></td> 
-              <td><input type="text" name="admin_income[]" placeholder=" Income" class="form-control name_list" /></td> 
-              <td><input type="number" name="admin_amount2[]" placeholder=" Amount" class="form-control name_list" /></td>  
+              <td><input type="text" name="admin_expenses[]" placeholder="Expenditure	" class="form-control name_list" required/></td> 
+              <td><input type="number" name="admin_amount1[]" placeholder=" Amount" class="form-control name_list" value="0" required/></td> 
+              <td><input type="text" name="admin_income[]" placeholder=" Income" class="form-control name_list" required/></td> 
+              <td><input type="number" name="admin_amount2[]" placeholder=" Amount" class="form-control name_list" value="0" required/></td>  
               <td><button type="button" name="add[]" id="admin_add" class="btn btn-success" style="width:7rem;">Add More</button></td>  
               
             </tr>
@@ -56,10 +109,10 @@
               <th>Amount(Rs.)</th>
             </tr>
             <tr >
-              <td><input type="text" name="serv_expenses[]" placeholder="Expenditure	" class="form-control name_list" /></td> 
-              <td><input type="number" name="serv_amount1[]" placeholder=" Amount" class="form-control name_list" value="0"/></td> 
-              <td><input type="text" name="serv_income[]" placeholder=" Income" class="form-control name_list" /></td> 
-              <td><input type="number" name="serv_amount2[]" placeholder=" Amount" class="form-control name_list" value="0"/></td>  
+              <td><input type="text" name="serv_expenses[]" placeholder="Expenditure	" class="form-control name_list" required/></td> 
+              <td><input type="number" name="serv_amount1[]" placeholder=" Amount" class="form-control name_list" value="0" required/></td> 
+              <td><input type="text" name="serv_income[]" placeholder=" Income" class="form-control name_list" required/></td> 
+              <td><input type="number" name="serv_amount2[]" placeholder=" Amount" class="form-control name_list" value="0" required/></td>  
               <td><button type="button" name="add[]" id="serv_add" class="btn btn-success" style="width:7rem;">Add More</button></td>  
             </tr>
           </table> 
@@ -151,7 +204,7 @@
 
       $('#admin_add').click(function(){  
           i++;  
-          $('#dynamic_field_admin').append('<tr id="row'+i+'" class="dynamic-added"><td><input type="text" name="admin_expenses[]" placeholder="Enter your Expenses/Expenditure" class="form-control name_list" /></td><td><input type="number" name="admin_amount1[]"  placeholder="Enter your Amount" class="form-control name_list" value="0" /></td><td><input type="text" name="admin_income[]" placeholder="Enter your income" class="form-control name_list"  /></td><td><input type="number" name="admin_amount2[]"  placeholder="Enter your amount" class="form-control name_list" value="0"/></td><td><button type="button" name="remove" id="'+i+'" class="btn btn-danger btn_remove">X</button></td></tr>');  
+          $('#dynamic_field_admin').append('<tr id="row'+i+'" class="dynamic-added"><td><input type="text" name="admin_expenses[]" placeholder="Enter your Expenses/Expenditure" class="form-control name_list" required/></td><td><input type="number" name="admin_amount1[]" placeholder="Enter your Amount" class="form-control name_list" value="0"  required/></td><td><input type="text" name="admin_income[]" placeholder="Enter your income" class="form-control name_list"  required/></td><td><input type="number" name="admin_amount2[]"  placeholder="Enter your amount" class="form-control name_list" value="0" required/></td><td><button type="button" name="remove" id="'+i+'" class="btn btn-danger btn_remove">X</button></td></tr>');  
         
           $("input").change(function(){
           var admin_amount1=0;
