@@ -51,4 +51,7 @@ class Cadmin extends Authenticatable
     public function news(){
         return $this->hasMany('App\News');
     }
+      public function monthreports(){
+        return $this->hasMany('App\Monthreport');
+    }
 }

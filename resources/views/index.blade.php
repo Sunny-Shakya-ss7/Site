@@ -94,7 +94,7 @@
             <li class="nav-item">
               <a class="nav-link" href="/gallery"> Gallery </a>
             </li>
-             <li class="nav-item">
+            <li class="nav-item">
               <a class="nav-link" href="/news"> Events </a>
             </li> 
             <li class="nav-item">
@@ -110,6 +110,19 @@
                   <a class="dropdown-item" href="/salutation">Flag Salutation</a>
                 </div>
               </li>
+            
+            @if(Auth::guard('cadmin')->check() || Auth::guard('admins')->check())
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Reports
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" href="/spa">SPA</a>
+                  <a class="dropdown-item" href="/report">Monthly</a>
+                  <a class="dropdown-item" href="/treasurer">Treasurer</a>
+                </div>
+              </li>
+          @endif
             <!--Login And Logout -->
             @if(Auth::guard('admins')->check() || Auth::guard('cadmin')->check() || Auth::guard('web')->check())
             @if (Route::has('login'))

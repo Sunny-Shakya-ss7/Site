@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title', 'Award and Reconization')
+@section('title', 'Send Report')
 @section('content')
 <style>
         .vertical3 { 
@@ -53,12 +53,12 @@
     <img class="vertical3 v4" src="{{asset('graphics/png/line.png')}}" alt="line" style="left: 10.5rem;"/>
     <img class="image" src="{{asset('graphics/logo/a.png')}}" alt="logo" />
 <div class="text-center">
-    <b><h1>MONTHLY PROGRESSIVE REPORT</h1></b> 
+    <b><h1 style="color: gold;">MONTHLY PROGRESSIVE REPORT</h1></b> 
 </div>
 <div class="text-center">
-    <b><h4>Leo District Council 325-A2, MD 325, Nepal</h4></b> 
+    <b><h4 style="color:gold;">Leo District Council 325-A2, MD 325, Nepal</h4></b> 
 </div>
-<div class="container evtDiv">
+<div class="container evtDiv" style="margin-left: 15%">
     {!! Form::open(['action' => 'MonthreportController@store', 'method' => 'POST']) !!}    
     <div  class="form-group mt-3" style="width:40%">
         <h5> {{Form::label('title', 'Leo Club Name *')}}</h5>

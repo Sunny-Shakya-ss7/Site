@@ -52,12 +52,16 @@
     <img class="vertical3 v3" src="{{asset('graphics/png/line.png')}}" alt="line" style="left: 9rem;" />
     <img class="vertical3 v4" src="{{asset('graphics/png/line.png')}}" alt="line" style="left: 10.5rem;"/>
     <img class="image" src="{{asset('graphics/logo/a.png')}}" alt="logo" />
- @if(Auth::guard('admins')->check())
-    <h1 style="color: #FBFF3C;" class="space2">All Successful Leo Club Projects Activity Reports </h1>
-@else
-    <h1 style="color: #FBFF3C;" class="space2">Your Successful Leo Club Projects Activity Reports </h1>
-@endif
-        <div class="container evtDiv spaDiv">
+
+        <div class="container evtDiv" style="margin-left: 15%;">
+            <div class="container mt-4 mb-4 text-center">
+            @if(Auth::guard('admins')->check())
+        <hr class="gline"><h1 style="color: gold;">ALL SPA REPORT</h1><hr class="gline">
+        @else
+        <hr class="gline"><h1 style="color: gold;">YOUR SPA REPORT</h1><hr class="gline">
+
+        @endif
+    </div>
             <a href="/spa/create" class="btn btn-success ">Send SPA Report</a>
             <hr>
         @if(count($spas)>0)

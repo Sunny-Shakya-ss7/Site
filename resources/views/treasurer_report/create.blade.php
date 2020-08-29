@@ -57,11 +57,11 @@
     <img class="image" src="{{asset('graphics/logo/a.png')}}" alt="logo" />
 </div>
 
-<div class="container" >
+<div class="container" style="margin-left: 15%">
      <div class="text-center">
-        <h1>Treasurer Report 2020/2021</h1>
+        <h1 style="color: gold;">Treasurer Report 2020/2021</h1>
      </div>
-     <a href="/" class="btn btn-success">Go Back</a>
+     <a href="/treasurer" class="btn btn-success">Go Back</a>
      <hr>
      {!! Form::open(['action' => 'TreasurerController@store', 'method' => 'POST']) !!}    
         <div class="form-group" style="width:40%">
@@ -175,8 +175,7 @@
           </div> 
           
           
-   
-          {{Form::submit('Submit Form', ['class' => 'p-3 btn btn-primary'])}}
+          {{Form::submit('Submit Form', ['class' => 'ml-4 p-2 btn btn-success'])}}
     {!! Form::close() !!}
 </div>   
 @endsection

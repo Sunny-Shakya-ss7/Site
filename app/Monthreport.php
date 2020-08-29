@@ -17,4 +17,7 @@ class Monthreport extends Model
     protected $casts = [
         'project'=>'array'
     ];
+    public function cadmins(){
+        return $this->belongsTo('App\Cadmin');
+    }
 }

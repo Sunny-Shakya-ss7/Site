@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Monthreport;
 use Illuminate\Http\Request;
+use Auth;
 
 class MonthreportController extends Controller
 {
@@ -17,6 +18,18 @@ class MonthreportController extends Controller
         $monthreports = monthreport::orderBy('id','desc')->paginate(5);
         return view('monthly_report.index')
                     ->with('monthreport', $monthreports);
+
+     if(Auth::guard('admins')->check()){
+        $monthreports = monthreport::orderBy('id','desc')->paginate(5);
+        return view('monthly_report.index')
+                    ->with('monthreport', $monthreports);
+    }
+    if(Auth::guard('cadmin')->check()){
+        $user_id = Auth::guard('cadmin')->user()->id;
+        $cadmin = Cadmin::find($user_id);
+        return view('monthly_report.index')
+                    ->with('monthreport', $cadmin->monthreports);
+    }
 
     }
 
@@ -57,10 +70,13 @@ class MonthreportController extends Controller
             'handover'=>$request->handover,
             'participants'=>$request->participants,
             'participation_meeting'=>$request->participation_meeting,
-            'hosted_meeting'=>$request->hosted_meeting
+            'hosted_meeting'=>$request->hosted_meeting,
         ]);
+         if( Auth::guard('cadmin')->check())
+        $monthreports->cadmin_id = Auth::guard('cadmin')->user()->id;
+        else
+        $monthreports->cadmin_id = Auth::guard('admins')->user()->id;
         $monthreports->save();
-        $monthreports = monthreport::all();
         return redirect('/report')->with('success','Report has been Updated');
     }
 

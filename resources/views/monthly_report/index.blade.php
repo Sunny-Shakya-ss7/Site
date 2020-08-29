@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title', 'Profile')
+@section('title', 'Monthly Report')
 @section('content')
 
 <style>
@@ -54,9 +54,9 @@
     <img class="vertical3 v4" src="{{asset('graphics/png/line.png')}}" alt="line" style="left: 10.5rem;"/>
     <img class="image" src="{{asset('graphics/logo/a.png')}}" alt="logo" />
 
-<div class="container evtDiv ">
+<div class="container evtDiv" style="margin-left: 15%;">
     <div class="container mt-4 mb-4 text-center"> 
-        <hr class="gline"><h1>MONTHLY PROGRESSIVE REPORT</h1><hr class="gline">
+        <hr class="gline"><h1 style="color: gold;">MONTHLY PROGRESSIVE REPORT</h1><hr class="gline">
     </div>
     <div ><a href="report/create" class="btn btn-success float-left">Send Monthely Progressive Report</a></div>
     <br><br>

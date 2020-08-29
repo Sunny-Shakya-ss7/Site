@@ -54,9 +54,9 @@
     <img class="image" src="{{asset('graphics/logo/a.png')}}" alt="logo" />
 </div>
     
-<div class="container evtDiv spaDiv">
+<div class="container evtDiv" style="margin-left: 15%;">
     <div class="container mt-4 mb-4 text-center"> 
-        <hr class="gline"><h1>TREASURER REPORT</h1><hr class="gline">
+        <hr class="gline" ><h1 style="color: gold;">TREASURER REPORT</h1><hr class="gline">
     </div>
     <div ><a href="treasurer/create" class="btn btn-success float-left">Send Treasurer Report</a></div>
     <br><br>
