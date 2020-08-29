@@ -27,6 +27,9 @@
     </tbody>
   </table>
 </div>
-
+@else
+<div class="container">
+No data
+</div>
 @endif
 @endsection

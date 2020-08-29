@@ -97,4 +97,12 @@ Route::get('/leaderboard', 'PagesController@pointtb')->name('points.index');
 Route::resource('/report','MonthreportController');
 
 Route::resource('/treasurer','TreasurerController');
-// Route::get('/test','TreasurerController@store');
+
+Route::get('/pledge',function ()
+{
+	return view('pages.pledge');
+});
+Route::get('/salutation',function ()
+{
+	return view('pages.salutation');
+});
