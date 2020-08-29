@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title', 'treasurer')
+@section('title', 'Treasurer Report')
 @section('content')
 <style>
         .vertical3 { 

@@ -6,7 +6,7 @@
 <div class="row">
         <div class="panel panel-primary">
             <div class="panel-heading">
-                <h3 class="panel-title text-center" >Users</h3>
+                <h3 class="panel-title text-center" style="color:gold;">Users</h3>
             </div>
         <div class="wel clearfix">
             <hr>

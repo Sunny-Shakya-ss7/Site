@@ -21,6 +21,8 @@ class Treasurer extends Model
         'serv_income'=>'array',
         'serv_amount2'=>'array'
     ];
-    
+     public function cadmins(){
+        return $this->belongsTo('App\Cadmin');
+    }    
 
 }

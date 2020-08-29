@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Treasurer;
 use Illuminate\Http\Request;
+use Auth;
 
 class TreasurerController extends Controller
 {
@@ -14,9 +15,17 @@ class TreasurerController extends Controller
      */
     public function index()
     {
-        $treasurers = Treasurer::orderBy('id','desc')->paginate(5);
-        return view('treasurer_report.index')->with('treasurer',$treasurers);
-    
+     if(Auth::guard('admins')->check()){
+            $treasurers = Treasurer::all();
+            return view('treasurer_report.index')
+                        ->with('treasurer', $treasurers);
+        }
+        if(Auth::guard('cadmin')->check()){
+            $user_id = Auth::guard('cadmin')->user()->id;
+            $cadmin = Cadmin::find($user_id);
+            return view('treasurer_report.index')
+                        ->with('treasurer', $cadmin->treasurers);
+        }
     }
 
     /**
@@ -73,14 +82,13 @@ class TreasurerController extends Controller
             'admin_amount2_total'=>$request->admin_amount2_total,
             'serv_amount1_total'=>$request->serv_amount1_total,
             'serv_amount2_total'=>$request->serv_amount2_total,
-
-
-
-
         ]);
+        if( Auth::guard('cadmin')->check())
+        $treasurer->cadmin_id = Auth::guard('cadmin')->user()->id;
+        else
+        $treasurer->cadmin_id = Auth::guard('admins')->user()->id;
+
         $treasurer->save();
-        
-        $treasurer=Treasurer::all();
         return redirect('/treasurer')->with('success','Report has been Updated');
     }
 

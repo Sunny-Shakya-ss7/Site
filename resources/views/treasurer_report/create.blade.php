@@ -1,7 +1,7 @@
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 
 @extends('layouts.app')
-@section('title', 'form_register')
+@section('title', 'Send Report')
 @section('content')
 
 <style>
